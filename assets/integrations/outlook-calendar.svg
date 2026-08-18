@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><title>Outlook Calendar</title>
+<path fill="#0078D4" d="M5 2.5A3.5 3.5 0 0 0 1.5 6v13A3.5 3.5 0 0 0 5 22.5h14a3.5 3.5 0 0 0 3.5-3.5V6A3.5 3.5 0 0 0 19 2.5H5z"/>
+<path fill="#DEECF9" d="M1.5 8.25h21V19A3.5 3.5 0 0 1 19 22.5H5A3.5 3.5 0 0 1 1.5 19V8.25z"/>
+<rect x="6.15" y="1.1" width="1.7" height="4.1" rx="0.85" fill="#004578"/>
+<rect x="16.15" y="1.1" width="1.7" height="4.1" rx="0.85" fill="#004578"/>
+<g fill="#0078D4">
+  <circle cx="6.4" cy="11.4" r="0.85"/>
+  <circle cx="10" cy="11.4" r="0.85"/>
+  <circle cx="13.6" cy="11.4" r="0.85"/>
+  <circle cx="17.2" cy="11.4" r="0.85"/>
+  <circle cx="6.4" cy="14.7" r="0.85"/>
+  <circle cx="10" cy="14.7" r="0.85"/>
+  <circle cx="13.6" cy="14.7" r="0.85"/>
+  <circle cx="17.2" cy="14.7" r="0.85"/>
+  <circle cx="6.4" cy="18" r="0.85"/>
+  <circle cx="10" cy="18" r="0.85"/>
+  <circle cx="13.6" cy="18" r="0.85"/>
+</g>
+</svg>
