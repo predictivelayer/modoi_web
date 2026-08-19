@@ -986,7 +986,7 @@ h2, .sec h2 {
 .after-demo-rail {
   display: flex;
   flex-direction: column;
-  height: calc(9 * var(--after-hour));
+  height: calc(6 * var(--after-hour));
 }
 .after-demo-rail span {
   height: var(--after-hour);
@@ -1001,7 +1001,7 @@ h2, .sec h2 {
 }
 .after-demo-col {
   position: relative;
-  height: calc(9 * var(--after-hour));
+  height: calc(6 * var(--after-hour));
   min-width: 0;
   background-image: repeating-linear-gradient(
     to bottom,
