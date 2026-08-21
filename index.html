@@ -3,702 +3,402 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modoi · AI calendar for closing more issues</title>
-<meta name="description" content="Modoi captures every activity, pairs them with the right issue, and nudges you when you get distracted. Free while in beta. macOS.">
+<title>Modoi · Unbreakable attention span, shielded by AI</title>
+<meta name="description" content="Modoi monitors your work and shields distraction, so you can finish more and juggle less. Free while in beta. macOS.">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
-<link rel="stylesheet" href="css/shared.css?v=1">
-<link rel="stylesheet" href="css/c.css?v=1">
+<link rel="stylesheet" href="css/g-lyncx-dynamic.css?v=1">
 </head>
 <body>
 
-<nav class="nav-sticky" id="nav" aria-label="Primary">
-  <div class="wrap nav-c">
-    <a class="brand" href="#top">
-      <img src="assets/modoi-mark.png" alt="">
-      <span class="wordmark">modoi</span>
-    </a>
-    <div class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#works">Works with</a>
-      <a href="#price">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="about.html">About</a>
-    </div>
-    <a class="btn btn-dark btn-sm" href="#price">Try on Mac ($0)</a>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="nav-links">
+    <a href="#privacy">Privacy</a>
+    <a href="#price">Pricing</a>
+    <a href="https://forms.gle/5yA298MG8UiKTvJa8" target="_blank" rel="noopener noreferrer">Get for Mac</a>
+    <a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
   </div>
 </nav>
 
-<header class="hero" id="top">
-  <figure class="hero-photo">
-    <img src="assets/dunes-water.png?v=2" alt="" width="1024" height="683">
+<ul class="chapter-dots" aria-label="Chapters">
+  <li><a href="#hero" data-dot="hero" aria-label="Hero"></a></li>
+  <li><a href="#pipeline" data-dot="pipeline" aria-label="How it works"></a></li>
+  <li><a href="#day" data-dot="day" aria-label="A day with Modoi"></a></li>
+  <li><a href="#privacy" data-dot="privacy" aria-label="Privacy"></a></li>
+  <li><a href="#price" data-dot="price" aria-label="Pricing"></a></li>
+  <li><a href="#faq" data-dot="faq" aria-label="FAQ"></a></li>
+</ul>
+
+<!-- 01 Hero -->
+<section class="chapter chapter-hero" id="hero" data-chapter="hero">
+  <figure class="hero-media">
+    <video src="assets/sand_shorter.mp4" autoplay muted playsinline loop aria-hidden="true"></video>
   </figure>
-  <div class="hero-copy">
-    <p class="kicker">Free while in beta</p>
-    <h1>AI calendar for <em>closing more issues</em></h1>
-    <p class="sub">Modoi captures every activity, pairs them with the right issue, and nudges you when you get distracted.</p>
+  <div class="hero-copy" data-reveal>
+    <h1>Unbreakable <em>attention span</em>, shielded by AI</h1>
+    <p class="lede">Modoi monitors your work and shields distraction, so you can finish more and juggle less.</p>
     <div class="cta">
-      <a class="btn btn-dark" href="#price">Try on Mac ($0)</a>
-      <a class="btn btn-ghost" href="#how">See how it works</a>
-    </div>
-    <p class="fineprint">macOS 13+ · Raw screenshots never leave your Mac</p>
-  </div>
-</header>
-
-<section class="sec" id="grouping">
-  <div class="wrap">
-    <p class="kicker">The grouping</p>
-    <h2>Ties your activity to each ticket</h2>
-    <p class="lede">Modoi takes the scatter of a morning and rolls it up to the ticket it belongs to.</p>
-
-    <div class="cal-pipeline-wrap">
-      <div class="cal-pipeline" role="img" aria-label="Raw window signals grouped into tasks and placed on a day calendar">
-        <div class="cal-pipeline-grid">
-          <div class="cal-pipeline-col cal-pipeline-signals">
-            <p class="cal-pipeline-label">Raw signals</p>
-            <div class="signal-scatter">
-              <span class="signal-chip">9 tabs</span>
-              <span class="signal-chip">Slack</span>
-              <span class="signal-chip">Figma</span>
-              <span class="signal-chip">VS Code</span>
-              <span class="signal-chip">Notion</span>
-              <span class="signal-chip">Chrome</span>
-              <span class="signal-chip">Linear</span>
-              <span class="signal-chip">Gmail</span>
-              <span class="signal-chip">Sheets</span>
-            </div>
-          </div>
-
-          <div class="cal-pipeline-connector" aria-hidden="true">
-            <svg viewBox="0 0 44 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 60 H28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M24 54 L34 60 L24 66" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 36 H22" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
-              <path d="M4 84 H22" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
-            </svg>
-          </div>
-
-          <div class="cal-pipeline-col cal-pipeline-group">
-            <p class="cal-pipeline-label">Grouping</p>
-            <ul class="task-lines">
-              <li class="task-line">
-                <span class="task-name">Writing the draft</span>
-                <span class="task-time">69m</span>
-              </li>
-              <li class="task-line">
-                <span class="task-name">Pulling the numbers</span>
-                <span class="task-time">38m</span>
-              </li>
-              <li class="task-line">
-                <span class="task-name">Review thread</span>
-                <span class="task-time">22m</span>
-              </li>
-              <li class="task-line">
-                <span class="task-name">Reviewing the mocks</span>
-                <span class="task-time">24m</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="cal-pipeline-connector" aria-hidden="true">
-            <svg viewBox="0 0 44 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 60 H28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M24 54 L34 60 L24 66" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 40 H20" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
-              <path d="M4 80 H20" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
-            </svg>
-          </div>
-
-          <div class="cal-pipeline-col cal-pipeline-cal">
-            <p class="cal-pipeline-label">Your day</p>
-            <div class="cal-day">
-              <div class="cal-rail">
-                <span>6a</span>
-                <span>9a</span>
-                <span>12p</span>
-                <span>3p</span>
-                <span>6p</span>
-              </div>
-              <div class="cal-blocks">
-                <div class="cal-block cal-block-rose">
-                  <span class="cal-ticket">ENG-288</span>
-                  <span class="cal-task">Writing the draft</span>
-                  <span class="cal-dur">2h 15m</span>
-                </div>
-                <div class="cal-block cal-block-gold">
-                  <span class="cal-ticket">MKT-12</span>
-                  <span class="cal-task">Review thread</span>
-                  <span class="cal-dur">22m</span>
-                </div>
-                <div class="cal-block cal-block-sage">
-                  <span class="cal-ticket">SALES-88</span>
-                  <span class="cal-task">Pulling the numbers</span>
-                  <span class="cal-dur">38m</span>
-                  <span class="cal-pending">Pending</span>
-                </div>
-                <div class="cal-block cal-block-slate">
-                  <span class="cal-ticket">ENG-456</span>
-                  <span class="cal-task">Reviewing the mocks</span>
-                  <span class="cal-dur">24m</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a class="btn btn-dark" href="https://forms.gle/5yA298MG8UiKTvJa8" target="_blank" rel="noopener noreferrer">Get for Mac</a>
+      <a class="btn btn-ghost on-sand" href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
     </div>
   </div>
 </section>
 
-<section class="sec sec-calendar" id="calendar">
-  <div class="wrap">
-    <p class="kicker">The calendar</p>
-    <h2>Your day, already sorted</h2>
-    <p class="lede">Grouped events on a normal engineer’s day. Nothing typed in by hand.</p>
-
-    <div class="appwin" role="img" aria-label="Modoi calendar for Monday, August 17, with activity, events, projects, meetings, and labels">
-      <div class="appwin-bar">
-        <span class="appwin-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span class="appwin-title">Calendar</span>
+<!-- 02 Pipeline -->
+<section class="chapter chapter-pipeline" id="pipeline" data-chapter="pipeline">
+  <div class="chapter-inner">
+    <div class="pipeline-stage" data-reveal>
+      <div class="pipeline-head">
+        <p class="kicker">How it works</p>
+        <h2>Match activity to each work item</h2>
+        <div class="wm-icons" aria-label="Works with Linear, HubSpot, Jira, Asana, Notion, and more">
+          <img src="assets/integrations/linear.svg" alt="Linear" width="28" height="28">
+          <img src="assets/integrations/hubspot.svg" alt="HubSpot" width="28" height="28">
+          <img src="assets/integrations/jira.svg" alt="Jira" width="28" height="28">
+          <img src="assets/integrations/asana.svg" alt="Asana" width="28" height="28">
+          <img src="assets/integrations/notion.svg" alt="Notion" width="28" height="28">
+          <span class="wm-more" title="More coming">+</span>
+        </div>
+        <p class="lede">Modoi sees your Mac’s record and pairs it with each item on your work management app.</p>
       </div>
 
-      <div class="appcal">
-        <div class="appcal-top">
-          <div class="appcal-brand">
-            <span class="appcal-mark">modoi</span>
-            <nav class="appcal-tabs-nav" aria-label="App">
-              <span class="appcal-chev" aria-hidden="true">‹</span>
-              <span class="appcal-tab">chat</span>
-              <span class="appcal-tab is-on">calendar</span>
-              <span class="appcal-chev is-dim" aria-hidden="true">›</span>
-            </nav>
-          </div>
-          <div class="appcal-tools" aria-hidden="true">
-            <span>12h</span>
-            <svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 3v5l3 2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
-            <svg viewBox="0 0 16 16" width="13" height="13"><rect x="4" y="4" width="8" height="8" rx="1.2" fill="currentColor"/></svg>
-            <svg viewBox="0 0 16 16" width="13" height="13"><path d="M5 3.5v9l8-4.5z" fill="currentColor"/></svg>
-            <svg viewBox="0 0 16 16" width="14" height="14"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/><path d="M8 2.2v1.6M8 12.2v1.6M2.2 8h1.6M12.2 8h1.6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          </div>
-        </div>
-
-        <div class="appcal-toolbar">
-          <p class="appcal-day">Monday, Aug 17</p>
-          <span class="appcal-today">Today</span>
-          <span class="appcal-shift" aria-hidden="true">‹  ›</span>
-        </div>
-
-        <div class="appcal-body">
-          <div class="appcal-scroll">
-            <div class="appcal-grid">
-              <div class="appcal-colnames">
-                <span></span>
-                <span>Activity</span>
-                <span>Events</span>
-                <span>Project</span>
-                <span>Calendar</span>
-                <span>Labels</span>
-              </div>
-
-              <div class="appcal-spine">
-                <div class="appcal-rail" aria-hidden="true">
-                  <span>6 AM</span><span>7 AM</span><span>8 AM</span><span>9 AM</span>
-                  <span>10 AM</span><span>11 AM</span><span>12 PM</span><span>1 PM</span>
-                  <span>2 PM</span><span>3 PM</span><span>4 PM</span><span>5 PM</span>
-                </div>
-
-                <div class="appcal-col appcal-col-activity">
-                  <div class="ab ab-act" style="--t:30;--d:75">
-                    <span class="ab-clock">6:30</span>
-                    <span class="ab-title">Browsing, Messaging</span>
-                    <span class="ab-meta">Chrome</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:105;--d:30">
-                    <span class="ab-clock">7:45</span>
-                    <span class="ab-title">Messaging</span>
-                    <span class="ab-meta">Slack</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:135;--d:135">
-                    <span class="ab-clock">8:15</span>
-                    <span class="ab-title">Code, Browsing</span>
-                    <span class="ab-meta">Cursor</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:270;--d:45">
-                    <span class="ab-clock">10:30</span>
-                    <span class="ab-title">Messaging</span>
-                    <span class="ab-meta">Slack</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:315;--d:45">
-                    <span class="ab-clock">11:15</span>
-                    <span class="ab-title">Code</span>
-                    <span class="ab-meta">Cursor</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:360;--d:45">
-                    <span class="ab-clock">12:00</span>
-                    <span class="ab-title">Browsing</span>
-                    <span class="ab-meta">Chrome</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:405;--d:105">
-                    <span class="ab-clock">12:45</span>
-                    <span class="ab-title">Code, Browsing</span>
-                    <span class="ab-meta">Cursor</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:510;--d:45">
-                    <span class="ab-clock">2:30</span>
-                    <span class="ab-title">Design</span>
-                    <span class="ab-meta">Figma</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:555;--d:45">
-                    <span class="ab-clock">3:15</span>
-                    <span class="ab-title">Writing</span>
-                    <span class="ab-meta">Chrome</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:600;--d:45">
-                    <span class="ab-clock">4:00</span>
-                    <span class="ab-title">Messaging</span>
-                    <span class="ab-meta">Slack</span>
-                  </div>
-                  <div class="ab ab-act" style="--t:645;--d:65">
-                    <span class="ab-clock">4:45</span>
-                    <span class="ab-title">Code</span>
-                    <span class="ab-meta">Cursor</span>
-                  </div>
-                </div>
-
-                <div class="appcal-col appcal-col-events">
-                  <div class="ab ab-ev is-ok" style="--t:30;--d:60">
-                    <span class="ab-title">Review onboarding copy</span>
-                    <span class="ab-meta">MKT-12</span>
-                    <span class="ab-check" aria-hidden="true">✓</span>
-                  </div>
-                  <div class="ab ab-ev is-ok" style="--t:90;--d:43">
-                    <span class="ab-title">Weekly standup notes</span>
-                    <span class="ab-meta">ENG-123</span>
-                    <span class="ab-check" aria-hidden="true">✓</span>
-                  </div>
-                  <div class="ab ab-ev is-ok is-on" style="--t:133;--d:45">
-                    <span class="ab-title">Implement catalog</span>
-                    <span class="ab-meta">ENG-288</span>
-                    <span class="ab-check" aria-hidden="true">✓</span>
-                  </div>
-                  <div class="ab ab-ev is-ok" style="--t:178;--d:92">
-                    <span class="ab-title">Ship search API</span>
-                    <span class="ab-meta">ENG-301</span>
-                    <span class="ab-check" aria-hidden="true">✓</span>
-                  </div>
-                  <div class="ab ab-ev" style="--t:270;--d:45">
-                    <span class="ab-title">Review thread</span>
-                    <span class="ab-meta">ENG-456</span>
-                  </div>
-                  <div class="ab ab-ev is-pending" style="--t:315;--d:45">
-                    <span class="ab-title">Pulling the numbers</span>
-                    <span class="ab-meta">SALES-88</span>
-                  </div>
-                  <div class="ab ab-ev is-ok" style="--t:405;--d:105">
-                    <span class="ab-title">Ship search API</span>
-                    <span class="ab-meta">ENG-301</span>
-                    <span class="ab-check" aria-hidden="true">✓</span>
-                  </div>
-                  <div class="ab ab-ev is-ok" style="--t:510;--d:45">
-                    <span class="ab-title">Reviewing the mocks</span>
-                    <span class="ab-meta">ENG-456</span>
-                    <span class="ab-check" aria-hidden="true">✓</span>
-                  </div>
-                  <div class="ab ab-ev" style="--t:555;--d:45">
-                    <span class="ab-title">Review onboarding copy</span>
-                    <span class="ab-meta">MKT-12</span>
-                  </div>
-                  <div class="ab ab-ev" style="--t:600;--d:45">
-                    <span class="ab-title">Pipeline review</span>
-                    <span class="ab-meta">SALES-88</span>
-                  </div>
-                  <div class="ab ab-ev is-ok" style="--t:645;--d:60">
-                    <span class="ab-title">Ship search API</span>
-                    <span class="ab-meta">ENG-301</span>
-                    <span class="ab-check" aria-hidden="true">✓</span>
-                  </div>
-                </div>
-
-                <div class="appcal-col appcal-col-thin">
-                  <div class="ab ab-proj ab-proj-onboard" style="--t:30;--d:103">
-                    <span class="ab-title">Onboarding</span>
-                  </div>
-                  <div class="ab ab-proj ab-proj-desk" style="--t:133;--d:227">
-                    <span class="ab-title">Product help desk</span>
-                  </div>
-                  <div class="ab ab-proj ab-proj-desk" style="--t:405;--d:105">
-                    <span class="ab-title">Product help desk</span>
-                  </div>
-                  <div class="ab ab-proj ab-proj-growth" style="--t:510;--d:135">
-                    <span class="ab-title">Growth experiments</span>
-                  </div>
-                  <div class="ab ab-proj ab-proj-desk" style="--t:645;--d:60">
-                    <span class="ab-title">Product help desk</span>
-                  </div>
-                </div>
-
-                <div class="appcal-col appcal-col-thin">
-                  <div class="ab ab-cal" style="--t:60;--d:30">
-                    <span class="ab-title">Standup</span>
-                  </div>
-                  <div class="ab ab-cal" style="--t:135;--d:135">
-                    <span class="ab-title">Focus block</span>
-                  </div>
-                  <div class="ab ab-cal" style="--t:270;--d:30">
-                    <span class="ab-title">1:1</span>
-                  </div>
-                  <div class="ab ab-cal" style="--t:360;--d:45">
-                    <span class="ab-title">Lunch</span>
-                  </div>
-                  <div class="ab ab-cal" style="--t:510;--d:45">
-                    <span class="ab-title">Design review</span>
-                  </div>
-                  <div class="ab ab-cal" style="--t:600;--d:45">
-                    <span class="ab-title">Vendor call</span>
-                  </div>
-                  <div class="ab ab-cal" style="--t:645;--d:60">
-                    <span class="ab-title">Focus block</span>
-                  </div>
-                </div>
-
-                <div class="appcal-col appcal-col-thin">
-                  <div class="ab ab-lab" style="--t:30;--d:60"><span class="ab-title">Writing</span></div>
-                  <div class="ab ab-lab" style="--t:90;--d:43"><span class="ab-title">Messaging</span></div>
-                  <div class="ab ab-lab is-on" style="--t:133;--d:45"><span class="ab-title">Messaging</span></div>
-                  <div class="ab ab-lab" style="--t:178;--d:92"><span class="ab-title">Code</span></div>
-                  <div class="ab ab-lab" style="--t:270;--d:45"><span class="ab-title">Messaging</span></div>
-                  <div class="ab ab-lab" style="--t:315;--d:45"><span class="ab-title">Writing</span></div>
-                  <div class="ab ab-lab" style="--t:405;--d:105"><span class="ab-title">Code</span></div>
-                  <div class="ab ab-lab" style="--t:510;--d:45"><span class="ab-title">Design</span></div>
-                  <div class="ab ab-lab" style="--t:555;--d:45"><span class="ab-title">Writing</span></div>
-                  <div class="ab ab-lab" style="--t:600;--d:45"><span class="ab-title">Messaging</span></div>
-                  <div class="ab ab-lab" style="--t:645;--d:60"><span class="ab-title">Code</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <aside class="appcal-side">
-            <div class="appcal-side-head">
-              <span>Event</span>
-              <span class="appcal-x" aria-hidden="true">✕</span>
-            </div>
-            <h3 class="appcal-side-title">Implement catalog</h3>
-            <span class="appcal-pill">
-              <svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><path d="M3.5 5.5h5v4.2H3.5zM4.6 5.5V4.2a1.4 1.4 0 0 1 2.8 0v1.3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
-              accepted
+      <div class="pipeline-flow" role="img" aria-label="Messy activity logs grouped into events, then placed on a calendar">
+        <div class="pipe-col pipe-col-activity">
+          <p class="pipe-label">Activity</p>
+          <div class="signal-scatter">
+            <span class="signal-chip">
+              <span class="signal-label">9 tabs · docs.google…</span>
+              <span class="signal-meta">08:54 · 18m</span>
             </span>
-            <p class="appcal-when">08:13–08:58 · 45m</p>
-            <p class="appcal-actions"><span>Re-approve</span> <span>Reject</span></p>
-
-            <label class="appcal-field">Linear ticket
-              <span class="appcal-input">ENG-288 Implement catalog</span>
-            </label>
-            <label class="appcal-field">Project
-              <span class="appcal-input">Product help desk</span>
-            </label>
-            <label class="appcal-field">Category
-              <select class="appcal-input appcal-select" aria-label="Category">
-                <option>Writing</option>
-                <option selected>Messaging</option>
-                <option>Code</option>
-                <option>Design</option>
-              </select>
-            </label>
-            <label class="appcal-field">Description
-              <textarea class="appcal-area" rows="3" placeholder=""></textarea>
-            </label>
-            <p class="appcal-actions"><span>Save description</span> <span>Rewrite description</span></p>
-            <p class="appcal-reanalyze">↻ Re-analyze from Samples</p>
-            <p class="appcal-note">Accepted. Counts toward Work Hours.</p>
-
-            <div class="appcal-evidence">
-              <div class="appcal-seg" role="tablist">
-                <button type="button" data-pane="titles">Titles</button>
-                <button type="button" data-pane="apps">Apps</button>
-                <button type="button" data-pane="log" class="is-on">Event Log</button>
-              </div>
-              <div class="appcal-pane" data-pane="titles" hidden>
-                <p><span>8m</span> Implement catalog — Linear</p>
-                <p><span>4m</span> catalog schema — Cursor</p>
-                <p><span>2m</span> Inbox — Outlook</p>
-              </div>
-              <div class="appcal-pane" data-pane="apps" hidden>
-                <p><span>7m</span> Slack</p>
-                <p><span>5m</span> Cursor</p>
-                <p><span>2m</span> Outlook</p>
-              </div>
-              <div class="appcal-pane" data-pane="log">
-                <div class="appcal-log">
-                  <p><time>8:13</time><b>loginwindow</b><span>Login Window</span></p>
-                  <p><time>8:23</time><b>Slack</b><span>DM — Slack</span></p>
-                  <p><time>8:24</time><b>Slack</b><span>dev channel — Slack</span></p>
-                  <p><time>8:24</time><b>Outlook</b><span>Inbox · All Accounts</span></p>
-                  <p><time>8:26</time><b>Cursor</b><span>Implement catalog</span></p>
-                </div>
-              </div>
-            </div>
-          </aside>
+            <span class="signal-chip">
+              <span class="signal-label">Slack · #design-system</span>
+              <span class="signal-meta">09:12 · 12m</span>
+            </span>
+            <span class="signal-chip">
+              <span class="signal-label">Figma · Home mock</span>
+              <span class="signal-meta">09:24 · 31m</span>
+            </span>
+            <span class="signal-chip">
+              <span class="signal-label">VS Code · search-api</span>
+              <span class="signal-meta">09:55 · 42m</span>
+            </span>
+            <span class="signal-chip">
+              <span class="signal-label">Notion · standup notes</span>
+              <span class="signal-meta">10:38 · 9m</span>
+            </span>
+            <span class="signal-chip">
+              <span class="signal-label">Chrome · github.com</span>
+              <span class="signal-meta">10:47 · 14m</span>
+            </span>
+            <span class="signal-chip">
+              <span class="signal-label">Linear · ENG-301</span>
+              <span class="signal-meta">11:02 · 6m</span>
+            </span>
+            <span class="signal-chip">
+              <span class="signal-label">Gmail · PR review</span>
+              <span class="signal-meta">11:11 · 8m</span>
+            </span>
+            <span class="signal-chip">
+              <span class="signal-label">Sheets · funnel Q3</span>
+              <span class="signal-meta">11:22 · 21m</span>
+            </span>
+          </div>
+        </div>
+        <div class="pipe-arrow" aria-hidden="true">
+          <svg viewBox="0 0 28 48" fill="none"><path d="M4 24h16M14 16l8 8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="pipe-col">
+          <p class="pipe-label">Event</p>
+          <ul class="task-lines">
+            <li class="task-line"><span>Writing the draft</span><span class="task-time">69m</span></li>
+            <li class="task-line"><span>Pulling the numbers</span><span class="task-time">38m</span></li>
+            <li class="task-line"><span>Review thread</span><span class="task-time">22m</span></li>
+          </ul>
+        </div>
+        <div class="pipe-arrow" aria-hidden="true">
+          <svg viewBox="0 0 28 48" fill="none"><path d="M4 24h16M14 16l8 8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="pipe-col">
+          <p class="pipe-label">Calendar</p>
+          <div class="cal-mini">
+            <div class="cal-block cal-rose"><span>ENG-288</span><strong>Writing the draft</strong></div>
+            <div class="cal-block cal-gold"><span>MKT-12</span><strong>Review thread</strong></div>
+            <div class="cal-block cal-sage"><span>SALES-88</span><strong>Pulling the numbers</strong></div>
+          </div>
         </div>
       </div>
+      <p class="pipe-story">messy activity → grouped event → ticket on calendar</p>
     </div>
   </div>
 </section>
 
-<section class="waterband">
-  <div class="wrap">
-    <div class="strip">
-      <div class="stat"><div class="num">20+%</div><p>more focused time on average</p></div>
-      <div class="stat"><div class="num">&lt; 3 min</div><p>setup, no training needed</p></div>
-      <div class="stat"><div class="num">0</div><p>data sent to third-party AI providers (e.g. Claude, OpenAI)</p></div>
-      <div class="stat"><div class="num">100%</div><p>automatic: no timers, no tags, no timesheets</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="how">
-  <div class="wrap">
-    <div class="show show-before">
-      <div class="txt">
-        <p class="kicker">Before · 01</p>
-        <h2>Your rim color shows how present you are</h2>
-        <p class="lede">Modoi reads how present you are and colors the edge of your screen. No check-in, no typing what you are on. The rim shifts on its own.</p>
-        <ul class="showlist">
-          <li>Pink when your attention is split.</li>
-          <li>Yellow when you have wandered off track.</li>
-          <li>Green when you are present; blue when you are in flow.</li>
-        </ul>
-      </div>
-      <div>
-        <div class="rim-grid" aria-label="Four presence states shown as screen rim colors">
-          <figure class="rim-mock rim-distracted">
-            <div class="rim-screen"><span class="rim-inner"></span></div>
-            <figcaption>Distracted</figcaption>
-          </figure>
-          <figure class="rim-mock rim-wandering">
-            <div class="rim-screen"><span class="rim-inner"></span></div>
-            <figcaption>Wandering</figcaption>
-          </figure>
-          <figure class="rim-mock rim-present">
-            <div class="rim-screen"><span class="rim-inner"></span></div>
-            <figcaption>Present</figcaption>
-          </figure>
-          <figure class="rim-mock rim-zen">
-            <div class="rim-screen"><span class="rim-inner"></span></div>
-            <figcaption>Zen</figcaption>
-          </figure>
-        </div>
-        <p class="panecap">Presence at the edge of the screen</p>
-      </div>
-    </div>
-
-    <div class="show flip show-during">
-      <div class="txt">
-        <p class="kicker">During · 02</p>
-        <h2>Distraction blocked</h2>
-        <p class="lede">When the screen stops matching what you said, Modoi says one sentence over the window you drifted into. No red, no lock, no streak to break.</p>
-        <ul class="showlist">
-          <li>It names the drift and the cost: five minutes, gone.</li>
-          <li>It reads your load too, and tells you when to stop rather than push.</li>
-          <li>Type back into the same line to answer it. Then it goes away.</li>
-        </ul>
-      </div>
-      <div class="stack">
-        <div class="pane"><img src="assets/during-overlay-1.jpg" alt="Modoi overlay on YouTube saying you have been distracted for 5 minutes" loading="lazy" width="1300" height="840"></div>
-        <div class="pane"><img src="assets/during-overlay-2.jpg" alt="Modoi overlay over an editor suggesting a break after 3 hours on one ticket" loading="lazy" width="1300" height="807"></div>
-      </div>
-    </div>
-
-    <div class="show show-after">
-      <div class="txt">
-        <p class="kicker">After · 03</p>
-        <h2>Auto-generate event details.</h2>
-        <p class="lede">The block already has a name, a time, a Linear ticket, and a project. You can still change them.</p>
-        <ul class="showlist">
-          <li>Each block lands on a Linear ticket (ENG-288, MKT-12).</li>
-          <li>Open it if the ticket or project is wrong.</li>
-        </ul>
-      </div>
-      <div>
-        <div class="pane pane-after-demo">
-          <div class="appwin after-demo" role="img" aria-label="Modoi event panel for Ship Search API, pending approval, linked to ENG-301 on Product help desk">
-            <div class="appwin-bar">
-              <span class="appwin-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="appwin-title">Calendar</span>
+<!-- 03 Day beats — sticky storytelling -->
+<section class="chapter chapter-day" id="day" data-chapter="day">
+  <div class="day-track" id="day-track">
+    <div class="day-sticky">
+      <div class="day-stage" data-reveal>
+        <div class="day-copy">
+          <div class="day-panel-copy is-active" data-beat="0">
+            <p class="kicker">Before · 01</p>
+            <h2>Your rim color shows how present you are</h2>
+            <p class="lede">No check-in, no typing — the rim shifts on its own.</p>
+            <ul class="beat-list">
+              <li>Pink when attention is split.</li>
+              <li>Yellow when you wander.</li>
+              <li>Green when present; blue in flow.</li>
+            </ul>
+            <div class="day-mobile-visual">
+              <div class="rim-grid" aria-hidden="true">
+                <figure class="rim-mock rim-distracted"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Distracted</figcaption></figure>
+                <figure class="rim-mock rim-present"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Present</figcaption></figure>
+              </div>
             </div>
-
-            <div class="appcal">
-              <div class="appcal-top">
-                <div class="appcal-brand">
-                  <span class="appcal-mark">modoi</span>
-                  <nav class="appcal-tabs-nav" aria-label="App">
-                    <span class="appcal-chev" aria-hidden="true">‹</span>
-                    <span class="appcal-tab">chat</span>
-                    <span class="appcal-tab is-on">calendar</span>
-                    <span class="appcal-chev is-dim" aria-hidden="true">›</span>
-                  </nav>
+          </div>
+          <div class="day-panel-copy" data-beat="1">
+            <p class="kicker">During · 02</p>
+            <h2>Distraction blocked</h2>
+            <p class="lede">When you leave the task, Modoi nudges once — no lock, no streak.</p>
+            <ul class="beat-list">
+              <li>Names where you went and the cost.</li>
+              <li>Reads your load; suggests when to stop.</li>
+              <li>Type back to ask for more detail</li>
+            </ul>
+            <div class="day-mobile-visual">
+              <div class="during-stack">
+                <div class="during-shot">
+                  <img src="assets/during-overlay-1.jpg" alt="" loading="lazy" width="650" height="420">
+                </div>
+                <div class="during-shot">
+                  <img src="assets/during-overlay-2.jpg" alt="" loading="lazy" width="650" height="404">
                 </div>
               </div>
-
-              <div class="appcal-toolbar">
-                <p class="appcal-day">Monday, Aug 17</p>
-                <span class="appcal-today">Today</span>
-                <span class="appcal-shift" aria-hidden="true">‹  ›</span>
-              </div>
-
-              <div class="after-demo-body">
-                <div class="after-demo-sliver" aria-hidden="true">
-                  <p class="after-demo-sliver-head">Events</p>
-                  <div class="after-demo-rail">
-                    <span>6 AM</span><span>7 AM</span><span>8 AM</span><span>9 AM</span>
-                    <span>10 AM</span><span>11 AM</span>
+            </div>
+          </div>
+          <div class="day-panel-copy" data-beat="2">
+            <p class="kicker">After · 03</p>
+            <h2>Auto-generate event details</h2>
+            <p class="lede">Each block already has a name, time, ticket, and project.</p>
+            <ul class="beat-list">
+              <li>Blocks land on a Linear ticket.</li>
+              <li>Pending until you approve.</li>
+            </ul>
+            <div class="day-mobile-visual">
+              <div class="after-card" role="img" aria-label="Pending event Ship Search API linked to ENG-301">
+                <div class="after-card-inner">
+                  <div class="after-sliver" aria-hidden="true">
+                    <p class="after-sliver-head">Events</p>
+                    <div class="after-sliver-list">
+                      <div class="ab is-ok"><span class="ab-title">Review onboarding</span><span class="ab-meta">MKT-12</span></div>
+                      <div class="ab is-pending is-on"><span class="ab-title">Ship Search API</span><span class="ab-meta">ENG-301</span></div>
+                      <div class="ab is-ok"><span class="ab-title">Review thread</span><span class="ab-meta">ENG-456</span></div>
+                    </div>
                   </div>
-                  <div class="after-demo-col">
-                    <div class="ab ab-ev is-ok" style="--t:30;--d:45">
+                  <aside class="after-side">
+                    <div class="after-side-head"><span>Event</span><span aria-hidden="true">✕</span></div>
+                    <h3>Ship Search API</h3>
+                    <span class="pill">pending</span>
+                    <p class="after-meta">09:20–10:05 · 45m</p>
+                    <p class="after-actions"><span>Approve</span> <span>Reject</span></p>
+                    <label class="after-field">Linear ticket<span>ENG-301 Ship Search API</span></label>
+                    <label class="after-field">Project<span>Product help desk</span></label>
+                    <label class="after-field">Category<span>Code</span></label>
+                    <label class="after-field">Description
+                      <span class="after-desc">Implemented search endpoints, wired catalog filters, and opened the ENG-301 PR for review.</span>
+                    </label>
+                    <p class="after-actions"><span>Save description</span> <span>Regenerate</span></p>
+                  </aside>
+                </div>
+                <p class="after-cap">Pending until you say otherwise</p>
+              </div>
+            </div>
+          </div>
+          <div class="day-panel-copy" data-beat="3">
+            <p class="kicker">Reflect · 04</p>
+            <h2>Double-tap ⌥ to chat about your day</h2>
+            <p class="lede">Ask what you got done — Modoi already has the calendar context.</p>
+            <ul class="beat-list">
+              <li>Stay in flow: no new window hunt.</li>
+              <li>Last week’s focus, already summarized.</li>
+            </ul>
+            <div class="day-mobile-visual">
+              <div class="reflect-card" role="img" aria-label="Reflect chat summarizing last week">
+                <p class="reflect-lead">Last week, you focused deeply on AI tool evaluation and deep work:</p>
+                <ul class="reflect-bullets">
+                  <li>2+ hours on event briefings and model comparisons.</li>
+                  <li>Extensive Cursor and Modoi workflow design.</li>
+                  <li>1.5 hours on benchmarks and ML concepts.</li>
+                  <li>Slack, Notes, and Linear kept in the loop.</li>
+                </ul>
+                <p class="reflect-query">my productivity last week</p>
+                <div class="reflect-composer"><span class="reflect-input">Glad you're here.</span></div>
+                <p class="reflect-hint">Double-tap ⌥ (option)</p>
+              </div>
+            </div>
+          </div>
+          <div class="day-progress" aria-hidden="true">
+            <span class="is-on" data-beat-dot="0"></span>
+            <span data-beat-dot="1"></span>
+            <span data-beat-dot="2"></span>
+            <span data-beat-dot="3"></span>
+          </div>
+        </div>
+
+        <div class="day-visual" aria-live="polite">
+          <div class="day-panel-visual is-active" data-beat="0">
+            <div class="rim-grid" aria-label="Presence rim colors">
+              <figure class="rim-mock rim-distracted"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Distracted</figcaption></figure>
+              <figure class="rim-mock rim-wandering"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Wandering</figcaption></figure>
+              <figure class="rim-mock rim-present"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Present</figcaption></figure>
+              <figure class="rim-mock rim-zen"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Zen</figcaption></figure>
+            </div>
+          </div>
+          <div class="day-panel-visual" data-beat="1">
+            <div class="during-stack">
+              <div class="during-shot">
+                <img src="assets/during-overlay-1.jpg" alt="Modoi overlay on YouTube saying you have been distracted for 5 minutes" loading="lazy" width="650" height="420">
+              </div>
+              <div class="during-shot">
+                <img src="assets/during-overlay-2.jpg" alt="Modoi overlay over an editor suggesting a break after 3 hours on one ticket" loading="lazy" width="650" height="404">
+              </div>
+            </div>
+          </div>
+          <div class="day-panel-visual" data-beat="2">
+            <div class="after-card" role="img" aria-label="Pending event Ship Search API linked to ENG-301 on Product help desk">
+              <div class="after-card-inner">
+                <div class="after-sliver" aria-hidden="true">
+                  <p class="after-sliver-head">Events</p>
+                  <div class="after-sliver-list">
+                    <div class="ab is-ok">
                       <span class="ab-title">Review onboarding copy</span>
                       <span class="ab-meta">MKT-12</span>
                       <span class="ab-check" aria-hidden="true">✓</span>
                     </div>
-                    <div class="ab ab-ev is-ok" style="--t:90;--d:43">
+                    <div class="ab is-ok">
                       <span class="ab-title">Weekly standup notes</span>
                       <span class="ab-meta">ENG-123</span>
                       <span class="ab-check" aria-hidden="true">✓</span>
                     </div>
-                    <div class="ab ab-ev is-ok" style="--t:133;--d:45">
-                      <span class="ab-title">Implement catalog</span>
-                      <span class="ab-meta">ENG-288</span>
-                      <span class="ab-check" aria-hidden="true">✓</span>
-                    </div>
-                    <div class="ab ab-ev is-pending is-on" style="--t:200;--d:45">
+                    <div class="ab is-pending is-on">
                       <span class="ab-title">Ship Search API</span>
                       <span class="ab-meta">ENG-301</span>
                     </div>
-                    <div class="ab ab-ev is-ok" style="--t:245;--d:40">
+                    <div class="ab is-ok">
                       <span class="ab-title">Review thread</span>
                       <span class="ab-meta">ENG-456</span>
                       <span class="ab-check" aria-hidden="true">✓</span>
                     </div>
-                    <div class="ab ab-ev is-pending" style="--t:315;--d:45">
+                    <div class="ab is-pending">
                       <span class="ab-title">Pulling the numbers</span>
                       <span class="ab-meta">SALES-88</span>
                     </div>
                   </div>
                 </div>
-
-                <aside class="appcal-side after-demo-side">
-                  <div class="appcal-side-head">
+                <aside class="after-side">
+                  <div class="after-side-head">
                     <span>Event</span>
-                    <span class="appcal-x" aria-hidden="true">✕</span>
+                    <span aria-hidden="true">✕</span>
                   </div>
-                  <h3 class="appcal-side-title">Ship Search API</h3>
-                  <span class="appcal-pill is-pending">
+                  <h3>Ship Search API</h3>
+                  <span class="pill">
                     <svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l2 1.2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
                     pending
                   </span>
-                  <p class="appcal-when">09:20–10:05 · 45m</p>
-                  <p class="appcal-actions"><span>Approve</span> <span>Reject</span></p>
-
-                  <label class="appcal-field">Linear ticket
-                    <span class="appcal-input">ENG-301 Ship Search API</span>
+                  <p class="after-meta">09:20–10:05 · 45m</p>
+                  <p class="after-actions"><span>Approve</span> <span>Reject</span></p>
+                  <label class="after-field">Linear ticket<span>ENG-301 Ship Search API</span></label>
+                  <label class="after-field">Project<span>Product help desk</span></label>
+                  <label class="after-field">Category<span>Code</span></label>
+                  <label class="after-field">Description
+                    <span class="after-desc">Implemented search endpoints, wired catalog filters, and opened the ENG-301 PR for review.</span>
                   </label>
-                  <label class="appcal-field">Project
-                    <span class="appcal-input">Product help desk</span>
-                  </label>
-                  <label class="appcal-field">Category
-                    <select class="appcal-input appcal-select" aria-label="Category">
-                      <option>Writing</option>
-                      <option>Messaging</option>
-                      <option selected>Code</option>
-                      <option>Design</option>
-                    </select>
-                  </label>
-                  <label class="appcal-field">Description
-                    <textarea class="appcal-area" rows="3" readonly aria-readonly="true">Implemented search endpoints, wired catalog filters, and opened the ENG-301 PR for review.</textarea>
-                  </label>
-                  <p class="appcal-actions"><span>Save description</span> <span>Regenerate</span></p>
+                  <p class="after-actions"><span>Save description</span> <span>Regenerate</span></p>
                 </aside>
               </div>
+              <p class="after-cap">Pending until you say otherwise</p>
+            </div>
+          </div>
+          <div class="day-panel-visual" data-beat="3">
+            <div class="reflect-card" role="img" aria-label="Reflect chat summarizing last week with Glad you're here composer">
+              <p class="reflect-lead">Last week, you focused deeply on AI tool evaluation and deep work:</p>
+              <ul class="reflect-bullets">
+                <li>Spent 2+ hours reviewing event briefings and AI model comparisons.</li>
+                <li>Worked extensively in Cursor and Modoi on agent docs and workflow design.</li>
+                <li>Drove 1.5 hours exploring model benchmarks and ML concepts.</li>
+                <li>Kept Slack, Notes, and Linear in the loop for coordination.</li>
+              </ul>
+              <p class="reflect-query">my productivity last week</p>
+              <div class="reflect-composer">
+                <span class="reflect-input">Glad you're here.</span>
+              </div>
+              <p class="reflect-hint">Double-tap ⌥ (option)</p>
             </div>
           </div>
         </div>
-        <p class="panecap">Pending until you say otherwise</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="rule"></div>
-
-<section class="sec works" id="works">
-  <div class="wrap">
-    <p class="kicker">Works with</p>
-    <h2>Works with your everyday tools.</h2>
-    <div class="introw">
-      <div class="int"><img src="assets/integrations/outlook-calendar.svg" alt="" width="36" height="36"><span>Outlook Calendar</span></div>
-      <div class="int"><img src="assets/integrations/google-calendar.svg" alt="" width="36" height="36"><span>Google Calendar</span></div>
-      <div class="int"><img src="assets/integrations/linear.svg" alt="" width="36" height="36"><span>Linear</span></div>
-      <div class="int"><img src="assets/integrations/asana.svg" alt="" width="36" height="36"><span>Asana</span></div>
-      <div class="int"><img src="assets/integrations/hubspot.svg" alt="" width="36" height="36"><span>HubSpot</span></div>
-      <div class="int"><img src="assets/integrations/slack.svg" alt="" width="36" height="36"><span>Slack</span></div>
-      <div class="int"><img src="assets/integrations/jira.svg" alt="" width="36" height="36"><span>Jira</span></div>
-      <div class="int"><img src="assets/integrations/notion.svg" alt="" width="36" height="36"><span>Notion</span></div>
+<!-- 04 Privacy -->
+<section class="chapter chapter-privacy" id="privacy" data-chapter="privacy">
+  <div class="chapter-inner">
+    <div class="privacy-in" data-reveal>
+      <p class="kicker">Privacy</p>
+      <h2>Zero data sent to third-party AI</h2>
+      <p class="lede">AI running on your computer. It even works without Wi‑Fi. Nothing sent to Claude, OpenAI, or the alike.</p>
     </div>
   </div>
 </section>
 
-<section class="price" id="price">
-  <div class="wrap">
-    <div class="price-in">
+<!-- 05 Pricing -->
+<section class="chapter chapter-price" id="price" data-chapter="price">
+  <div class="chapter-inner">
+    <div class="price-in" data-reveal>
       <p class="kicker">Pricing</p>
       <h2>It costs</h2>
       <div class="big0">$0</div>
-      <p class="lede">Free while Modoi is in beta. No card, no account, no seat count. We will tell you long before that changes.</p>
+      <p class="price-sub">during beta testing</p>
+      <p class="lede">No card, no account. Help us by suggesting a feature.</p>
       <div class="cta">
-        <a class="btn btn-dark" href="#">Try on Mac ($0)</a>
-        <a class="btn btn-ghost" href="#how">See how it works</a>
+        <a class="btn btn-dark" href="https://forms.gle/5yA298MG8UiKTvJa8" target="_blank" rel="noopener noreferrer">Get for Mac</a>
+        <a class="btn btn-ghost" href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
       </div>
-      <p class="fineprint">Apple silicon and Intel · 14 MB</p>
     </div>
   </div>
 </section>
 
-<section class="sec" id="faq">
+<!-- 06 FAQ -->
+<section class="chapter chapter-faq" id="faq" data-chapter="faq">
   <div class="wrap">
-    <p class="kicker">FAQ</p>
-    <h2><a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Skip the FAQ. Tell us.</a></h2>
+    <div class="faq-head">
+      <p class="kicker">FAQ</p>
+      <h2><a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Skip the FAQ. Just tell us</a></h2>
+    </div>
     <div class="faqgrid">
       <div class="qa">
-        <h4>Do I have to start a timer?</h4>
-        <p>No. There is nothing to start and nothing to stop. Modoi asks what you are on, then measures the rest of the day against that.</p>
+        <h4>Does it need Wi‑Fi?</h4>
+        <p>No. Modoi works without Wi‑Fi. Calendar sync with Google or Outlook needs a connection.</p>
       </div>
       <div class="qa">
         <h4>What does it actually read?</h4>
-        <p>Window titles, app names and tab names, plus what is on screen. The screen is read on your Mac with Apple Vision, and the raw image is dropped straight after.</p>
-      </div>
-      <div class="qa">
-        <h4>Does anything leave my Mac?</h4>
-        <p>Raw screenshots and camera frames do not. The text pulled out of them is sent up to be labelled, which is how a window becomes a task. You can turn capture off at any time.</p>
+        <p>Window titles, app and tab names, plus what is on screen. Raw images are dropped after on-device reading.</p>
       </div>
       <div class="qa">
         <h4>Does it use my camera?</h4>
-        <p>Only if you switch it on. It reads coarse signals such as whether you are still at the desk, then drops the frame. It is off until you allow it.</p>
+        <p>Only if you switch it on. Coarse presence signals, then the frame is dropped. Off until you allow it.</p>
       </div>
       <div class="qa">
         <h4>Will it interrupt me?</h4>
-        <p>One line, over the window you drifted into, and only when the screen stops matching what you said you were on. No lock screens, no sounds, no streaks to protect.</p>
+        <p>One line over the off-task window — only when the screen stops matching what you said you were on.</p>
       </div>
       <div class="qa">
-        <h4>Can I fix what it got wrong?</h4>
-        <p>Every block arrives pending. Approve it, reject it, rename it, or point it at a different ticket. Nothing counts toward your hours until you approve it.</p>
+        <h4>Can I edit auto-generated stuff?</h4>
+        <p>Every block arrives pending. Approve, reject, rename, or retarget a ticket. Nothing counts until you approve.</p>
       </div>
       <div class="qa">
-        <h4>Does the time land on my tickets?</h4>
-        <p>Link a block to a Linear ticket and the hours sit with the work. You are not copying numbers into a second tool at the end of the week.</p>
-      </div>
-      <div class="qa">
-        <h4>What does it cost?</h4>
-        <p>Nothing while Modoi is in beta. No card and no account. We will tell you well before that changes.</p>
+        <h4>Can my boss see my hours?</h4>
+        <p>No. Time stays on your machine — Modoi doesn’t report hours to your manager.</p>
       </div>
     </div>
   </div>
@@ -706,53 +406,22 @@
 
 <footer class="site">
   <div class="wrap">
-    <div class="footgrid">
-      <div class="footbrand">
-        <a class="brand" href="#top">
-          <img src="assets/modoi-mark.png" alt="">
-          <span class="wordmark">modoi</span>
-        </a>
-        <p>Your AI for staying present. For people who lose the hour and cannot say where it went.</p>
-      </div>
-      <div class="footcol">
-        <h5>Product</h5>
-        <a href="#how">How it works</a>
-        <a href="#works">Works with</a>
+    <div class="footrow">
+      <a class="brand" href="#hero">
+        <img src="assets/modoi-mark.png" alt="">
+        <span class="wordmark">modoi</span>
+      </a>
+      <div class="foot-links">
+        <a href="#pipeline">How it works</a>
+        <a href="#privacy">Privacy</a>
         <a href="#price">Pricing</a>
-      </div>
-      <div class="footcol">
-        <h5>Learn</h5>
-        <a href="#faq">FAQ</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-      </div>
-      <div class="footcol">
-        <h5>Company</h5>
-        <a href="about.html">Who we are</a>
-        <a href="mailto:hi@modoi.ai">hi@modoi.ai</a>
+        <a href="mailto:support@modoi.ai">support@modoi.ai</a>
       </div>
     </div>
-    <div class="footbase">
-      <span>&copy; Modoi 2026</span>
-    </div>
+    <div class="footbase">&copy; Modoi 2026</div>
   </div>
 </footer>
 
-<script>
-(function(){
-  var nav = document.getElementById("nav");
-  addEventListener("scroll", function(){ nav.classList.toggle("stuck", scrollY > 8); }, {passive:true});
-  document.querySelectorAll(".appcal-seg").forEach(function(seg){
-    var buttons = seg.querySelectorAll("button");
-    var panes = seg.parentElement.querySelectorAll(".appcal-pane");
-    buttons.forEach(function(btn){
-      btn.addEventListener("click", function(){
-        buttons.forEach(function(b){ b.classList.toggle("is-on", b === btn); });
-        panes.forEach(function(p){ p.hidden = p.getAttribute("data-pane") !== btn.getAttribute("data-pane"); });
-      });
-    });
-  });
-})();
-</script>
+<script src="js/g-lyncx-dynamic.js?v=1"></script>
 </body>
 </html>
