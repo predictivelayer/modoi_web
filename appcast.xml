@@ -3,20 +3,20 @@
   <channel>
     <title>modoi</title>
     <link>https://modoi.ai/appcast.xml</link>
-    <description>modoi appcast (stub — replace enclosure URL and sparkle:edSignature before shipping)</description>
+    <description>modoi update feed</description>
     <language>en</language>
     <item>
-      <title>Version 0.1</title>
-      <pubDate>Sun, 23 Aug 2026 12:00:00 +0000</pubDate>
-      <sparkle:version>1</sparkle:version>
-      <sparkle:shortVersionString>0.1</sparkle:shortVersionString>
+      <title>Version 0.1.1</title>
+      <pubDate>Sun, 23 Aug 2026 21:00:00 +0000</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <!-- Placeholder: point at a GitHub Releases thin DMG after the first signed build. -->
+      <description>modoi 0.1.1 test update (thin, model-less build).</description>
       <enclosure
-        url="https://github.com/predictivelayer/modoi/releases/download/v0.1/modoi.dmg"
-        length="0"
+        url="https://github.com/predictivelayer/modoi_web/releases/download/v0.1.1/modoi-0.1.1-thin.dmg"
+        length="81120724"
         type="application/octet-stream"
-        sparkle:edSignature="REPLACE_WITH_sign_update_OUTPUT" />
+        sparkle:edSignature="C0RLxITg82uG0vn+GUJmlYuwzY707tIdflo8PdQ5DQ7NJCcvsAj6s+VNzDTF0qgitjgfZYGcge7OIswilQjmAg==" />
     </item>
   </channel>
 </rss>
