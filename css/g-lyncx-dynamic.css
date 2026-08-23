@@ -1056,6 +1056,67 @@ h2 {
   .faqgrid { grid-template-columns: 1fr; }
 }
 
+/* ---------- 07 Blog ---------- */
+.chapter-blog {
+  background: var(--paper);
+  justify-content: flex-start;
+  min-height: auto;
+  padding: clamp(64px, 10vh, 120px) 0 48px;
+  scroll-snap-align: none;
+}
+.blog-head {
+  max-width: 640px;
+}
+.blog-head h2 {
+  max-width: 18ch;
+}
+.blog-head .lede {
+  max-width: 50ch;
+}
+.blog-posts {
+  margin-top: clamp(32px, 5vh, 48px);
+  display: grid;
+  gap: 12px;
+}
+.blog-post {
+  display: block;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.55);
+  transition: transform 0.18s var(--ease), border-color 0.18s, box-shadow 0.2s;
+}
+.blog-post:hover {
+  transform: translateY(-2px);
+  border-color: rgba(74, 119, 116, 0.45);
+  box-shadow: 0 14px 34px -22px rgba(44, 46, 50, 0.35);
+}
+.blog-post-meta {
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.blog-post h3 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 500;
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.blog-post:hover h3 { color: var(--accent-ink); }
+.blog-post-lede {
+  margin: 8px 0 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+
 /* Footer */
 footer.site {
   border-top: 1px solid var(--line);
