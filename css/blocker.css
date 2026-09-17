@@ -1,0 +1,153 @@
+/* Nuclear Blocker product page — landing-sized, same tokens as g-lyncx-dynamic / g-blog. */
+
+.blocker-page {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vh, 96px) clamp(20px, 4vw, 56px) 88px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(52px, 9vh, 88px);
+}
+
+/* Soft sage wash behind the hero — Modoi accent family, not a flat paper slab. */
+.blocker-page::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: min(58vh, 460px);
+  margin: 0 calc(-1 * clamp(20px, 4vw, 56px));
+  background:
+    radial-gradient(ellipse 95% 75% at 8% -5%, rgba(143, 175, 169, 0.42), transparent 55%),
+    radial-gradient(ellipse 80% 60% at 92% 5%, rgba(183, 205, 201, 0.55), transparent 50%),
+    linear-gradient(180deg, #e4ece9 0%, rgba(250, 248, 245, 0.35) 55%, rgba(250, 248, 245, 0) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.blocker-hero {
+  position: relative;
+  padding-bottom: clamp(12px, 2.5vh, 20px);
+  animation: blocker-rise 0.7s var(--ease) both;
+}
+
+.blocker-hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  letter-spacing: -0.03em;
+  max-width: none;
+  color: var(--ink);
+}
+
+.blocker-hero .lede {
+  margin-top: 20px;
+  max-width: 42ch;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.blocker-hero .cta {
+  margin-top: 32px;
+  gap: 14px;
+}
+
+.blocker-hero .cta .btn-dark {
+  box-shadow: 0 1px 0 rgba(44, 46, 50, 0.06);
+}
+
+.blocker-hero .cta .btn-dark:hover {
+  box-shadow: 0 8px 24px rgba(44, 46, 50, 0.26);
+}
+
+.blocker-features {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(44, 46, 50, 0.16);
+  padding-top: clamp(4px, 1vh, 10px);
+}
+
+.blocker-features article {
+  padding: clamp(28px, 4.5vh, 38px) 0;
+  border-bottom: 1px solid var(--line);
+  animation: blocker-rise 0.7s var(--ease) both;
+}
+
+.blocker-features article:nth-child(1) { animation-delay: 0.06s; }
+.blocker-features article:nth-child(2) { animation-delay: 0.12s; }
+.blocker-features article:nth-child(3) { animation-delay: 0.18s; }
+.blocker-features article:nth-child(4) { animation-delay: 0.24s; }
+.blocker-features article:nth-child(5) { animation-delay: 0.3s; }
+
+.blocker-features article:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/*
+  Section titles — Fraunces like site/blog h2s.
+  Sized to read as titles (not mono captions): ~1.7–2.15rem, clearly above 15.5px body.
+*/
+.blocker-features article h2 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(1.7rem, 3.6vw, 2.15rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  text-transform: none;
+  color: var(--ink);
+  max-width: none;
+}
+
+.blocker-features article p {
+  margin: 14px 0 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 58ch;
+}
+
+.blocker-features code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  color: var(--ink);
+  background: rgba(74, 119, 116, 0.1);
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+}
+
+.blog-nav-links a[aria-current="page"],
+.foot-links a[aria-current="page"] {
+  color: var(--ink);
+}
+
+@keyframes blocker-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blocker-hero,
+  .blocker-features article {
+    animation: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .blocker-page {
+    padding-top: 40px;
+  }
+  .blocker-hero h1 {
+    font-size: 2.35rem;
+  }
+  .blocker-features article h2 {
+    font-size: 1.6rem;
+  }
+}
