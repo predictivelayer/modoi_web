@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nuclear Blocker · Strict site blocker · Modoi</title>
 <meta name="description" content="Nuclear Blocker is a personal self-control blocker for Mac and iPhone/iPad. Block chosen sites in every browser, lock yourself out until the timer ends, and sync sessions and schedules over iCloud.">
-<link rel="icon" href="favicon.ico?v=2" sizes="any">
-<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20100%20100%27%3E%3Cdefs%3E%3CclipPath%20id=%27d%27%3E%3Ccircle%20cx=%2750%27%20cy=%2750%27%20r=%2750%27/%3E%3C/clipPath%3E%3ClinearGradient%20id=%27w%27%20x1=%270%27%20y1=%27-0.1547%27%20x2=%270%27%20y2=%271.1880%27%3E%3Cstop%20offset=%220%22%20stop-color=%22%23fefcfc%22/%3E%3Cstop%20offset=%220.13%22%20stop-color=%22%23fcf4f4%22/%3E%3Cstop%20offset=%220.3%22%20stop-color=%22%23f2d6d6%22/%3E%3Cstop%20offset=%220.48%22%20stop-color=%22%23eecaca%22/%3E%3Cstop%20offset=%220.61%22%20stop-color=%22%23e3bbbc%22/%3E%3Cstop%20offset=%220.72%22%20stop-color=%22%23d8a0a4%22/%3E%3Cstop%20offset=%220.84%22%20stop-color=%22%23bb6670%22/%3E%3Cstop%20offset=%220.93%22%20stop-color=%22%23b8636d%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23b15762%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg%20clip-path=%27url(%2523d)%27%3E%3Crect%20width=%27100%27%20height=%27100%27%20fill=%27url(%2523w)%27/%3E%3Ccircle%20cx=%223.31%22%20cy=%2236.23%22%20r=%2225.96%22%20fill=%22%23ffffff%22%20opacity=%220.66%22/%3E%3Ccircle%20cx=%2267.78%22%20cy=%228.74%22%20r=%2247.25%22%20fill=%22%23ffffff%22%20opacity=%220.30%22/%3E%3Ccircle%20cx=%22100.44%22%20cy=%2247.99%22%20r=%2232.51%22%20fill=%22%23ffffff%22%20opacity=%220.33%22/%3E%3Ccircle%20cx=%2244.08%22%20cy=%2280.42%22%20r=%2253.24%22%20fill=%22%23b15762%22%20opacity=%220.38%22/%3E%3Cg%20fill=%22%23fff%22%3E%3Cpath%20d=%22M77%2050A27%2027%200%200%200%2063.5%2026.618L54.35%2042.466A8.7%208.7%200%200%201%2058.7%2050Z%22/%3E%3Cpath%20d=%22M36.5%2026.618A27%2027%200%200%200%2023%2050L41.3%2050A8.7%208.7%200%200%201%2045.65%2042.466Z%22/%3E%3Cpath%20d=%22M36.5%2073.382A27%2027%200%200%200%2063.5%2073.382L54.35%2057.534A8.7%208.7%200%200%201%2045.65%2057.534Z%22/%3E%3Ccircle%20cx=%2250%22%20cy=%2250%22%20r=%225%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="stylesheet" href="css/g-lyncx-dynamic.css?v=3">
 <link rel="stylesheet" href="blogs/g-blog.css?v=1">
-<link rel="stylesheet" href="css/blocker.css?v=4">
+<link rel="stylesheet" href="css/blocker.css?v=6">
 </head>
 <body>
 
@@ -30,15 +29,244 @@
 </nav>
 
 <main class="blocker-page">
+  <!--
+    Inline sprite. Lives first in <main> so the hero lockup and every device
+    mockup can <use> the same symbols. Holds no space of its own.
+  -->
+  <svg class="blocker-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <!--
+        The Nuclear Blocker mark: a white trefoil on a rose watercolour disc.
+        The disc is a vertical wash from near-white at the top down to deep
+        rose at the bottom, layered with translucent circles whose edges give
+        it the soft overlapping-blob depth of the supplied artwork.
+        Blades are 60-degree sectors, outer radius .54 and inner .174 of the
+        disc radius, with a .10 centre dot and background showing in every gap.
+      -->
+      <clipPath id="nb-disc"><circle cx="50" cy="50" r="50"/></clipPath>
+      <linearGradient id="nb-wash" x1="0" y1="-0.1547" x2="0" y2="1.1880">
+        <stop offset="0" stop-color="#fefcfc"/>
+        <stop offset="0.13" stop-color="#fcf4f4"/>
+        <stop offset="0.3" stop-color="#f2d6d6"/>
+        <stop offset="0.48" stop-color="#eecaca"/>
+        <stop offset="0.61" stop-color="#e3bbbc"/>
+        <stop offset="0.72" stop-color="#d8a0a4"/>
+        <stop offset="0.84" stop-color="#bb6670"/>
+        <stop offset="0.93" stop-color="#b8636d"/>
+        <stop offset="1" stop-color="#b15762"/>
+      </linearGradient>
+      <symbol id="nb-mark" viewBox="0 0 100 100">
+        <g clip-path="url(#nb-disc)">
+          <rect width="100" height="100" fill="url(#nb-wash)"/>
+        <circle cx="3.31" cy="36.23" r="25.96" fill="#ffffff" opacity="0.66"/>
+        <circle cx="67.78" cy="8.74" r="47.25" fill="#ffffff" opacity="0.30"/>
+        <circle cx="100.44" cy="47.99" r="32.51" fill="#ffffff" opacity="0.33"/>
+        <circle cx="44.08" cy="80.42" r="53.24" fill="#b15762" opacity="0.38"/>
+          <g fill="#fff">
+            <path d="M77 50A27 27 0 0 0 63.5 26.618L54.35 42.466A8.7 8.7 0 0 1 58.7 50Z"/>
+            <path d="M36.5 26.618A27 27 0 0 0 23 50L41.3 50A8.7 8.7 0 0 1 45.65 42.466Z"/>
+            <path d="M36.5 73.382A27 27 0 0 0 63.5 73.382L54.35 57.534A8.7 8.7 0 0 1 45.65 57.534Z"/>
+            <circle cx="50" cy="50" r="5"/>
+          </g>
+        </g>
+      </symbol>
+
+      <symbol id="ico-trefoil" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7.2 3.686a9.6 9.6 0 0 1 9.6 0l-3.5 6.063a2.6 2.6 0 0 0-2.6 0z"/>
+        <path d="M7.2 3.686a9.6 9.6 0 0 1 9.6 0l-3.5 6.063a2.6 2.6 0 0 0-2.6 0z" transform="rotate(120 12 12)"/>
+        <path d="M7.2 3.686a9.6 9.6 0 0 1 9.6 0l-3.5 6.063a2.6 2.6 0 0 0-2.6 0z" transform="rotate(240 12 12)"/>
+        <circle cx="12" cy="12" r="2.6"/>
+      </symbol>
+      <symbol id="ico-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4.8" y="10.6" width="14.4" height="9.6" rx="2.4"/>
+        <path d="M8.2 10.6V8.2a3.8 3.8 0 0 1 7.6 0v2.4"/>
+      </symbol>
+      <symbol id="ico-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+        <circle cx="12" cy="12" r="8.4"/>
+        <path d="M6.3 17.7 17.7 6.3"/>
+      </symbol>
+      <symbol id="ico-browser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2.6" y="4.4" width="18.8" height="15.2" rx="2.6"/>
+        <path d="M2.6 9.2h18.8"/>
+        <path d="M6 6.8h.01M8.7 6.8h.01"/>
+      </symbol>
+      <symbol id="ico-devices" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1.8" y="4.6" width="12.4" height="8.6" rx="1.8"/>
+        <path d="M4.4 16.2h7.2M8 13.2v3"/>
+        <rect x="16.2" y="7" width="5.8" height="11.4" rx="1.8"/>
+        <path d="M18.4 16.1h1.4"/>
+      </symbol>
+      <symbol id="ico-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8.4"/>
+        <path d="M12 6.9V12l3.7 2.2"/>
+      </symbol>
+      <symbol id="ico-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+        <path d="M9 7.2h10.4M9 12h10.4M9 16.8h10.4"/>
+        <circle cx="4.8" cy="7.2" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="4.8" cy="12" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="4.8" cy="16.8" r="1.05" fill="currentColor" stroke="none"/>
+      </symbol>
+      <symbol id="ico-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3.2l7.2 2.7v5.3c0 4.4-2.9 7.5-7.2 9.1-4.3-1.6-7.2-4.7-7.2-9.1V5.9z"/>
+      </symbol>
+      <symbol id="ico-reload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19.8 12a7.8 7.8 0 1 1-2.5-5.7"/>
+        <path d="M20 2.9v3.9h-3.9"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <section class="blocker-hero">
     <p class="kicker">A Modoi product</p>
-    <h1>Nuclear Blocker</h1>
+    <div class="blocker-lockup">
+      <svg class="blocker-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#nb-mark"/></svg>
+      <h1>Nuclear Blocker</h1>
+    </div>
     <p class="lede">Self-control for Mac and iPhone/iPad. Block chosen sites system-wide in every browser, then stay locked until the session ends.</p>
     <div class="cta">
       <!-- TODO(app-store): replace href with real App Store URL when published. -->
       <a class="btn btn-dark" id="blocker-download" href="#app-store">App Store — coming soon</a>
       <a class="btn btn-ghost" href="https://forms.gle/ech76PWHxXLLxQjR6" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
     </div>
+  </section>
+
+  <!-- Infographic: device mockups + icon rows. Inline SVG only, no raster assets. -->
+  <section class="blocker-showcase" aria-labelledby="blocker-showcase-title">
+    <div class="blocker-showcase-head">
+      <p class="kicker">On every screen</p>
+      <h2 id="blocker-showcase-title">Blocked on Mac, iPhone, and iPad.</h2>
+      <p class="blocker-showcase-lede">Name a site once. Nuclear Blocker blocks it in Safari, Chrome, Brave, Edge, and Arc — on all three devices. iCloud keeps the list in step.</p>
+    </div>
+
+    <div class="blocker-showcase-wide">
+      <div class="blocker-stage" aria-hidden="true">
+        <!-- Laptop: a blocked site in a desktop browser -->
+        <div class="dv dv-laptop">
+          <div class="dv-lid">
+            <span class="dv-cam"></span>
+            <div class="dv-window">
+              <div class="dv-chrome">
+                <span class="dv-lights"><i></i><i></i><i></i></span>
+                <span class="dv-tabs">
+                  <span class="dv-tab is-on">facebook.com</span>
+                  <span class="dv-tab">youtube.com</span>
+                  <span class="dv-tab">x.com</span>
+                </span>
+              </div>
+              <div class="dv-bar">
+                <span class="dv-chev"></span>
+                <span class="dv-chev is-fwd"></span>
+                <span class="dv-field"><svg class="dv-ico"><use href="#ico-lock"/></svg>facebook.com</span>
+              </div>
+              <div class="dv-block">
+                <svg class="dv-mark" viewBox="0 0 100 100"><use href="#nb-mark"/></svg>
+                <p class="dv-block-h">This site is blocked</p>
+                <p class="dv-block-p">facebook.com</p>
+                <span class="dv-tag">Locked 11:42:08</span>
+                <span class="dv-credit"><svg><use href="#ico-trefoil"/></svg>Nuclear Blocker</span>
+              </div>
+            </div>
+          </div>
+          <div class="dv-base"></div>
+        </div>
+
+        <!-- Tablet: the same block, another browser -->
+        <div class="dv dv-tablet">
+          <div class="dv-frame is-tablet">
+            <div class="dv-screen">
+              <div class="dv-mbar">
+                <span class="dv-chev"></span>
+                <span class="dv-field"><svg class="dv-ico"><use href="#ico-lock"/></svg>youtube.com</span>
+                <svg class="dv-ico"><use href="#ico-reload"/></svg>
+              </div>
+              <div class="dv-block">
+                <svg class="dv-mark" viewBox="0 0 100 100"><use href="#nb-mark"/></svg>
+                <p class="dv-block-h">This site is blocked</p>
+                <p class="dv-block-p">youtube.com</p>
+                <span class="dv-tag">Locked 11:42:08</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone: same session, counted down on the small screen -->
+        <div class="dv dv-phone">
+          <div class="dv-frame is-phone">
+            <div class="dv-screen">
+              <span class="dv-island"></span>
+              <div class="dv-block">
+                <svg class="dv-mark" viewBox="0 0 100 100"><use href="#nb-mark"/></svg>
+                <p class="dv-block-h">This site is blocked</p>
+                <p class="dv-block-p">instagram.com</p>
+                <span class="dv-tag">Locked 11:42:08</span>
+              </div>
+              <div class="dv-pbar">
+                <span class="dv-chev"></span>
+                <span class="dv-field"><svg class="dv-ico"><use href="#ico-lock"/></svg>instagram.com</span>
+                <svg class="dv-ico"><use href="#ico-reload"/></svg>
+              </div>
+              <span class="dv-home"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mac app: the list and the lock behind every blocked page -->
+        <div class="dv dv-panel">
+          <div class="dv-window is-mac">
+            <div class="dv-titlebar">
+              <span class="dv-lights"><i></i><i></i><i></i></span>
+              <span class="dv-app">
+                <svg class="dv-appmark" viewBox="0 0 100 100"><use href="#nb-mark"/></svg>
+                <span class="dv-title">Nuclear Blocker</span>
+              </span>
+              <span class="dv-titlebar-end"></span>
+            </div>
+            <div class="dv-body">
+              <div class="dv-row">
+                <div class="dv-row-txt">
+                  <p class="dv-row-h">Blocking is ON</p>
+                  <p class="dv-row-s">Strict mode · locked until 11:42 PM</p>
+                </div>
+                <span class="dv-switch is-on"></span>
+              </div>
+              <div class="dv-sep"></div>
+              <span class="dv-cap">Blocked items</span>
+              <ul class="dv-list">
+                <li>facebook.com</li>
+                <li>instagram.com</li>
+                <li>youtube.com</li>
+                <li>x.com</li>
+                <li>discord.com</li>
+              </ul>
+              <span class="dv-more">+ 12 more</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="blocker-points">
+      <li>
+        <span class="pt-ico"><svg><use href="#ico-block"/></svg></span>
+        <h3>Block any site</h3>
+        <p>Social feeds, video, news, and shopping.</p>
+      </li>
+      <li>
+        <span class="pt-ico"><svg><use href="#ico-browser"/></svg></span>
+        <h3>Works in every browser</h3>
+        <p>Safari, Chrome, Brave, Edge, and Arc.</p>
+      </li>
+      <li>
+        <span class="pt-ico"><svg><use href="#ico-devices"/></svg></span>
+        <h3>Mac, iPhone, and iPad</h3>
+        <p>One block list, synced over iCloud.</p>
+      </li>
+      <li>
+        <span class="pt-ico"><svg><use href="#ico-lock"/></svg></span>
+        <h3>Schedules and strict mode</h3>
+        <p>Weekday windows. No cancel while a lock runs.</p>
+      </li>
+    </ul>
   </section>
 
   <section class="blocker-features" aria-label="Features">
@@ -64,6 +292,26 @@
     </article>
   </section>
 </main>
+
+<section class="blocker-value" aria-label="What the block gives you">
+  <ul>
+    <li>
+      <span class="val-ico"><svg><use href="#ico-clock"/></svg></span>
+      <p class="val-h">Long sessions</p>
+      <p class="val-s">Twelve hours by default. Twenty-four at most.</p>
+    </li>
+    <li>
+      <span class="val-ico"><svg><use href="#ico-list"/></svg></span>
+      <p class="val-h">One block list</p>
+      <p class="val-s">Add a site once, block it everywhere.</p>
+    </li>
+    <li>
+      <span class="val-ico"><svg><use href="#ico-shield"/></svg></span>
+      <p class="val-h">Strict by design</p>
+      <p class="val-s">No cancel, no quit, and no uninstall.</p>
+    </li>
+  </ul>
+</section>
 
 <footer class="site blog-foot">
   <div class="wrap">
