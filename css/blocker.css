@@ -115,7 +115,7 @@
 }
 
 /* ==================================================================
-   Infographic — four device mockups and five icon rows.
+   Infographic — four device mockups and six icon rows.
    Built from inline HTML, CSS, and SVG: no raster assets, no icon
    fonts, no brand logos. Every device is a real window: chrome,
    chrome, toggle, list rows, and a dark blocked page.
@@ -642,9 +642,8 @@
 /* ---------- icon rows ---------- */
 
 .blocker-points {
-  --pt-gap: 26px;
   display: grid;
-  gap: 20px var(--pt-gap);
+  gap: 20px 26px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -729,17 +728,6 @@
 
 @media (min-width: 620px) {
   .blocker-points { grid-template-columns: 1fr 1fr; }
-
-  /*
-    Fifth item ("Always on") lands alone on the third row. It keeps one
-    column's width and centres on the grid, so it reads as a single card
-    under the two-column block instead of a full-width bar.
-  */
-  .blocker-points li:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc(50% - var(--pt-gap) / 2);
-  }
 }
 
 /* ---------- phones ---------- */
