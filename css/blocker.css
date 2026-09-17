@@ -117,6 +117,14 @@
   border-radius: 4px;
 }
 
+/* Long example URL: sits on one chip, smaller than host chips, and wraps instead of overflowing on phones. */
+.blocker-features code.blocker-url {
+  display: inline-block;
+  max-width: 100%;
+  font-size: 0.8em;
+  overflow-wrap: anywhere;
+}
+
 .blog-nav-links a[aria-current="page"],
 .foot-links a[aria-current="page"] {
   color: var(--ink);
