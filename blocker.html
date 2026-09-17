@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="stylesheet" href="css/g-lyncx-dynamic.css?v=3">
 <link rel="stylesheet" href="blogs/g-blog.css?v=1">
-<link rel="stylesheet" href="css/blocker.css?v=6">
+<link rel="stylesheet" href="css/blocker.css?v=7">
 </head>
 <body>
 
@@ -95,16 +95,6 @@
         <path d="M4.4 16.2h7.2M8 13.2v3"/>
         <rect x="16.2" y="7" width="5.8" height="11.4" rx="1.8"/>
         <path d="M18.4 16.1h1.4"/>
-      </symbol>
-      <symbol id="ico-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="8.4"/>
-        <path d="M12 6.9V12l3.7 2.2"/>
-      </symbol>
-      <symbol id="ico-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-        <path d="M9 7.2h10.4M9 12h10.4M9 16.8h10.4"/>
-        <circle cx="4.8" cy="7.2" r="1.05" fill="currentColor" stroke="none"/>
-        <circle cx="4.8" cy="12" r="1.05" fill="currentColor" stroke="none"/>
-        <circle cx="4.8" cy="16.8" r="1.05" fill="currentColor" stroke="none"/>
       </symbol>
       <symbol id="ico-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 3.2l7.2 2.7v5.3c0 4.4-2.9 7.5-7.2 9.1-4.3-1.6-7.2-4.7-7.2-9.1V5.9z"/>
@@ -266,52 +256,14 @@
         <h3>Schedules and strict mode</h3>
         <p>Weekday windows. No cancel while a lock runs.</p>
       </li>
+      <li>
+        <span class="pt-ico"><svg><use href="#ico-shield"/></svg></span>
+        <h3>Always on</h3>
+        <p>Starts at login. A watchdog holds the quit lock.</p>
+      </li>
     </ul>
   </section>
-
-  <section class="blocker-features" aria-label="Features">
-    <article>
-      <h2>Blocking</h2>
-      <p>Blocks chosen sites across Safari, Chrome, Brave, Edge, Arc, and every other browser. Enter <code>youtube.com</code> and the app blocks the whole site, not just the homepage: <code>www.youtube.com</code>, <code>m.youtube.com</code>, <code>youtu.be</code>, and deep links such as <code class="blocker-url">https://www.youtube.com/watch?v=o6jQo3-iCao</code>. Manual sessions default to 12 hours; max 24.</p>
-    </article>
-    <article>
-      <h2>Strict mode</h2>
-      <p>You cannot cancel once locked. On Mac, quit and uninstall stay hardened while a session runs. The lock survives restart and login.</p>
-    </article>
-    <article>
-      <h2>Schedules</h2>
-      <p>Set recurring weekday windows, including overnight. An active window uses the same strict lock as a manual session.</p>
-    </article>
-    <article>
-      <h2>Cross-device</h2>
-      <p>Mac and iOS apps. iCloud syncs your block list, active session, and schedules.</p>
-    </article>
-    <article>
-      <h2>Always on</h2>
-      <p>Starts at login on Mac and phone. During strict sessions and schedule windows, a watchdog and quit lock stay up.</p>
-    </article>
-  </section>
 </main>
-
-<section class="blocker-value" aria-label="What the block gives you">
-  <ul>
-    <li>
-      <span class="val-ico"><svg><use href="#ico-clock"/></svg></span>
-      <p class="val-h">Long sessions</p>
-      <p class="val-s">Twelve hours by default. Twenty-four at most.</p>
-    </li>
-    <li>
-      <span class="val-ico"><svg><use href="#ico-list"/></svg></span>
-      <p class="val-h">One block list</p>
-      <p class="val-s">Add a site once, block it everywhere.</p>
-    </li>
-    <li>
-      <span class="val-ico"><svg><use href="#ico-shield"/></svg></span>
-      <p class="val-h">Strict by design</p>
-      <p class="val-s">No cancel, no quit, and no uninstall.</p>
-    </li>
-  </ul>
-</section>
 
 <footer class="site blog-foot">
   <div class="wrap">

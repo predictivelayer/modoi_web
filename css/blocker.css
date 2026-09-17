@@ -76,71 +76,6 @@
   box-shadow: 0 8px 24px rgba(44, 46, 50, 0.26);
 }
 
-.blocker-features {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid rgba(44, 46, 50, 0.16);
-  padding-top: clamp(4px, 1vh, 10px);
-}
-
-.blocker-features article {
-  padding: clamp(28px, 4.5vh, 38px) 0;
-  border-bottom: 1px solid var(--line);
-  animation: blocker-rise 0.7s var(--ease) both;
-}
-
-.blocker-features article:nth-child(1) { animation-delay: 0.06s; }
-.blocker-features article:nth-child(2) { animation-delay: 0.12s; }
-.blocker-features article:nth-child(3) { animation-delay: 0.18s; }
-.blocker-features article:nth-child(4) { animation-delay: 0.24s; }
-.blocker-features article:nth-child(5) { animation-delay: 0.3s; }
-
-.blocker-features article:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-/*
-  Section titles — Fraunces like site/blog h2s.
-  Sized to read as titles (not mono captions): ~1.7–2.15rem, clearly above 15.5px body.
-*/
-.blocker-features article h2 {
-  margin: 0;
-  font-family: Fraunces, Georgia, serif;
-  font-size: clamp(1.7rem, 3.6vw, 2.15rem);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.12;
-  text-transform: none;
-  color: var(--ink);
-  max-width: none;
-}
-
-.blocker-features article p {
-  margin: 14px 0 0;
-  font-size: 15.5px;
-  line-height: 1.6;
-  color: var(--ink-2);
-  max-width: 58ch;
-}
-
-.blocker-features code {
-  font-family: var(--mono);
-  font-size: 0.9em;
-  color: var(--ink);
-  background: rgba(74, 119, 116, 0.1);
-  padding: 0.12em 0.35em;
-  border-radius: 4px;
-}
-
-/* Long example URL: sits on one chip, smaller than host chips, and wraps instead of overflowing on phones. */
-.blocker-features code.blocker-url {
-  display: inline-block;
-  max-width: 100%;
-  font-size: 0.8em;
-  overflow-wrap: anywhere;
-}
-
 .blog-nav-links a[aria-current="page"],
 .foot-links a[aria-current="page"] {
   color: var(--ink);
@@ -158,8 +93,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blocker-hero,
-  .blocker-features article {
+  .blocker-hero {
     animation: none;
   }
 }
@@ -178,13 +112,10 @@
   .blocker-mark {
     margin-bottom: 12px;
   }
-  .blocker-features article h2 {
-    font-size: 1.6rem;
-  }
 }
 
 /* ==================================================================
-   Infographic — four device mockups, four icon rows, one value band.
+   Infographic — four device mockups and five icon rows.
    Built from inline HTML, CSS, and SVG: no raster assets, no icon
    fonts, no brand logos. Every device is a real window: chrome,
    chrome, toggle, list rows, and a dark blocked page.
@@ -711,8 +642,9 @@
 /* ---------- icon rows ---------- */
 
 .blocker-points {
+  --pt-gap: 26px;
   display: grid;
-  gap: 20px 26px;
+  gap: 20px var(--pt-gap);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -751,60 +683,6 @@
 }
 .blocker-points p {
   margin: 3px 0 0;
-  font-size: 14.5px;
-  line-height: 1.45;
-  color: var(--ink-2);
-}
-
-/* ---------- value band ---------- */
-
-.blocker-value {
-  padding: clamp(26px, 4.5vh, 38px) 0;
-  border-top: 1px solid var(--line);
-  background: linear-gradient(96deg, #f3f0eb 0%, #eef3f0 52%, #e6eeea 100%);
-}
-
-.blocker-value ul {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 3.5vw, 40px);
-  width: min(1140px, 92vw);
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-}
-
-.blocker-value li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5em;
-  text-align: center;
-}
-
-.blocker-value .val-ico {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  color: var(--accent);
-}
-.blocker-value .val-ico svg {
-  display: block;
-  width: 24px;
-  height: 24px;
-}
-
-.blocker-value .val-h {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 650;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-}
-.blocker-value .val-s {
-  margin: 0;
-  max-width: 30ch;
   font-size: 14.5px;
   line-height: 1.45;
   color: var(--ink-2);
@@ -851,6 +729,17 @@
 
 @media (min-width: 620px) {
   .blocker-points { grid-template-columns: 1fr 1fr; }
+
+  /*
+    Fifth item ("Always on") lands alone on the third row. It keeps one
+    column's width and centres on the grid, so it reads as a single card
+    under the two-column block instead of a full-width bar.
+  */
+  .blocker-points li:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - var(--pt-gap) / 2);
+  }
 }
 
 /* ---------- phones ---------- */
@@ -858,10 +747,6 @@
 @media (max-width: 700px) {
   .blocker-showcase-lede {
     font-size: 16px;
-  }
-  .blocker-value ul {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
   }
 }
 
