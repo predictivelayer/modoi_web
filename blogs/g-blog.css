@@ -36,11 +36,16 @@
 }
 .blog-nav-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  gap: clamp(14px, 2.5vw, 26px);
+  gap: 16px;
   font-size: 13px;
   font-weight: 600;
   color: var(--ink-2);
+}
+.blog-nav-links a {
+  white-space: nowrap;
 }
 .blog-nav-links a:hover { color: var(--ink); }
 

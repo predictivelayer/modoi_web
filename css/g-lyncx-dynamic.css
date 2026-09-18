@@ -136,11 +136,17 @@ button { font: inherit; background: none; border: 0; cursor: pointer; color: inh
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(14px, 2.5vw, 28px);
+  align-items: center;
+  /* Fixed gap: viewport-scaled clamp grew to ~28px and made the long
+     "Nuclear Blocker" label look like it had a larger hole after it. */
+  gap: 16px;
   font-size: 13px;
   font-weight: 600;
   color: var(--ink-2);
   opacity: var(--nav-fade, 1);
+}
+.nav-links a {
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--ink); }
 
