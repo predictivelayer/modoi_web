@@ -206,7 +206,7 @@ h1, h2 {
   line-height: 1.12;
 }
 h1 {
-  font-size: clamp(2.8rem, 5.5vw + 0.6rem, 5.4rem);
+  font-size: clamp(2.24rem, 4.4vw + 0.48rem, 4.32rem);
   max-width: 14ch;
 }
 h1 em {
@@ -307,11 +307,38 @@ h2 {
 .wm-icons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   margin: 18px 0 0;
+  padding-bottom: 12px;
   flex-wrap: wrap;
 }
-.wm-icons img { width: 28px; height: 28px; }
+.wm-icons img { width: 28px; height: 28px; display: block; }
+.wm-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.wm-icon--soon img {
+  filter: grayscale(1);
+  opacity: 0.42;
+}
+.wm-soon {
+  position: absolute;
+  left: 50%;
+  bottom: -11px;
+  transform: translateX(-50%);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
 .wm-more {
   width: 28px;
   height: 28px;
