@@ -591,7 +591,8 @@ h2 {
 }
 .zoom-lead {
   margin: 0 0 14px;
-  max-width: 34ch;
+  max-width: none;
+  white-space: nowrap;
   font-size: clamp(1rem, 1.4vw + 0.55rem, 1.25rem);
   font-weight: 500;
   line-height: 1.45;
@@ -636,6 +637,10 @@ h2 {
   .zoom-copy h2 {
     font-size: clamp(2rem, 8vw, 2.6rem);
     max-width: 14ch;
+  }
+  .zoom-lead {
+    white-space: normal;
+    max-width: 26ch;
   }
 }
 
