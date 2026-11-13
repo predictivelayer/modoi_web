@@ -8,12 +8,10 @@
   var SHEETS_ENDPOINT =
     "https://script.google.com/macros/s/AKfycbw5qwNAqsX0T5_1YOQ4qd3nHna4g0kow_eFp98PeQTc_2g6GsvWLcZKPJh8lIdllA9oFQ/exec";
 
-  // From appcast.xml (v0.1.1 thin). Replace when you ship a fuller build.
-  // Alternate Drive link from the old form (view page, not direct):
-  // https://drive.google.com/file/d/1Iwgy8_pJmx9hcTPl08m222RbE2wXrXpF/view?usp=sharing
-  // Local placeholder if you host the file in-repo: "assets/modoi.dmg"  // #TODO-dmg
-  var DOWNLOAD_URL =
+  // Modoi: appcast.xml v0.1.1 thin. Nuclear: set when predictivelayer/nuclear-blocker has a release DMG.
+  var MODOI_DMG_URL =
     "https://github.com/predictivelayer/modoi_web/releases/download/v0.1.1/modoi-0.1.1-thin.dmg";
+  var NUCLEAR_DMG_URL = "";
 
   var form = document.getElementById("get-form");
   var statusEl = document.getElementById("get-status");
@@ -21,6 +19,7 @@
   var submitBtn = document.getElementById("get-submit");
   var doneEl = document.getElementById("get-done");
   var downloadAgain = document.getElementById("get-download-again");
+  var getNoteEl = form ? form.querySelector(".get-note") : null;
   var otherRadio = document.getElementById("value-other");
   var otherText = document.getElementById("value-other-text");
 
@@ -45,6 +44,46 @@
   }
 
   preselectProduct();
+
+  function selectedProductKind() {
+    var nuclear = document.getElementById("product-nuclear");
+    if (nuclear && nuclear.checked) return "nuclear";
+    var modoi = document.getElementById("product-modoi");
+    if (modoi && modoi.checked) return "modoi";
+    var fromQuery = productSlugFromQuery();
+    return fromQuery || "modoi";
+  }
+
+  function dmgUrlForKind(kind) {
+    if (kind === "nuclear") return NUCLEAR_DMG_URL || "";
+    return MODOI_DMG_URL;
+  }
+
+  function refreshDownloadUi() {
+    var kind = selectedProductKind();
+    var url = dmgUrlForKind(kind);
+    if (submitBtn) {
+      if (kind === "nuclear" && !url) {
+        submitBtn.textContent = "Send answers";
+      } else {
+        submitBtn.textContent = "Download now";
+      }
+    }
+    if (getNoteEl) {
+      if (kind === "nuclear" && !url) {
+        getNoteEl.textContent =
+          "No Mac DMG yet — we save your answers and you can follow progress on the Nuclear Blocker page.";
+      } else {
+        getNoteEl.textContent =
+          "Download starts after you submit. If tracking fails, you still get the app.";
+      }
+    }
+  }
+
+  form.querySelectorAll('input[name="product"]').forEach(function (el) {
+    el.addEventListener("change", refreshDownloadUi);
+  });
+  refreshDownloadUi();
 
   var EMAIL_FORMAT = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
@@ -263,9 +302,10 @@
   });
   syncOther();
 
-  function startDownload() {
+  function startDownload(url) {
+    if (!url) return;
     var a = document.createElement("a");
-    a.href = DOWNLOAD_URL;
+    a.href = url;
     a.setAttribute("download", "");
     a.rel = "noopener";
     document.body.appendChild(a);
@@ -273,12 +313,35 @@
     a.remove();
   }
 
-  function showDone() {
+  function showDone(kind, url) {
     form.hidden = true;
     if (doneEl) doneEl.hidden = false;
+    var doneTitle = doneEl ? doneEl.querySelector("h2") : null;
+    if (doneTitle) {
+      if (kind === "nuclear") {
+        doneTitle.textContent = url
+          ? "Thank you for trying Nuclear Blocker"
+          : "Thanks — Mac build coming soon";
+      } else {
+        doneTitle.textContent = "Thank you for trying Modoi";
+      }
+    }
     if (downloadAgain) {
-      downloadAgain.href = DOWNLOAD_URL;
-      downloadAgain.setAttribute("download", "");
+      if (url) {
+        downloadAgain.href = url;
+        downloadAgain.setAttribute("download", "");
+        downloadAgain.textContent = "Download again";
+        downloadAgain.classList.remove("btn-ghost");
+        if (!downloadAgain.classList.contains("btn-dark")) {
+          downloadAgain.classList.add("btn-dark");
+        }
+      } else if (kind === "nuclear") {
+        downloadAgain.href = "blocker.html";
+        downloadAgain.removeAttribute("download");
+        downloadAgain.textContent = "Nuclear Blocker — full Mac build coming soon";
+        downloadAgain.classList.remove("btn-dark");
+        downloadAgain.classList.add("btn-ghost");
+      }
     }
   }
 
@@ -378,6 +441,8 @@
     }
 
     var data = payloadFromForm();
+    var kind = selectedProductKind();
+    var downloadUrl = dmgUrlForKind(kind);
     submitBtn.disabled = true;
     setStatus("Saving your answers…");
 
@@ -389,20 +454,36 @@
       setStatus("");
       // Sheet POST first — a immediate cross-origin download click has been
       // flaky on some builds; the DMG still starts right after logging.
-      startDownload();
-      showDone();
-      if (result && result.skipped) {
+      if (downloadUrl) {
+        startDownload(downloadUrl);
+      }
+      showDone(kind, downloadUrl);
+      if (kind === "nuclear" && !downloadUrl) {
+        setDoneStatus(
+          "We saved your answers. The notarized Mac DMG is not public yet — see the Nuclear Blocker page for iOS and updates.",
+          ""
+        );
+      } else if (result && result.skipped) {
         setDoneStatus(
           "Download started. Sheet tracking is not configured yet (paste SHEETS_ENDPOINT in js/get-for-mac.js).",
           "warn"
         );
       } else if (result && result.failed) {
-        setDoneStatus("Download started. We could not save your answers — that is OK.", "warn");
-      } else if (result && result.unverified) {
         setDoneStatus(
-          "Download started. Your answers may not have reached the sheet — tell support@modoi.ai if you do not hear from us.",
+          downloadUrl
+            ? "Download started. We could not save your answers — that is OK."
+            : "We could not save your answers — email support@modoi.ai if you need help.",
           "warn"
         );
+      } else if (result && result.unverified) {
+        setDoneStatus(
+          downloadUrl
+            ? "Download started. Your answers may not have reached the sheet — tell support@modoi.ai if you do not hear from us."
+            : "Your answers may not have reached the sheet — tell support@modoi.ai if you do not hear from us.",
+          "warn"
+        );
+      } else if (!downloadUrl && kind !== "nuclear") {
+        setDoneStatus("No download URL is configured for this product.", "warn");
       } else {
         setDoneStatus("");
       }
