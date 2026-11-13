@@ -51,14 +51,16 @@
 
   /* Sticky day beats — scroll progress through 4 scenes */
   var track = document.getElementById("day-track");
+  var dayStage = document.querySelector(".day-stage");
   var copyPanels = Array.prototype.slice.call(document.querySelectorAll(".day-panel-copy"));
   var visualPanels = Array.prototype.slice.call(document.querySelectorAll(".day-panel-visual"));
   var beatDots = Array.prototype.slice.call(document.querySelectorAll("[data-beat-dot]"));
-  var currentBeat = 0;
+  var currentBeat = -1;
 
   function setBeat(index) {
     if (index === currentBeat) return;
     currentBeat = index;
+    if (dayStage) dayStage.setAttribute("data-active-beat", String(index));
     copyPanels.forEach(function (p) {
       p.classList.toggle("is-active", Number(p.getAttribute("data-beat")) === index);
     });

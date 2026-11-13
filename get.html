@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<title>Get for Mac · Modoi</title>
+<meta name="description" content="Download Modoi for Mac. Free while in beta. Tell us a bit about yourself, then grab the DMG.">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="stylesheet" href="css/g-lyncx-dynamic.css?v=13">
+<link rel="stylesheet" href="css/get.css?v=1">
+</head>
+<body class="get-page">
+
+<!--
+  Sheets setup (Zach):
+  1. Create a Google Sheet with header row:
+     Timestamp | Email | First name | Last name | Email updates | Value worth | Comments | Source | User agent
+  (If you already have cols A–E only, add F: Value worth, G: Comments, etc.)
+  2. Extensions → Apps Script → paste scripts/get-for-mac-apps-script.js
+  3. Deploy → New deployment → Web app
+     - Execute as: Me
+     - Who has access: Anyone
+  4. Copy the Web app URL into js/get-for-mac.js → SHEETS_ENDPOINT
+  5. Confirm DOWNLOAD_URL points at the current Modoi DMG (see appcast.xml)
+-->
+
+<nav class="nav get-nav" aria-label="Primary">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#privacy">Privacy</a>
+    <a href="index.html#price">Pricing</a>
+    <a href="blogs/index.html">Blog</a>
+    <a href="blocker.html">Nuclear Blocker</a>
+    <a href="get.html" aria-current="page">Get for Mac</a>
+    <a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
+  </div>
+</nav>
+
+<main class="get-main">
+  <div class="get-card" data-reveal>
+    <p class="kicker">Modoi beta · Free</p>
+    <h1>Get for Mac</h1>
+    <p class="lede get-lede">A few questions, then the download. macOS 13+, about 2&nbsp;GB (on-device model so your data stays local).</p>
+
+    <form id="get-form" class="get-form" novalidate>
+      <div class="get-row">
+        <label class="get-field">
+          <span>Email <abbr title="required">*</abbr></span>
+          <input type="email" name="email" autocomplete="email" required placeholder="you@company.com">
+        </label>
+      </div>
+
+      <div class="get-row get-row-2">
+        <label class="get-field">
+          <span>First name <abbr title="required">*</abbr></span>
+          <input type="text" name="firstName" autocomplete="given-name" required placeholder="Ada">
+        </label>
+        <label class="get-field">
+          <span>Last name</span>
+          <input type="text" name="lastName" autocomplete="family-name" placeholder="Lovelace">
+        </label>
+      </div>
+
+      <fieldset class="get-fieldset">
+        <legend>Email for upgrades and updates? <abbr title="required">*</abbr></legend>
+        <label class="get-choice"><input type="radio" name="emailUpdates" value="Yes" required checked> Yes</label>
+        <label class="get-choice"><input type="radio" name="emailUpdates" value="No"> No</label>
+      </fieldset>
+
+      <fieldset class="get-fieldset">
+        <legend>How much would a 20% increase in tickets or issues you close each week be worth to you? <abbr title="required">*</abbr></legend>
+        <label class="get-choice"><input type="radio" name="valueWorth" value="$9" required> $9</label>
+        <label class="get-choice"><input type="radio" name="valueWorth" value="$19"> $19</label>
+        <label class="get-choice"><input type="radio" name="valueWorth" value="$29"> $29</label>
+        <label class="get-choice get-choice-other">
+          <input type="radio" name="valueWorth" value="Other" id="value-other">
+          Other
+          <input type="text" name="valueWorthOther" id="value-other-text" placeholder="$…" inputmode="text" disabled aria-label="Other amount">
+        </label>
+      </fieldset>
+
+      <label class="get-field">
+        <span>Questions and comments</span>
+        <textarea name="comments" rows="3" placeholder="Optional"></textarea>
+      </label>
+
+      <p class="get-status" id="get-status" role="status" aria-live="polite" hidden></p>
+
+      <div class="cta get-cta">
+        <button type="submit" class="btn btn-dark" id="get-submit">Download now</button>
+        <a class="btn btn-ghost" href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
+      </div>
+      <p class="get-note">Download starts after you submit. If tracking fails, you still get the app.</p>
+    </form>
+
+    <div class="get-done" id="get-done" hidden>
+      <h2>Thank you for trying Modoi</h2>
+      <p class="get-status" id="get-done-status" role="status" aria-live="polite" hidden></p>
+      <ul class="get-reqs">
+        <li>Hardware: macOS 13+</li>
+        <li>Size: ~2&nbsp;GB (on-device model keeps your data private)</li>
+        <li><a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a></li>
+        <li><a href="mailto:support@modoi.ai">support@modoi.ai</a></li>
+      </ul>
+      <div class="cta get-cta">
+        <a class="btn btn-dark" id="get-download-again" href="#">Download again</a>
+        <a class="btn btn-ghost" href="index.html">Back home</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site get-foot">
+  <div class="wrap">
+    <div class="footrow">
+      <a class="brand" href="index.html">
+        <img src="assets/modoi-mark.png" alt="">
+        <span class="wordmark">modoi</span>
+      </a>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="blocker.html">Nuclear Blocker</a>
+        <a href="index.html#privacy">Privacy</a>
+        <a href="mailto:support@modoi.ai">support@modoi.ai</a>
+      </div>
+    </div>
+    <div class="footbase">&copy; Modoi 2026</div>
+  </div>
+</footer>
+
+<script src="js/get-for-mac.js?v=6"></script>
+</body>
+</html>

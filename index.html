@@ -8,7 +8,7 @@
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
-<link rel="stylesheet" href="css/g-lyncx-dynamic.css?v=10">
+<link rel="stylesheet" href="css/g-lyncx-dynamic.css?v=17">
 </head>
 <body>
 
@@ -18,13 +18,14 @@
     <a href="#price">Pricing</a>
     <a href="blogs/index.html">Blog</a>
     <a href="blocker.html">Nuclear Blocker</a>
-    <a href="https://forms.gle/5yA298MG8UiKTvJa8" target="_blank" rel="noopener noreferrer">Get for Mac</a>
+    <a href="get.html">Get for Mac</a>
     <a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
   </div>
 </nav>
 
 <ul class="chapter-dots" aria-label="Chapters">
   <li><a href="#hero" data-dot="hero" aria-label="Hero"></a></li>
+  <li><a href="#zoom" data-dot="zoom" aria-label="Zoom in"></a></li>
   <li><a href="#pipeline" data-dot="pipeline" aria-label="How it works"></a></li>
   <li><a href="#day" data-dot="day" aria-label="A day with Modoi"></a></li>
   <li><a href="#privacy" data-dot="privacy" aria-label="Privacy"></a></li>
@@ -34,20 +35,120 @@
 
 <!-- 01 Hero -->
 <section class="chapter chapter-hero" id="hero" data-chapter="hero">
-  <figure class="hero-media">
-    <video src="assets/sand_shorter.mp4" autoplay muted playsinline loop aria-hidden="true"></video>
-  </figure>
+  <div class="hero-media" aria-hidden="true">
+    <div class="daylog-mock">
+      <header class="daylog-head">
+        <p class="daylog-date">Tuesday, Nov 3 <span>Today</span></p>
+        <div class="daylog-nav" aria-hidden="true">
+          <span>&lt;</span><span>&gt;</span>
+        </div>
+      </header>
+      <div class="daylog-cols">
+        <span></span>
+        <span>Activity</span>
+        <span>Events</span>
+        <span>Project</span>
+        <span>Calendar</span>
+        <span>Labels</span>
+      </div>
+      <div class="daylog-board">
+        <div class="daylog-times">
+          <span>6 AM</span><span>7 AM</span><span>8 AM</span><span>9 AM</span><span>10 AM</span>
+          <span>11 AM</span><span>12 PM</span><span>1 PM</span><span>2 PM</span><span>3 PM</span>
+          <span>4 PM</span><span>5 PM</span><span>6 PM</span><span>7 PM</span>
+        </div>
+        <div class="daylog-lanes">
+          <!-- Activity -->
+          <div class="daylog-lane lane-act">
+            <div class="dl-block done" style="--top:0.15;--h:0.55">Code, Browsing — Editor</div>
+            <div class="dl-block done" style="--top:0.85;--h:0.7">Browsing — Docs</div>
+            <div class="dl-block" style="--top:1.7;--h:1.55">Code — Editor</div>
+            <div class="dl-block" style="--top:3.4;--h:0.85">Design — Figma</div>
+            <div class="dl-block" style="--top:4.4;--h:1.1">Code — Terminal</div>
+            <div class="dl-block" style="--top:5.7;--h:0.55">Chat — Slack</div>
+            <div class="dl-block" style="--top:7.15;--h:1.7">Code — Editor</div>
+            <div class="dl-block" style="--top:9.1;--h:0.95">Browsing — GitHub</div>
+            <div class="dl-block" style="--top:10.3;--h:0.7">Mail — Inbox</div>
+          </div>
+          <!-- Events (Linear-style tickets) -->
+          <div class="daylog-lane lane-evt">
+            <div class="dl-block done short" style="--top:0.9;--h:0.55"><span class="dl-id">OPS-12</span> Team standup</div>
+            <div class="dl-block tall" style="--top:1.65;--h:1.55"><span class="dl-id">DEV-120</span> Fix api change</div>
+            <div class="dl-block" style="--top:3.35;--h:0.9"><span class="dl-id">DES-8</span> Review PR diff</div>
+            <div class="dl-block" style="--top:4.4;--h:1.1"><span class="dl-id">ENG-45</span> Add auth retry</div>
+            <div class="dl-block short" style="--top:5.7;--h:0.5"><span class="dl-id">OPS-31</span> Sync with design</div>
+            <div class="dl-block tall" style="--top:7.1;--h:1.75"><span class="dl-id">DEV-134</span> Patch flaky test</div>
+            <div class="dl-block" style="--top:9.05;--h:1.0"><span class="dl-id">ENG-52</span> Draft release notes</div>
+            <div class="dl-block short" style="--top:10.35;--h:0.55"><span class="dl-id">OPS-19</span> Triage inbox</div>
+          </div>
+          <!-- Project -->
+          <div class="daylog-lane lane-proj">
+            <div class="dl-tag" style="--top:0.9">Ops</div>
+            <div class="dl-tag peach" style="--top:1.65">Product</div>
+            <div class="dl-tag" style="--top:3.35">Design</div>
+            <div class="dl-tag peach" style="--top:4.4">Product</div>
+            <div class="dl-tag" style="--top:5.7">Ops</div>
+            <div class="dl-tag peach" style="--top:7.1">Infra</div>
+            <div class="dl-tag peach" style="--top:9.05">Product</div>
+            <div class="dl-tag" style="--top:10.35">Ops</div>
+          </div>
+          <!-- Calendar -->
+          <div class="daylog-lane lane-cal">
+            <div class="dl-cal-block done" style="--top:0.9;--h:0.55"></div>
+            <div class="dl-cal-block" style="--top:1.65;--h:1.55"></div>
+            <div class="dl-cal-block" style="--top:3.35;--h:0.9"></div>
+            <div class="dl-cal-block" style="--top:4.4;--h:1.1"></div>
+            <div class="dl-cal-block" style="--top:5.7;--h:0.5"></div>
+            <div class="dl-cal-block" style="--top:7.1;--h:1.75"></div>
+            <div class="dl-cal-block" style="--top:9.05;--h:1.0"></div>
+          </div>
+          <!-- Labels -->
+          <div class="daylog-lane lane-lab">
+            <div class="dl-lab" style="--top:0.9">Meetings</div>
+            <div class="dl-lab" style="--top:1.65">Code</div>
+            <div class="dl-lab" style="--top:3.35">Review</div>
+            <div class="dl-lab" style="--top:4.4">Code</div>
+            <div class="dl-lab" style="--top:5.7">Meetings</div>
+            <div class="dl-lab" style="--top:7.1">Code</div>
+            <div class="dl-lab" style="--top:9.05">Writing</div>
+            <div class="dl-lab" style="--top:10.35">Admin</div>
+          </div>
+          <div class="daylog-now" style="--top:4.6">
+            <span>10:36 AM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-copy" data-reveal>
-    <h1>Zoom in on <em>one grain of work</em> at a time</h1>
-    <p class="lede">Modoi is an AI calendar for less context-switching.<br><span class="lede-line">It tracks your work and blocks distractions, so you can finish more and juggle less.</span></p>
+    <div class="hero-formula" aria-label="Google Calendar plus Linear plus site blocker">
+      <img class="hero-mark" src="assets/integrations/google-calendar.svg" alt="Google Calendar" width="72" height="72">
+      <span class="hero-plus" aria-hidden="true">+</span>
+      <img class="hero-mark" src="assets/integrations/linear.svg" alt="Linear" width="72" height="72">
+      <span class="hero-plus" aria-hidden="true">+</span>
+      <img class="hero-mark hero-mark-block" src="assets/block-mark.png" alt="Site blocker" width="72" height="72">
+    </div>
+    <h1>AI calendar for less context-switching</h1>
+    <p class="lede">Tracks your work, blocks distractions, maximize&nbsp;focus</p>
     <div class="cta">
-      <a class="btn btn-dark" href="https://forms.gle/5yA298MG8UiKTvJa8" target="_blank" rel="noopener noreferrer">Get for Mac</a>
-      <a class="btn btn-ghost on-sand" href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
+      <a class="btn btn-dark" href="get.html">Get for Mac</a>
     </div>
   </div>
 </section>
 
-<!-- 02 Pipeline -->
+<!-- 02 Zoom -->
+<section class="chapter chapter-zoom" id="zoom" data-chapter="zoom">
+  <figure class="zoom-media">
+    <video src="assets/sand_shorter.mp4" autoplay muted playsinline loop aria-hidden="true"></video>
+  </figure>
+  <div class="zoom-copy" data-reveal>
+    <p class="zoom-lead">Too much chat and app switching, and too little done?</p>
+    <h2>Zoom in on <em>one grain of work</em> at a time</h2>
+  </div>
+</section>
+
+<!-- 03 Pipeline -->
 <section class="chapter chapter-pipeline" id="pipeline" data-chapter="pipeline">
   <div class="chapter-inner">
     <div class="pipeline-stage" data-reveal>
@@ -151,7 +252,155 @@
 <section class="chapter chapter-day" id="day" data-chapter="day">
   <div class="day-track" id="day-track">
     <div class="day-sticky">
-      <div class="day-stage" data-reveal>
+      <div class="day-stage" data-reveal data-active-beat="0">
+        <div class="day-visual" aria-live="polite">
+          <div class="day-panel-visual is-active" data-beat="0">
+            <div class="rim-loom" aria-label="Mac window with Modoi rim color shifting through presence states">
+              <div class="rim-mac">
+                <div class="rim-mac-glow rim-glow-distracted" aria-hidden="true"></div>
+                <div class="rim-mac-glow rim-glow-wandering" aria-hidden="true"></div>
+                <div class="rim-mac-glow rim-glow-present" aria-hidden="true"></div>
+                <div class="rim-mac-glow rim-glow-zen" aria-hidden="true"></div>
+                <div class="rim-mac-window">
+                  <header class="rim-mac-chrome">
+                    <span class="rim-traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <span class="rim-mac-title">ENG-301 · Ship Search API</span>
+                  </header>
+                  <div class="rim-mac-body">
+                    <aside class="rim-mac-side" aria-hidden="true">
+                      <span class="rim-side-row is-on"></span>
+                      <span class="rim-side-row"></span>
+                      <span class="rim-side-row"></span>
+                      <span class="rim-side-row"></span>
+                      <span class="rim-side-row"></span>
+                    </aside>
+                    <div class="rim-mac-editor" aria-hidden="true">
+                      <span class="rim-code c1"></span>
+                      <span class="rim-code c2"></span>
+                      <span class="rim-code c3"></span>
+                      <span class="rim-code c4"></span>
+                      <span class="rim-code c5"></span>
+                      <span class="rim-code c2"></span>
+                      <span class="rim-code c6"></span>
+                      <span class="rim-code c3"></span>
+                    </div>
+                  </div>
+                </div>
+                <p class="rim-mac-state">
+                  <span class="rim-state rim-state-distracted">Distracted</span>
+                  <span class="rim-state rim-state-wandering">Wandering</span>
+                  <span class="rim-state rim-state-present">Present</span>
+                  <span class="rim-state rim-state-zen">Zen</span>
+                </p>
+                <ul class="rim-legend" aria-hidden="true">
+                  <li class="rim-distracted">Pink · split</li>
+                  <li class="rim-wandering">Yellow · wander</li>
+                  <li class="rim-present">Green · present</li>
+                  <li class="rim-zen">Blue · flow</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="day-panel-visual" data-beat="1">
+            <div class="during-loom" aria-label="Distraction nudge over a browser window">
+              <div class="during-browser">
+                <header class="during-chrome">
+                  <span class="rim-traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="during-url">youtube.com/watch?v=…</span>
+                </header>
+                <div class="during-page" aria-hidden="true">
+                  <div class="during-player">
+                    <span class="during-play"></span>
+                  </div>
+                  <div class="during-meta">
+                    <span class="during-meta-title"></span>
+                    <span class="during-meta-sub"></span>
+                    <span class="during-meta-line"></span>
+                    <span class="during-meta-line short"></span>
+                  </div>
+                </div>
+                <aside class="during-nudge">
+                  <p class="during-nudge-kicker">Modoi</p>
+                  <p class="during-nudge-body">Are you distracted? You’ve been on YouTube for 5 minutes. Stretch and return to ENG-301.</p>
+                  <div class="during-nudge-reply">Glad you're here.</div>
+                </aside>
+              </div>
+            </div>
+          </div>
+          <div class="day-panel-visual" data-beat="2">
+            <div class="after-card after-card--loom" role="img" aria-label="Pending event Ship Search API linked to ENG-301 on Product help desk">
+              <div class="after-card-inner">
+                <div class="after-sliver" aria-hidden="true">
+                  <p class="after-sliver-head">Events</p>
+                  <div class="after-sliver-list">
+                    <div class="ab is-ok">
+                      <span class="ab-title">Review onboarding copy</span>
+                      <span class="ab-meta">MKT-12</span>
+                      <span class="ab-check" aria-hidden="true">✓</span>
+                    </div>
+                    <div class="ab is-ok">
+                      <span class="ab-title">Weekly standup notes</span>
+                      <span class="ab-meta">ENG-123</span>
+                      <span class="ab-check" aria-hidden="true">✓</span>
+                    </div>
+                    <div class="ab is-pending is-on">
+                      <span class="ab-title">Ship Search API</span>
+                      <span class="ab-meta">ENG-301</span>
+                    </div>
+                    <div class="ab is-ok">
+                      <span class="ab-title">Review thread</span>
+                      <span class="ab-meta">ENG-456</span>
+                      <span class="ab-check" aria-hidden="true">✓</span>
+                    </div>
+                    <div class="ab is-pending">
+                      <span class="ab-title">Pulling the numbers</span>
+                      <span class="ab-meta">SALES-88</span>
+                    </div>
+                  </div>
+                </div>
+                <aside class="after-side">
+                  <div class="after-side-head">
+                    <span>Event</span>
+                    <span aria-hidden="true">✕</span>
+                  </div>
+                  <h3>Ship Search API</h3>
+                  <span class="pill">
+                    <svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l2 1.2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    pending
+                  </span>
+                  <p class="after-meta">09:20–10:05 · 45m</p>
+                  <p class="after-actions"><span>Approve</span> <span>Reject</span></p>
+                  <label class="after-field">Linear ticket<span>ENG-301 Ship Search API</span></label>
+                  <label class="after-field">Project<span>Product help desk</span></label>
+                  <label class="after-field">Category<span>Code</span></label>
+                  <label class="after-field">Description
+                    <span class="after-desc">Implemented search endpoints, wired catalog filters, and opened the ENG-301 PR for review.</span>
+                  </label>
+                  <p class="after-actions"><span>Save description</span> <span>Regenerate</span></p>
+                </aside>
+              </div>
+              <p class="after-cap">Pending until you say otherwise</p>
+            </div>
+          </div>
+          <div class="day-panel-visual" data-beat="3">
+            <div class="reflect-card reflect-card--loom" role="img" aria-label="Reflect chat summarizing last week with Glad you're here composer">
+              <p class="reflect-lead">Last week, you focused deeply on AI tool evaluation and deep work:</p>
+              <ul class="reflect-bullets">
+                <li>Spent 2+ hours reviewing event briefings and AI model comparisons.</li>
+                <li>Worked extensively in Cursor and Modoi on agent docs and workflow design.</li>
+                <li>Drove 1.5 hours exploring model benchmarks and ML concepts.</li>
+                <li>Kept Slack, Notes, and Linear in the loop for coordination.</li>
+              </ul>
+              <p class="reflect-query">my productivity last week</p>
+              <div class="reflect-composer">
+                <span class="reflect-input">Glad you're here.</span>
+              </div>
+              <p class="reflect-hint">Double-tap ⌃ (control)</p>
+            </div>
+          </div>
+        </div>
+        <div class="day-scrim" aria-hidden="true"></div>
+
         <div class="day-copy">
           <div class="day-panel-copy is-active" data-beat="0">
             <p class="kicker">Before · 01</p>
@@ -163,9 +412,40 @@
               <li>Green when present; blue in flow.</li>
             </ul>
             <div class="day-mobile-visual">
-              <div class="rim-grid" aria-hidden="true">
-                <figure class="rim-mock rim-distracted"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Distracted</figcaption></figure>
-                <figure class="rim-mock rim-present"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Present</figcaption></figure>
+              <div class="rim-loom" aria-hidden="true">
+                <div class="rim-mac">
+                  <div class="rim-mac-glow rim-glow-distracted"></div>
+                  <div class="rim-mac-glow rim-glow-wandering"></div>
+                  <div class="rim-mac-glow rim-glow-present"></div>
+                  <div class="rim-mac-glow rim-glow-zen"></div>
+                  <div class="rim-mac-window">
+                    <header class="rim-mac-chrome">
+                      <span class="rim-traffic"><i></i><i></i><i></i></span>
+                      <span class="rim-mac-title">ENG-301 · Ship Search API</span>
+                    </header>
+                    <div class="rim-mac-body">
+                      <aside class="rim-mac-side">
+                        <span class="rim-side-row is-on"></span>
+                        <span class="rim-side-row"></span>
+                        <span class="rim-side-row"></span>
+                        <span class="rim-side-row"></span>
+                      </aside>
+                      <div class="rim-mac-editor">
+                        <span class="rim-code c1"></span>
+                        <span class="rim-code c2"></span>
+                        <span class="rim-code c3"></span>
+                        <span class="rim-code c4"></span>
+                        <span class="rim-code c5"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="rim-mac-state">
+                    <span class="rim-state rim-state-distracted">Distracted</span>
+                    <span class="rim-state rim-state-wandering">Wandering</span>
+                    <span class="rim-state rim-state-present">Present</span>
+                    <span class="rim-state rim-state-zen">Zen</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -174,17 +454,29 @@
             <h2>Distraction blocked</h2>
             <p class="lede">When you leave the task, Modoi nudges once — no lock, no streak.</p>
             <ul class="beat-list">
-              <li>Names where you went and the cost.</li>
-              <li>Reads your load; suggests when to stop.</li>
-              <li>Type back to ask for more detail</li>
+              <li>Shows where you went and how long you were there.</li>
+              <li>Notices when you’re drained and suggests a break.</li>
+              <li>You can type back if you want more detail.</li>
             </ul>
             <div class="day-mobile-visual">
-              <div class="during-stack">
-                <div class="during-shot">
-                  <img src="assets/during-overlay-1.jpg" alt="" loading="lazy" width="650" height="420">
-                </div>
-                <div class="during-shot">
-                  <img src="assets/during-overlay-2.jpg" alt="" loading="lazy" width="650" height="404">
+              <div class="during-loom" aria-hidden="true">
+                <div class="during-browser">
+                  <header class="during-chrome">
+                    <span class="rim-traffic"><i></i><i></i><i></i></span>
+                    <span class="during-url">youtube.com/watch?v=…</span>
+                  </header>
+                  <div class="during-page">
+                    <div class="during-player"><span class="during-play"></span></div>
+                    <div class="during-meta">
+                      <span class="during-meta-title"></span>
+                      <span class="during-meta-sub"></span>
+                    </div>
+                  </div>
+                  <aside class="during-nudge">
+                    <p class="during-nudge-kicker">Modoi</p>
+                    <p class="during-nudge-body">You’ve been on YouTube for 5 minutes. Stretch and return to ENG-301.</p>
+                    <div class="during-nudge-reply">Glad you're here.</div>
+                  </aside>
                 </div>
               </div>
             </div>
@@ -257,98 +549,6 @@
             <span data-beat-dot="3"></span>
           </div>
         </div>
-
-        <div class="day-visual" aria-live="polite">
-          <div class="day-panel-visual is-active" data-beat="0">
-            <div class="rim-grid" aria-label="Presence rim colors">
-              <figure class="rim-mock rim-distracted"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Distracted</figcaption></figure>
-              <figure class="rim-mock rim-wandering"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Wandering</figcaption></figure>
-              <figure class="rim-mock rim-present"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Present</figcaption></figure>
-              <figure class="rim-mock rim-zen"><div class="rim-screen"><span class="rim-inner"></span></div><figcaption>Zen</figcaption></figure>
-            </div>
-          </div>
-          <div class="day-panel-visual" data-beat="1">
-            <div class="during-stack">
-              <div class="during-shot">
-                <img src="assets/during-overlay-1.jpg" alt="Modoi overlay on YouTube saying you have been distracted for 5 minutes" loading="lazy" width="650" height="420">
-              </div>
-              <div class="during-shot">
-                <img src="assets/during-overlay-2.jpg" alt="Modoi overlay over an editor suggesting a break after 3 hours on one ticket" loading="lazy" width="650" height="404">
-              </div>
-            </div>
-          </div>
-          <div class="day-panel-visual" data-beat="2">
-            <div class="after-card" role="img" aria-label="Pending event Ship Search API linked to ENG-301 on Product help desk">
-              <div class="after-card-inner">
-                <div class="after-sliver" aria-hidden="true">
-                  <p class="after-sliver-head">Events</p>
-                  <div class="after-sliver-list">
-                    <div class="ab is-ok">
-                      <span class="ab-title">Review onboarding copy</span>
-                      <span class="ab-meta">MKT-12</span>
-                      <span class="ab-check" aria-hidden="true">✓</span>
-                    </div>
-                    <div class="ab is-ok">
-                      <span class="ab-title">Weekly standup notes</span>
-                      <span class="ab-meta">ENG-123</span>
-                      <span class="ab-check" aria-hidden="true">✓</span>
-                    </div>
-                    <div class="ab is-pending is-on">
-                      <span class="ab-title">Ship Search API</span>
-                      <span class="ab-meta">ENG-301</span>
-                    </div>
-                    <div class="ab is-ok">
-                      <span class="ab-title">Review thread</span>
-                      <span class="ab-meta">ENG-456</span>
-                      <span class="ab-check" aria-hidden="true">✓</span>
-                    </div>
-                    <div class="ab is-pending">
-                      <span class="ab-title">Pulling the numbers</span>
-                      <span class="ab-meta">SALES-88</span>
-                    </div>
-                  </div>
-                </div>
-                <aside class="after-side">
-                  <div class="after-side-head">
-                    <span>Event</span>
-                    <span aria-hidden="true">✕</span>
-                  </div>
-                  <h3>Ship Search API</h3>
-                  <span class="pill">
-                    <svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l2 1.2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                    pending
-                  </span>
-                  <p class="after-meta">09:20–10:05 · 45m</p>
-                  <p class="after-actions"><span>Approve</span> <span>Reject</span></p>
-                  <label class="after-field">Linear ticket<span>ENG-301 Ship Search API</span></label>
-                  <label class="after-field">Project<span>Product help desk</span></label>
-                  <label class="after-field">Category<span>Code</span></label>
-                  <label class="after-field">Description
-                    <span class="after-desc">Implemented search endpoints, wired catalog filters, and opened the ENG-301 PR for review.</span>
-                  </label>
-                  <p class="after-actions"><span>Save description</span> <span>Regenerate</span></p>
-                </aside>
-              </div>
-              <p class="after-cap">Pending until you say otherwise</p>
-            </div>
-          </div>
-          <div class="day-panel-visual" data-beat="3">
-            <div class="reflect-card" role="img" aria-label="Reflect chat summarizing last week with Glad you're here composer">
-              <p class="reflect-lead">Last week, you focused deeply on AI tool evaluation and deep work:</p>
-              <ul class="reflect-bullets">
-                <li>Spent 2+ hours reviewing event briefings and AI model comparisons.</li>
-                <li>Worked extensively in Cursor and Modoi on agent docs and workflow design.</li>
-                <li>Drove 1.5 hours exploring model benchmarks and ML concepts.</li>
-                <li>Kept Slack, Notes, and Linear in the loop for coordination.</li>
-              </ul>
-              <p class="reflect-query">my productivity last week</p>
-              <div class="reflect-composer">
-                <span class="reflect-input">Glad you're here.</span>
-              </div>
-              <p class="reflect-hint">Double-tap ⌃ (control)</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -359,8 +559,36 @@
   <div class="chapter-inner">
     <div class="privacy-in" data-reveal>
       <p class="kicker">Privacy</p>
-      <h2>Zero data sent to third-party AI</h2>
+      <h2>Zero data sent to third-party <em>AI</em></h2>
       <p class="lede">AI running on your computer. It even works without Wi‑Fi. Nothing sent to Claude, OpenAI, or the alike.</p>
+      <div class="privacy-flows" role="group" aria-label="How Modoi compares to other apps">
+        <article class="privacy-flow privacy-flow--us">
+          <p class="privacy-flow-label">Us</p>
+          <ol class="privacy-steps">
+            <li><span class="privacy-ico" aria-hidden="true">🖥️</span><span>Screen activity</span></li>
+            <li class="privacy-arrow" aria-hidden="true">→</li>
+            <li><span class="privacy-ico" aria-hidden="true">📥</span><span>Modoi collects</span></li>
+            <li class="privacy-arrow" aria-hidden="true">→</li>
+            <li><span class="privacy-ico" aria-hidden="true">🧠</span><span>Local model processes</span></li>
+            <li class="privacy-arrow" aria-hidden="true">→</li>
+            <li class="privacy-result privacy-result--ok"><span class="privacy-ico" aria-hidden="true">🔒</span><span>Nothing leaves the computer</span></li>
+          </ol>
+        </article>
+        <article class="privacy-flow privacy-flow--them">
+          <p class="privacy-flow-label">Others</p>
+          <ol class="privacy-steps">
+            <li><span class="privacy-ico" aria-hidden="true">🖥️</span><span>Screen activity</span></li>
+            <li class="privacy-arrow" aria-hidden="true">→</li>
+            <li><span class="privacy-ico" aria-hidden="true">☁️</span><span>App’s server</span></li>
+            <li class="privacy-arrow" aria-hidden="true">→</li>
+            <li><span class="privacy-ico" aria-hidden="true">🔌</span><span>Third-party model API</span></li>
+            <li class="privacy-arrow" aria-hidden="true">→</li>
+            <li><span class="privacy-ico" aria-hidden="true">📲</span><span>Back to the app</span></li>
+            <li class="privacy-arrow" aria-hidden="true">→</li>
+            <li class="privacy-result privacy-result--bad"><span class="privacy-ico" aria-hidden="true">⚠️</span><span>Personal data likely leaked</span></li>
+          </ol>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -375,7 +603,7 @@
       <p class="price-sub">during beta testing</p>
       <p class="lede">No card, no account. Help us by suggesting a feature.</p>
       <div class="cta">
-        <a class="btn btn-dark" href="https://forms.gle/5yA298MG8UiKTvJa8" target="_blank" rel="noopener noreferrer">Get for Mac</a>
+        <a class="btn btn-dark" href="get.html">Get for Mac</a>
         <a class="btn btn-ghost" href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
       </div>
     </div>
@@ -464,6 +692,6 @@
   </div>
 </footer>
 
-<script src="js/g-lyncx-dynamic.js?v=2"></script>
+<script src="js/g-lyncx-dynamic.js?v=3"></script>
 </body>
 </html>
