@@ -914,12 +914,6 @@ h2 {
   align-items: stretch;
   overflow: hidden;
   background: #f1efeb;
-  /* Site-wrap gutter on the stage shell (not on .day-copy width). */
-  padding-right: clamp(20px, 4vw, 56px);
-  padding-left: calc((100% - min(var(--max), 100%)) / 2 + clamp(20px, 4vw, 56px));
-}
-.day-sticky:has(.day-stage[data-active-beat="3"]) {
-  padding-inline: clamp(20px, 4vw, 56px);
 }
 .day-stage {
   position: relative;
@@ -968,6 +962,7 @@ h2 {
   height: 100%;
   width: min(520px, 100%);
   margin: 0;
+  margin-left: calc((100vw - min(var(--max), 100vw)) / 2 + clamp(20px, 4vw, 56px));
   padding-block: clamp(36px, 6vh, 72px);
   padding-inline: 0 clamp(20px, 4vw, 56px);
   display: flex;
@@ -978,7 +973,8 @@ h2 {
 }
 .day-stage[data-active-beat="3"] .day-copy {
   width: min(560px, 100%);
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
   justify-content: flex-end;
   text-align: center;
