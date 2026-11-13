@@ -26,6 +26,26 @@
 
   if (!form) return;
 
+  function productSlugFromQuery() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var p = (params.get("product") || "").toLowerCase();
+      if (p === "nuclear" || p === "blocker") return "nuclear";
+      if (p === "modoi") return "modoi";
+    } catch (ignore) {}
+    return "";
+  }
+
+  function preselectProduct() {
+    var slug = productSlugFromQuery();
+    if (!slug) return;
+    var id = slug === "nuclear" ? "product-nuclear" : "product-modoi";
+    var el = document.getElementById(id);
+    if (el) el.checked = true;
+  }
+
+  preselectProduct();
+
   var EMAIL_FORMAT = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
   var BLOCKED_EMAIL_DOMAINS = {
@@ -273,6 +293,7 @@
       email: (fd.get("email") || "").toString().trim(),
       firstName: (fd.get("firstName") || "").toString().trim(),
       lastName: (fd.get("lastName") || "").toString().trim(),
+      product: (fd.get("product") || "").toString(),
       emailUpdates: (fd.get("emailUpdates") || "").toString(),
       valueWorth: worth,
       comments: (fd.get("comments") || "").toString().trim(),
@@ -310,6 +331,7 @@
           email: data.email || "",
           firstName: data.firstName || "",
           lastName: data.lastName || "",
+          product: data.product || "",
           emailUpdates: data.emailUpdates || "",
           valueWorth: data.valueWorth || "",
           comments: data.comments || "",

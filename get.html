@@ -11,15 +11,15 @@
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="stylesheet" href="css/g-lyncx-dynamic.css?v=13">
-<link rel="stylesheet" href="css/get.css?v=1">
+<link rel="stylesheet" href="css/get.css?v=2">
 </head>
 <body class="get-page">
 
 <!--
   Sheets setup (Zach):
   1. Create a Google Sheet with header row:
-     Timestamp | Email | First name | Last name | Email updates | Value worth | Comments | Source | User agent
-  (If you already have cols A–E only, add F: Value worth, G: Comments, etc.)
+     Timestamp | Email | First name | Last name | Product | Email updates | Value worth | Comments | Source | User agent
+  (If your sheet predates Product, insert a column after Last name and header “Product”.)
   2. Extensions → Apps Script → paste scripts/get-for-mac-apps-script.js
   3. Deploy → New deployment → Web app
      - Execute as: Me
@@ -64,6 +64,18 @@
           <input type="text" name="lastName" autocomplete="family-name" placeholder="Lovelace">
         </label>
       </div>
+
+      <fieldset class="get-fieldset" id="get-product-fieldset">
+        <legend>Which product are you interested in? <abbr title="required">*</abbr></legend>
+        <label class="get-choice">
+          <input type="radio" name="product" value="Nuclear blocker – most powerful to block distractions" required id="product-nuclear">
+          Nuclear blocker – most powerful to block distractions
+        </label>
+        <label class="get-choice">
+          <input type="radio" name="product" value="Modoi – AI calendar for less context-switching" id="product-modoi">
+          Modoi – AI calendar for less context-switching
+        </label>
+      </fieldset>
 
       <fieldset class="get-fieldset">
         <legend>Email for upgrades and updates? <abbr title="required">*</abbr></legend>
@@ -132,6 +144,6 @@
   </div>
 </footer>
 
-<script src="js/get-for-mac.js?v=6"></script>
+<script src="js/get-for-mac.js?v=7"></script>
 </body>
 </html>

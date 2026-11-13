@@ -7,7 +7,7 @@ On-site form: [`get.html`](get.html). Answers POST to a Google Apps Script web a
 ### One-time setup
 
 1. **Sheet** — create a Google Sheet. Optional header row:
-   `Timestamp | Email | First name | Last name | Email updates | Value worth | Comments | Source | User agent`
+   `Timestamp | Email | First name | Last name | Product | Email updates | Value worth | Comments | Source | User agent`
 2. **Script** — open the Sheet → Extensions → Apps Script. Paste [`scripts/get-for-mac-apps-script.js`](scripts/get-for-mac-apps-script.js). Save.
 3. **Deploy** — Deploy → New deployment → Web app.
    - Execute as: **Me**

@@ -4,7 +4,7 @@
  * Setup:
  * 1. Bind to your submission Sheet (e.g. "Modoi Customer Submission").
  *    Row 1 headers (optional but recommended — add cols F–I if you only have A–E):
- *    Timestamp | Email | First name | Last name | Email updates | Value worth | Comments | Source | User agent
+ *    Timestamp | Email | First name | Last name | Product | Email updates | Value worth | Comments | Source | User agent
  *
  * Zach: after ANY change here → Deploy → Manage deployments → Edit → New version → Deploy.
  * 2. Extensions → Apps Script. Delete the stub and paste this file.
@@ -42,6 +42,7 @@ function doPost(e) {
       data.email || "",
       data.firstName || "",
       data.lastName || "",
+      data.product || "",
       data.emailUpdates || "",
       data.valueWorth || "",
       data.comments || "",
