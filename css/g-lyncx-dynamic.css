@@ -635,8 +635,8 @@ h2 {
     letter-spacing: -0.005em;
   }
   .zoom-copy h2 {
-    font-size: clamp(2rem, 8vw, 2.6rem);
-    max-width: 14ch;
+    font-size: clamp(1.85rem, 7vw, 2.5rem);
+    max-width: 20ch;
   }
   .zoom-lead {
     white-space: normal;
