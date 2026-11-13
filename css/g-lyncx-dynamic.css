@@ -963,6 +963,8 @@ h2 {
   width: min(520px, 100%);
   margin: 0;
   padding: clamp(36px, 6vh, 72px) clamp(20px, 4vw, 56px);
+  /* Match old centered day-stage grid gutter (was width: min(--max) + side padding). */
+  padding-left: calc((100vw - min(var(--max), 100vw)) / 2 + clamp(20px, 4vw, 56px));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -976,6 +978,7 @@ h2 {
   justify-content: flex-end;
   text-align: center;
   padding-bottom: clamp(40px, 8vh, 88px);
+  padding-left: clamp(20px, 4vw, 56px);
 }
 .day-panel-copy {
   position: absolute;
