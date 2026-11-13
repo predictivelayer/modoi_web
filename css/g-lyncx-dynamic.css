@@ -1825,9 +1825,13 @@ h2 {
   margin: 0 auto;
 }
 .privacy-in h2 {
-  max-width: 18ch;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 721px) {
+  .privacy-in h2 {
+    white-space: nowrap;
+  }
 }
 .privacy-in h2 em {
   font-style: italic;
