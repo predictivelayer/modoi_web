@@ -1,0 +1,31 @@
+/* Shared demo chrome: banner, header, footer. Namespaced (mh-/mf-) so it can sit on top of the live CSS. */
+:root{--blue:#406BC7;--app-ink:#14141A;--ink-3:#6b6f77}
+.demo-strip{background:#14141A;color:#fff;font:500 12px/1.3 "IBM Plex Mono",ui-monospace,monospace;text-align:center;padding:8px 12px;letter-spacing:.02em;text-transform:none}
+.mh{position:sticky;top:0;z-index:70;background:rgba(250,248,245,.9);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid rgba(20,20,26,.1)}
+.mh-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px;height:64px}
+.mh-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#14141A;font:500 21px/1 "Fraunces",Georgia,serif}
+.mh-brand img{width:28px;height:28px;border-radius:50%}
+.mh-links{margin-left:auto;display:flex;align-items:center;gap:22px;list-style:none;padding:0;margin-top:0;margin-bottom:0}
+.mh-links a{color:#2C2E32;text-decoration:none;font:500 14.5px/1 "Public Sans",system-ui,sans-serif;white-space:nowrap}
+.mh-links a:hover,.mh-links a[aria-current="page"]{color:#406BC7}
+.mh-links a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px}
+.mh-cta{display:inline-flex;align-items:center;background:#14141A;color:#fff!important;text-decoration:none;font:600 14px/1 "Public Sans",system-ui,sans-serif;padding:11px 18px;border-radius:999px;white-space:nowrap}
+.mh-cta:hover{background:#2a2a33;box-shadow:0 6px 20px -6px rgba(64,107,199,.55)}
+.mf{border-top:1px solid rgba(20,20,26,.1);padding:40px 0 32px;background:#FAF8F5}
+.mf-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.mf-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.mf-brand{display:inline-flex;align-items:center;gap:9px;color:#14141A;text-decoration:none;font:500 20px/1 "Fraunces",Georgia,serif}
+.mf-brand img{width:22px;height:22px;border-radius:50%}
+.mf-links{display:flex;flex-wrap:wrap;gap:18px}
+.mf-links a{color:#5a5e66;text-decoration:none;font:400 14px/1.4 "Public Sans",system-ui,sans-serif}
+.mf-links a:hover{color:#406BC7}
+.mf-base{margin-top:24px;font:400 13px/1 "Public Sans",system-ui,sans-serif;color:#6b6f77}
+:focus-visible{outline:3px solid #406BC7;outline-offset:3px;border-radius:6px}
+@media (max-width:900px){
+  .mh-inner{flex-wrap:wrap;height:auto;padding:10px 20px 0;gap:10px 16px}
+  .mh-cta{margin-left:auto}
+  .mh-links{order:3;width:100%;margin-left:0;overflow-x:auto;gap:18px;padding:4px 0 12px;scrollbar-width:none}
+  .mh-links a{font-size:14px}
+  .mf-inner{padding:0 20px}
+}
+@media (max-width:900px){.mh-links{flex-wrap:wrap;overflow:visible;gap:8px 18px}}

@@ -1,563 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modoi · Focus on one thing at a time</title>
-<meta name="description" content="Modoi tracks your work and blocks distractions so you can close more and juggle less. Free while in beta. macOS.">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
-<link rel="stylesheet" href="css/g-lyncx-dynamic.css?v=23">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Modoi · AI focus calendar for Mac</title>
+<meta name="description" content="Modoi logs your day against tickets and nudges you when you drift. Runs 100% on your Mac. macOS 13+.">
+<link rel="stylesheet" href="css/live-components.css?v=1">
+<link rel="stylesheet" href="css/chrome.css?v=1">
+<link rel="stylesheet" href="css/landing.css?v=1">
+<link rel="stylesheet" href="css/hero.css?v=1">
 </head>
-<body>
-
-<nav class="nav" id="nav" aria-label="Primary">
-  <div class="nav-links">
-    <a href="#privacy">Privacy</a>
-    <a href="#price">Pricing</a>
-    <a href="blogs/index.html">Blog</a>
-    <a href="blocker.html">Nuclear Blocker</a>
-    <a href="get.html">Get for Mac</a>
-    <a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
+<body class="page-index">
+<a class="skip-d" href="#main">Skip to content</a>
+<header class="mh">
+  <div class="mh-inner">
+    <a class="mh-brand" href="index.html" aria-label="Modoi home"><img src="assets/modoi-mark.png" alt="">Modoi</a>
+    <nav aria-label="Primary" style="display:contents">
+      <ul class="mh-links">
+        <li><a href="index.html#how">How it works</a></li>
+        <li><a href="index.html#privacy">Privacy</a></li>
+        <li><a href="blogs/index.html">Blog</a></li>
+        <li><a href="blocker.html">Nuclear Blocker</a></li>
+        <li><a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a></li>
+      </ul>
+      <a class="mh-cta" href="get.html">Get for Mac</a>
+    </nav>
   </div>
-</nav>
+</header>
+<main id="main">
+<!-- HERO (live: 01 Hero) — full Mac screen: see-through day view + screen-edge glow -->
+<section class="hero hero2" id="top">
+  <div class="wrap">
+    <div class="hero2-copy">
+      <p class="eyebrow">AI focus calendar for Mac</p>
+      <h1>Logs your day against tickets — and nudges you when you drift.</h1>
+      <p class="lede-d">A see-through schedule over your work, and a screen edge that glows when you drift.</p>
+      <div class="cta-row"><a class="btn-d btn-lg" href="get.html">Get for Mac</a></div>
+      <p class="meta">macOS 13+ · ~2&nbsp;GB · runs 100% on your Mac</p>
+    </div>
 
-<ul class="chapter-dots" aria-label="Chapters">
-  <li><a href="#hero" data-dot="hero" aria-label="Hero"></a></li>
-  <li><a href="#zoom" data-dot="zoom" aria-label="Zoom in"></a></li>
-  <li><a href="#pipeline" data-dot="pipeline" aria-label="How it works"></a></li>
-  <li><a href="#day" data-dot="day" aria-label="A day with Modoi"></a></li>
-  <li><a href="#privacy" data-dot="privacy" aria-label="Privacy"></a></li>
-  <li><a href="#price" data-dot="price" aria-label="Pricing"></a></li>
-  <li><a href="#faq" data-dot="faq" aria-label="FAQ"></a></li>
-</ul>
-
-<!-- 01 Hero -->
-<section class="chapter chapter-hero" id="hero" data-chapter="hero">
-  <div class="hero-media" aria-hidden="true">
-    <div class="daylog-mock">
-      <header class="daylog-head">
-        <p class="daylog-date">Tuesday, Nov 3 <span>Today</span></p>
-        <div class="daylog-nav" aria-hidden="true">
-          <span>&lt;</span><span>&gt;</span>
-        </div>
-      </header>
-      <div class="daylog-cols">
-        <span></span>
-        <span>Activity</span>
-        <span>Events</span>
-        <span>Project</span>
-        <span>Calendar</span>
-        <span>Labels</span>
-      </div>
-      <div class="daylog-board">
-        <div class="daylog-times">
-          <span>6 AM</span><span>7 AM</span><span>8 AM</span><span>9 AM</span><span>10 AM</span>
-          <span>11 AM</span><span>12 PM</span><span>1 PM</span><span>2 PM</span><span>3 PM</span>
-          <span>4 PM</span><span>5 PM</span><span>6 PM</span><span>7 PM</span>
-        </div>
-        <div class="daylog-lanes">
-          <!-- Activity -->
-          <div class="daylog-lane lane-act">
-            <div class="dl-block done" style="--top:0.15;--h:0.55">Code, Browsing — Editor</div>
-            <div class="dl-block done" style="--top:0.85;--h:0.7">Browsing — Docs</div>
-            <div class="dl-block" style="--top:1.7;--h:1.55">Code — Editor</div>
-            <div class="dl-block" style="--top:3.4;--h:0.85">Design — Figma</div>
-            <div class="dl-block" style="--top:4.4;--h:1.1">Code — Terminal</div>
-            <div class="dl-block" style="--top:5.7;--h:0.55">Chat — Slack</div>
-            <div class="dl-block" style="--top:7.15;--h:1.7">Code — Editor</div>
-            <div class="dl-block" style="--top:9.1;--h:0.95">Browsing — GitHub</div>
-            <div class="dl-block" style="--top:10.3;--h:0.7">Mail — Inbox</div>
+    <figure class="mac" id="hero-screen" data-view="schedule" data-glow="present">
+      <div class="mac-bezel">
+        <div class="scr" role="img" aria-label="Mac screen with Modoi's see-through day view over a code editor and a browser, and a glowing screen edge">
+          <div class="scr-menubar" aria-hidden="true">
+            <span class="mb-apple"></span><b>Code</b><span>File</span><span>Edit</span><span>View</span><span>Go</span>
+            <span class="mb-right">Thu Nov 19&nbsp;&nbsp;8:50 PM</span>
           </div>
-          <!-- Events (Linear-style tickets) -->
-          <div class="daylog-lane lane-evt">
-            <div class="dl-block done short" style="--top:0.9;--h:0.55"><span class="dl-id">OPS-12</span> Team standup</div>
-            <div class="dl-block tall" style="--top:1.65;--h:1.55"><span class="dl-id">DEV-120</span> Fix api change</div>
-            <div class="dl-block" style="--top:3.35;--h:0.9"><span class="dl-id">DES-8</span> Review PR diff</div>
-            <div class="dl-block" style="--top:4.4;--h:1.1"><span class="dl-id">ENG-45</span> Add auth retry</div>
-            <div class="dl-block short" style="--top:5.7;--h:0.5"><span class="dl-id">OPS-31</span> Sync with design</div>
-            <div class="dl-block tall" style="--top:7.1;--h:1.75"><span class="dl-id">DEV-134</span> Patch flaky test</div>
-            <div class="dl-block" style="--top:9.05;--h:1.0"><span class="dl-id">ENG-52</span> Draft release notes</div>
-            <div class="dl-block short" style="--top:10.35;--h:0.55"><span class="dl-id">OPS-19</span> Triage inbox</div>
+          <div class="scr-apps" aria-hidden="true">
+            <div class="aw aw-editor">
+              <div class="aw-bar"><span class="rim-traffic"><i></i><i></i><i></i></span><span class="aw-title">handlers.ts — search-api</span></div>
+              <div class="aw-body">
+                <div class="aw-side"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="aw-code"><span class="k1" style="--w:38%"></span><span style="--w:72%"></span><span class="k2" style="--w:58%"></span><span style="--w:84%"></span><span class="k3" style="--w:46%"></span><span style="--w:66%"></span><span class="k1" style="--w:30%"></span><span style="--w:78%"></span><span class="k2" style="--w:62%"></span><span style="--w:54%"></span><span class="k3" style="--w:70%"></span><span style="--w:40%"></span><span style="--w:76%"></span><span class="k1" style="--w:50%"></span></div>
+              </div>
+            </div>
+            <div class="aw aw-browser">
+              <div class="aw-bar"><span class="rim-traffic"><i></i><i></i><i></i></span><span class="aw-url">linear.app/…/ENG-301</span></div>
+              <div class="aw-page"><span class="pg-h"></span><span class="pg-chip"></span><span style="--w:88%"></span><span style="--w:74%"></span><span style="--w:82%"></span><span style="--w:52%"></span></div>
+            </div>
           </div>
-          <!-- Project -->
-          <div class="daylog-lane lane-proj">
-            <div class="dl-tag" style="--top:0.9">Ops</div>
-            <div class="dl-tag peach" style="--top:1.65">Product</div>
-            <div class="dl-tag" style="--top:3.35">Design</div>
-            <div class="dl-tag peach" style="--top:4.4">Product</div>
-            <div class="dl-tag" style="--top:5.7">Ops</div>
-            <div class="dl-tag peach" style="--top:7.1">Infra</div>
-            <div class="dl-tag peach" style="--top:9.05">Product</div>
-            <div class="dl-tag" style="--top:10.35">Ops</div>
+          <div class="ov" aria-hidden="true">
+            <div class="ov-head"><b>Thursday, Nov 19</b><small>Today</small><span class="ov-nav">‹&nbsp;&nbsp;›</span></div>
+            <div class="ov-cols"><span></span><span>Activity</span><span>Events</span><span>Calendar</span></div>
+            <div class="ov-board">
+              <div class="ov-hours"><span style="--t:0">8 AM</span><span style="--t:1">9 AM</span><span style="--t:2">10 AM</span><span style="--t:3">11 AM</span><span style="--t:4">12 PM</span><span style="--t:5">1 PM</span><span style="--t:6">2 PM</span><span style="--t:7">3 PM</span><span style="--t:8">4 PM</span><span style="--t:9">5 PM</span><span style="--t:10">6 PM</span><span style="--t:11">7 PM</span><span style="--t:12">8 PM</span><span style="--t:13">9 PM</span><span style="--t:14">10 PM</span></div>
+              <div class="ov-lane ov-act"><div class="ov-b " style="--t:0.9;--h:0.4"><i>08:54</i> Browsing — Docs</div><div class="ov-b flow" style="--t:1.33;--h:0.75"><i>09:20</i> Code — Editor</div><div class="ov-b flow" style="--t:2.17;--h:1.2"><i>10:10</i> Code, Browsing</div><div class="ov-b wander" style="--t:3.67;--h:0.5"><i>11:40</i> Chat — Slack</div><div class="ov-b " style="--t:4.5;--h:0.8"><i>12:30</i> Uncategorized</div><div class="ov-b present" style="--t:5.5;--h:1.5"><i>13:30</i> Code — Terminal</div><div class="ov-b split" style="--t:7.17;--h:0.4"><i>15:10</i> YouTube</div><div class="ov-b present" style="--t:7.67;--h:1.6"><i>15:40</i> Code — Editor</div><div class="ov-b " style="--t:10.67;--h:0.35"><i>18:40</i> Uncategorized</div><div class="ov-b present" style="--t:12.23;--h:0.6"><i>20:14</i> Uncategorized, Code</div></div>
+              <div class="ov-lane ov-evt"><div class="ov-e ok" style="--t:1.33;--h:0.75"><i>ENG-301</i> Ship Search API</div><div class="ov-e ok" style="--t:2.17;--h:1.2"><i>ENG-301</i> Ship Search API</div><div class="ov-e ok" style="--t:4.5;--h:0.8"><i>MKT-12</i> Review onboarding copy</div><div class="ov-e ok" style="--t:5.5;--h:1.5"><i>ENG-456</i> Review thread</div><div class="ov-e ok" style="--t:7.67;--h:1.6"><i>ENG-301</i> Ship Search API</div><div class="ov-e pending" style="--t:12.23;--h:0.6"><i>SALES-88</i> Pulling the numbers</div></div>
+              <div class="ov-lane ov-cal"><div class="ov-c" style="--t:1;--h:0.3">Standup</div><div class="ov-c" style="--t:4;--h:0.5">Lunch</div><div class="ov-c" style="--t:5.5;--h:1">Focus: ENG-301</div><div class="ov-c" style="--t:9;--h:0.5">1:1</div><div class="ov-c" style="--t:10;--h:1">Design review</div></div>
+              <div class="ov-now" style="--t:12.83"><span>8:50 PM</span></div>
+            </div>
           </div>
-          <!-- Calendar -->
-          <div class="daylog-lane lane-cal">
-            <div class="dl-cal-block done" style="--top:0.9;--h:0.55"></div>
-            <div class="dl-cal-block" style="--top:1.65;--h:1.55"></div>
-            <div class="dl-cal-block" style="--top:3.35;--h:0.9"></div>
-            <div class="dl-cal-block" style="--top:4.4;--h:1.1"></div>
-            <div class="dl-cal-block" style="--top:5.7;--h:0.5"></div>
-            <div class="dl-cal-block" style="--top:7.1;--h:1.75"></div>
-            <div class="dl-cal-block" style="--top:9.05;--h:1.0"></div>
-          </div>
-          <!-- Labels -->
-          <div class="daylog-lane lane-lab">
-            <div class="dl-lab" style="--top:0.9">Meetings</div>
-            <div class="dl-lab" style="--top:1.65">Code</div>
-            <div class="dl-lab" style="--top:3.35">Review</div>
-            <div class="dl-lab" style="--top:4.4">Code</div>
-            <div class="dl-lab" style="--top:5.7">Meetings</div>
-            <div class="dl-lab" style="--top:7.1">Code</div>
-            <div class="dl-lab" style="--top:9.05">Writing</div>
-            <div class="dl-lab" style="--top:10.35">Admin</div>
-          </div>
-          <div class="daylog-now" style="--top:4.6">
-            <span>10:36 AM</span>
-          </div>
+          <div class="scr-glow" aria-hidden="true"></div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-scrim" aria-hidden="true"></div>
-  <div class="hero-copy" data-reveal>
-    <div class="hero-formula" aria-label="Google Calendar plus Linear plus site blocker">
-      <img class="hero-mark" src="assets/integrations/google-calendar.svg" alt="Google Calendar" width="72" height="72">
-      <span class="hero-plus" aria-hidden="true">+</span>
-      <img class="hero-mark" src="assets/integrations/linear.svg" alt="Linear" width="72" height="72">
-      <span class="hero-plus" aria-hidden="true">+</span>
-      <img class="hero-mark hero-mark-block" src="assets/block-mark.png" alt="Site blocker" width="72" height="72">
-    </div>
-    <h1>AI calendar for less context-switching</h1>
-    <p class="lede">Tracks your work, blocks distractions, maximize&nbsp;focus</p>
-    <div class="cta">
-      <a class="btn btn-dark" href="get.html">Get for Mac</a>
+      <div class="mac-stand" aria-hidden="true"></div>
+      <figcaption class="sr-only">Illustrative mock of the Modoi overlay on a Mac screen.</figcaption>
+    </figure>
+
+    <div class="view-toggle">
+      <div class="seg" role="group" aria-label="Hero preview">
+        <button type="button" data-view="schedule" aria-pressed="true">Schedule view</button>
+        <button type="button" data-view="glow" aria-pressed="false">Glow only</button>
+      </div>
+      <div class="glow-pick" role="group" aria-label="Glow state" hidden>
+        <button type="button" data-glow="split" aria-pressed="false"><span class="sw sw-split"></span>Split</button>
+        <button type="button" data-glow="wander" aria-pressed="false"><span class="sw sw-wander"></span>Wander</button>
+        <button type="button" data-glow="present" aria-pressed="true"><span class="sw sw-present"></span>Present</button>
+        <button type="button" data-glow="flow" aria-pressed="false"><span class="sw sw-flow"></span>Flow</button>
+      </div>
+      <p class="view-note" id="view-note" aria-live="polite">Your day, see-through, on top of whatever you’re working in.</p>
     </div>
   </div>
 </section>
 
-<!-- 02 Zoom -->
-<section class="chapter chapter-zoom" id="zoom" data-chapter="zoom">
-  <figure class="zoom-media">
-    <video src="assets/sand_shorter.mp4" autoplay muted playsinline loop aria-hidden="true"></video>
-  </figure>
-  <div class="zoom-copy" data-reveal>
-    <p class="zoom-lead">Too much chat and app switching, and too&nbsp;little done?</p>
-    <h2>Modoi helps you focus on <em>one thing</em> at a time</h2>
-  </div>
-</section>
-
-<!-- 03 Pipeline -->
-<section class="chapter chapter-pipeline" id="pipeline" data-chapter="pipeline">
-  <div class="chapter-inner">
-    <div class="pipeline-stage" data-reveal>
-      <div class="pipeline-head">
-        <p class="kicker">How it works</p>
-        <h2>Match activity to each work item</h2>
-        <div class="wm-icons" aria-label="Works with Linear now; HubSpot, Jira, Asana, Notion, and more coming soon">
-          <img src="assets/integrations/linear.svg" alt="Linear" width="28" height="28">
-          <span class="wm-icon wm-icon--soon" title="Coming soon">
-            <img src="assets/integrations/hubspot.svg" alt="HubSpot, coming soon" width="28" height="28">
-            <span class="wm-soon" aria-hidden="true">Soon</span>
-          </span>
-          <span class="wm-icon wm-icon--soon" title="Coming soon">
-            <img src="assets/integrations/jira.svg" alt="Jira, coming soon" width="28" height="28">
-            <span class="wm-soon" aria-hidden="true">Soon</span>
-          </span>
-          <span class="wm-icon wm-icon--soon" title="Coming soon">
-            <img src="assets/integrations/asana.svg" alt="Asana, coming soon" width="28" height="28">
-            <span class="wm-soon" aria-hidden="true">Soon</span>
-          </span>
-          <span class="wm-icon wm-icon--soon" title="Coming soon">
-            <img src="assets/integrations/notion.svg" alt="Notion, coming soon" width="28" height="28">
-            <span class="wm-soon" aria-hidden="true">Soon</span>
-          </span>
-          <span class="wm-more" title="More coming">+</span>
-        </div>
-        <p class="lede">Modoi sees your Mac’s record and pairs it with each item on your work management app.</p>
-      </div>
-
-      <div class="pipeline-flow" role="img" aria-label="Messy activity logs grouped into events, then placed on a calendar">
-        <div class="pipe-col pipe-col-activity">
-          <p class="pipe-label">Activity</p>
-          <div class="signal-scatter">
-            <span class="signal-chip">
-              <span class="signal-label">9 tabs · docs.google…</span>
-              <span class="signal-meta">08:54 · 18m</span>
-            </span>
-            <span class="signal-chip">
-              <span class="signal-label">Slack · #design-system</span>
-              <span class="signal-meta">09:12 · 12m</span>
-            </span>
-            <span class="signal-chip">
-              <span class="signal-label">Figma · Home mock</span>
-              <span class="signal-meta">09:24 · 31m</span>
-            </span>
-            <span class="signal-chip">
-              <span class="signal-label">VS Code · search-api</span>
-              <span class="signal-meta">09:55 · 42m</span>
-            </span>
-            <span class="signal-chip">
-              <span class="signal-label">Notion · standup notes</span>
-              <span class="signal-meta">10:38 · 9m</span>
-            </span>
-            <span class="signal-chip">
-              <span class="signal-label">Chrome · github.com</span>
-              <span class="signal-meta">10:47 · 14m</span>
-            </span>
-            <span class="signal-chip">
-              <span class="signal-label">Linear · ENG-301</span>
-              <span class="signal-meta">11:02 · 6m</span>
-            </span>
-            <span class="signal-chip">
-              <span class="signal-label">Gmail · PR review</span>
-              <span class="signal-meta">11:11 · 8m</span>
-            </span>
-            <span class="signal-chip">
-              <span class="signal-label">Sheets · funnel Q3</span>
-              <span class="signal-meta">11:22 · 21m</span>
-            </span>
-          </div>
-        </div>
-        <div class="pipe-arrow" aria-hidden="true">
-          <svg viewBox="0 0 28 48" fill="none"><path d="M4 24h16M14 16l8 8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="pipe-col">
-          <p class="pipe-label">Event</p>
-          <ul class="task-lines">
-            <li class="task-line"><span>Writing the draft</span><span class="task-time">69m</span></li>
-            <li class="task-line"><span>Pulling the numbers</span><span class="task-time">38m</span></li>
-            <li class="task-line"><span>Review thread</span><span class="task-time">22m</span></li>
-          </ul>
-        </div>
-        <div class="pipe-arrow" aria-hidden="true">
-          <svg viewBox="0 0 28 48" fill="none"><path d="M4 24h16M14 16l8 8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="pipe-col">
-          <p class="pipe-label">Calendar</p>
-          <div class="cal-mini">
-            <div class="cal-block cal-rose"><span>ENG-288</span><strong>Writing the draft</strong></div>
-            <div class="cal-block cal-gold"><span>MKT-12</span><strong>Review thread</strong></div>
-            <div class="cal-block cal-sage"><span>SALES-88</span><strong>Pulling the numbers</strong></div>
-          </div>
-        </div>
-      </div>
-      <p class="pipe-story">messy activity → grouped event → ticket on calendar</p>
+<!-- FOCUS ONE THING (live: 02 Zoom, sand film) -->
+<section class="focus-band" id="focus">
+  <div class="wrap focus-grid">
+    <div>
+      <p class="zoom-lead-d">Too much chat and app switching, and too&nbsp;little done?</p>
+      <h2>Modoi helps you focus on <em>one thing</em> at a time</h2>
     </div>
+    <img class="focus-img" src="assets/dunes-water.png" alt="" loading="lazy">
   </div>
 </section>
 
-<!-- 03 Day beats — sticky storytelling -->
-<section class="chapter chapter-day" id="day" data-chapter="day">
-  <div class="day-track" id="day-track">
-    <div class="day-sticky">
-      <div class="day-stage" data-reveal data-active-beat="0">
-        <div class="day-visual" aria-live="polite">
-          <div class="day-panel-visual is-active" data-beat="0">
-            <div class="rim-loom" aria-label="Mac window with Modoi rim color shifting through presence states">
-              <div class="rim-mac">
-                <div class="rim-mac-glow rim-glow-distracted" aria-hidden="true"></div>
-                <div class="rim-mac-glow rim-glow-wandering" aria-hidden="true"></div>
-                <div class="rim-mac-glow rim-glow-present" aria-hidden="true"></div>
-                <div class="rim-mac-glow rim-glow-zen" aria-hidden="true"></div>
-                <div class="rim-mac-window">
-                  <header class="rim-mac-chrome">
-                    <span class="rim-traffic" aria-hidden="true"><i></i><i></i><i></i></span>
-                    <span class="rim-mac-title">ENG-301 · Ship Search API</span>
-                  </header>
-                  <div class="rim-mac-body">
-                    <aside class="rim-mac-side" aria-hidden="true">
-                      <span class="rim-side-row is-on"></span>
-                      <span class="rim-side-row"></span>
-                      <span class="rim-side-row"></span>
-                      <span class="rim-side-row"></span>
-                      <span class="rim-side-row"></span>
-                    </aside>
-                    <div class="rim-mac-editor" aria-hidden="true">
-                      <span class="rim-code c1"></span>
-                      <span class="rim-code c2"></span>
-                      <span class="rim-code c3"></span>
-                      <span class="rim-code c4"></span>
-                      <span class="rim-code c5"></span>
-                      <span class="rim-code c2"></span>
-                      <span class="rim-code c6"></span>
-                      <span class="rim-code c3"></span>
-                    </div>
-                  </div>
-                </div>
-                <p class="rim-mac-state">
-                  <span class="rim-state rim-state-distracted">Distracted</span>
-                  <span class="rim-state rim-state-wandering">Wandering</span>
-                  <span class="rim-state rim-state-present">Present</span>
-                  <span class="rim-state rim-state-zen">Zen</span>
-                </p>
-                <ul class="rim-legend" aria-hidden="true">
-                  <li class="rim-distracted">Pink · split</li>
-                  <li class="rim-wandering">Yellow · wander</li>
-                  <li class="rim-present">Green · present</li>
-                  <li class="rim-zen">Blue · flow</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="day-panel-visual" data-beat="1">
-            <div class="during-loom" aria-label="Distraction nudge over a browser window">
-              <div class="during-browser">
-                <header class="during-chrome">
-                  <span class="rim-traffic" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="during-url">youtube.com/watch?v=…</span>
-                </header>
-                <div class="during-page" aria-hidden="true">
-                  <div class="during-player">
-                    <span class="during-play"></span>
-                  </div>
-                  <div class="during-meta">
-                    <span class="during-meta-title"></span>
-                    <span class="during-meta-sub"></span>
-                    <span class="during-meta-line"></span>
-                    <span class="during-meta-line short"></span>
-                  </div>
-                </div>
-                <aside class="during-nudge">
-                  <p class="during-nudge-kicker">Modoi</p>
-                  <p class="during-nudge-body">Are you distracted? You’ve been on YouTube for 5 minutes. Stretch and return to ENG-301.</p>
-                  <div class="during-nudge-reply">Glad you're here.</div>
-                </aside>
-              </div>
-            </div>
-          </div>
-          <div class="day-panel-visual" data-beat="2">
-            <div class="after-card after-card--loom" role="img" aria-label="Pending event Ship Search API linked to ENG-301 on Product help desk">
-              <div class="after-card-inner">
-                <div class="after-sliver" aria-hidden="true">
-                  <p class="after-sliver-head">Events</p>
-                  <div class="after-sliver-list">
-                    <div class="ab is-ok">
-                      <span class="ab-title">Review onboarding copy</span>
-                      <span class="ab-meta">MKT-12</span>
-                      <span class="ab-check" aria-hidden="true">✓</span>
-                    </div>
-                    <div class="ab is-ok">
-                      <span class="ab-title">Weekly standup notes</span>
-                      <span class="ab-meta">ENG-123</span>
-                      <span class="ab-check" aria-hidden="true">✓</span>
-                    </div>
-                    <div class="ab is-pending is-on">
-                      <span class="ab-title">Ship Search API</span>
-                      <span class="ab-meta">ENG-301</span>
-                    </div>
-                    <div class="ab is-ok">
-                      <span class="ab-title">Review thread</span>
-                      <span class="ab-meta">ENG-456</span>
-                      <span class="ab-check" aria-hidden="true">✓</span>
-                    </div>
-                    <div class="ab is-pending">
-                      <span class="ab-title">Pulling the numbers</span>
-                      <span class="ab-meta">SALES-88</span>
-                    </div>
-                  </div>
-                </div>
-                <aside class="after-side">
-                  <div class="after-side-head">
-                    <span>Event</span>
-                    <span aria-hidden="true">✕</span>
-                  </div>
-                  <h3>Ship Search API</h3>
-                  <span class="pill">
-                    <svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l2 1.2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                    pending
-                  </span>
-                  <p class="after-meta">09:20–10:05 · 45m</p>
-                  <p class="after-actions"><span>Approve</span> <span>Reject</span></p>
-                  <label class="after-field">Linear ticket<span>ENG-301 Ship Search API</span></label>
-                  <label class="after-field">Project<span>Product help desk</span></label>
-                  <label class="after-field">Category<span>Code</span></label>
-                  <label class="after-field">Description
-                    <span class="after-desc">Implemented search endpoints, wired catalog filters, and opened the ENG-301 PR for review.</span>
-                  </label>
-                  <p class="after-actions"><span>Save description</span> <span>Regenerate</span></p>
-                </aside>
-              </div>
-              <p class="after-cap">Pending until you say otherwise</p>
-            </div>
-          </div>
-          <div class="day-panel-visual" data-beat="3">
-            <div class="reflect-card reflect-card--loom" role="img" aria-label="Reflect chat summarizing last week with Glad you're here composer">
-              <p class="reflect-lead">Last week, you focused deeply on AI tool evaluation and deep work:</p>
-              <ul class="reflect-bullets">
-                <li>Spent 2+ hours reviewing event briefings and AI model comparisons.</li>
-                <li>Worked extensively in Cursor and Modoi on agent docs and workflow design.</li>
-                <li>Drove 1.5 hours exploring model benchmarks and ML concepts.</li>
-                <li>Kept Slack, Notes, and Linear in the loop for coordination.</li>
-              </ul>
-              <p class="reflect-query">my productivity last week</p>
-              <div class="reflect-composer">
-                <span class="reflect-input">Glad you're here.</span>
-              </div>
-              <p class="reflect-hint">Double-tap ⌃ (control)</p>
-            </div>
-          </div>
-        </div>
-        <div class="day-scrim" aria-hidden="true"></div>
+<!-- HOW IT WORKS (live: 03 Pipeline) -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="pipeline-head">
+      <p class="kicker">How it works</p>
+      <h2>Match activity to each work item</h2>
+      <p class="lede">Modoi sees your Mac’s record and pairs it with each item on your work management app.</p>
+    </div>
+    <ol class="steps-d">
+      <li><span class="mono">01</span> Connect Linear</li>
+      <li><span class="mono">02</span> Work normally</li>
+      <li><span class="mono">03</span> See your day on your calendar — get nudged when you drift</li>
+    </ol>
+    <div class="int-row" aria-label="Works with Linear and Google Calendar; HubSpot, Jira, Asana, Notion coming later">
+      <span class="int"><img src="assets/integrations/linear.svg" alt="" width="20" height="20">Linear</span>
+      <span class="int"><img src="assets/integrations/google-calendar.svg" alt="" width="20" height="20">Google Calendar</span>
+      <span class="int-soon">Coming later:
+        <img src="assets/integrations/hubspot.svg" alt="" width="14" height="14">HubSpot
+        <img src="assets/integrations/jira.svg" alt="" width="14" height="14">Jira
+        <img src="assets/integrations/asana.svg" alt="" width="14" height="14">Asana
+        <img src="assets/integrations/notion.svg" alt="" width="14" height="14">Notion
+      </span>
+    </div>
 
-        <div class="day-copy">
-          <div class="day-panel-copy is-active" data-beat="0">
-            <p class="kicker">Before · 01</p>
-            <h2>Your rim color shows how present you are</h2>
-            <p class="lede">No check-in, no typing — the rim shifts on its own.</p>
-            <ul class="beat-list">
-              <li>Pink when attention is split.</li>
-              <li>Yellow when you wander.</li>
-              <li>Green when present; blue in flow.</li>
-            </ul>
-            <div class="day-mobile-visual">
-              <div class="rim-loom" aria-hidden="true">
-                <div class="rim-mac">
-                  <div class="rim-mac-glow rim-glow-distracted"></div>
-                  <div class="rim-mac-glow rim-glow-wandering"></div>
-                  <div class="rim-mac-glow rim-glow-present"></div>
-                  <div class="rim-mac-glow rim-glow-zen"></div>
-                  <div class="rim-mac-window">
-                    <header class="rim-mac-chrome">
-                      <span class="rim-traffic"><i></i><i></i><i></i></span>
-                      <span class="rim-mac-title">ENG-301 · Ship Search API</span>
-                    </header>
-                    <div class="rim-mac-body">
-                      <aside class="rim-mac-side">
-                        <span class="rim-side-row is-on"></span>
-                        <span class="rim-side-row"></span>
-                        <span class="rim-side-row"></span>
-                        <span class="rim-side-row"></span>
-                      </aside>
-                      <div class="rim-mac-editor">
-                        <span class="rim-code c1"></span>
-                        <span class="rim-code c2"></span>
-                        <span class="rim-code c3"></span>
-                        <span class="rim-code c4"></span>
-                        <span class="rim-code c5"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="rim-mac-state">
-                    <span class="rim-state rim-state-distracted">Distracted</span>
-                    <span class="rim-state rim-state-wandering">Wandering</span>
-                    <span class="rim-state rim-state-present">Present</span>
-                    <span class="rim-state rim-state-zen">Zen</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="day-panel-copy" data-beat="1">
-            <p class="kicker">During · 02</p>
-            <h2>Distraction blocked</h2>
-            <p class="lede">When you leave the task, Modoi nudges once — no lock, no streak.</p>
-            <ul class="beat-list">
-              <li>Shows where you went and how long you were there.</li>
-              <li>Notices when you’re drained and suggests a break.</li>
-              <li>You can type back if you want more detail.</li>
-            </ul>
-            <div class="day-mobile-visual">
-              <div class="during-loom" aria-hidden="true">
-                <div class="during-browser">
-                  <header class="during-chrome">
-                    <span class="rim-traffic"><i></i><i></i><i></i></span>
-                    <span class="during-url">youtube.com/watch?v=…</span>
-                  </header>
-                  <div class="during-page">
-                    <div class="during-player"><span class="during-play"></span></div>
-                    <div class="during-meta">
-                      <span class="during-meta-title"></span>
-                      <span class="during-meta-sub"></span>
-                    </div>
-                  </div>
-                  <aside class="during-nudge">
-                    <p class="during-nudge-kicker">Modoi</p>
-                    <p class="during-nudge-body">You’ve been on YouTube for 5 minutes. Stretch and return to ENG-301.</p>
-                    <div class="during-nudge-reply">Glad you're here.</div>
-                  </aside>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="day-panel-copy" data-beat="2">
-            <p class="kicker">After · 03</p>
-            <h2>Auto-generate event details</h2>
-            <p class="lede">Each block already has a name, time, ticket, and project.</p>
-            <ul class="beat-list">
-              <li>Blocks land on a Linear ticket.</li>
-              <li>Pending until you approve.</li>
-            </ul>
-            <div class="day-mobile-visual">
-              <div class="after-card" role="img" aria-label="Pending event Ship Search API linked to ENG-301">
-                <div class="after-card-inner">
-                  <div class="after-sliver" aria-hidden="true">
-                    <p class="after-sliver-head">Events</p>
-                    <div class="after-sliver-list">
-                      <div class="ab is-ok"><span class="ab-title">Review onboarding</span><span class="ab-meta">MKT-12</span></div>
-                      <div class="ab is-pending is-on"><span class="ab-title">Ship Search API</span><span class="ab-meta">ENG-301</span></div>
-                      <div class="ab is-ok"><span class="ab-title">Review thread</span><span class="ab-meta">ENG-456</span></div>
-                    </div>
-                  </div>
-                  <aside class="after-side">
-                    <div class="after-side-head"><span>Event</span><span aria-hidden="true">✕</span></div>
-                    <h3>Ship Search API</h3>
-                    <span class="pill">pending</span>
-                    <p class="after-meta">09:20–10:05 · 45m</p>
-                    <p class="after-actions"><span>Approve</span> <span>Reject</span></p>
-                    <label class="after-field">Linear ticket<span>ENG-301 Ship Search API</span></label>
-                    <label class="after-field">Project<span>Product help desk</span></label>
-                    <label class="after-field">Category<span>Code</span></label>
-                    <label class="after-field">Description
-                      <span class="after-desc">Implemented search endpoints, wired catalog filters, and opened the ENG-301 PR for review.</span>
-                    </label>
-                    <p class="after-actions"><span>Save description</span> <span>Regenerate</span></p>
-                  </aside>
-                </div>
-                <p class="after-cap">Pending until you say otherwise</p>
-              </div>
-            </div>
-          </div>
-          <div class="day-panel-copy" data-beat="3">
-            <p class="kicker">Reflect · 04</p>
-            <h2>Double-tap ⌃ to chat about your day</h2>
-            <p class="lede">Ask what you got done — Modoi already has the calendar context.</p>
-            <ul class="beat-list">
-              <li>Stay in flow: no new window hunt.</li>
-              <li>Last week’s focus, already summarized.</li>
-            </ul>
-            <div class="day-mobile-visual">
-              <div class="reflect-card" role="img" aria-label="Reflect chat summarizing last week">
-                <p class="reflect-lead">Last week, you focused deeply on AI tool evaluation and deep work:</p>
-                <ul class="reflect-bullets">
-                  <li>2+ hours on event briefings and model comparisons.</li>
-                  <li>Extensive Cursor and Modoi workflow design.</li>
-                  <li>1.5 hours on benchmarks and ML concepts.</li>
-                  <li>Slack, Notes, and Linear kept in the loop.</li>
-                </ul>
-                <p class="reflect-query">my productivity last week</p>
-                <div class="reflect-composer"><span class="reflect-input">Glad you're here.</span></div>
-                <p class="reflect-hint">Double-tap ⌃ (control)</p>
-              </div>
-            </div>
-          </div>
-          <div class="day-progress" aria-hidden="true">
-            <span class="is-on" data-beat-dot="0"></span>
-            <span data-beat-dot="1"></span>
-            <span data-beat-dot="2"></span>
-            <span data-beat-dot="3"></span>
-          </div>
+    <div class="pipeline-flow" role="img" aria-label="Messy activity logs grouped into events, then placed on a calendar">
+      <div class="pipe-col pipe-col-activity">
+        <p class="pipe-label">Activity</p>
+        <div class="signal-scatter">
+          <span class="signal-chip"><span class="signal-label">9 tabs · docs.google…</span><span class="signal-meta">08:54 · 18m</span></span>
+          <span class="signal-chip"><span class="signal-label">Slack · #design-system</span><span class="signal-meta">09:12 · 12m</span></span>
+          <span class="signal-chip"><span class="signal-label">Figma · Home mock</span><span class="signal-meta">09:24 · 31m</span></span>
+          <span class="signal-chip"><span class="signal-label">VS Code · search-api</span><span class="signal-meta">09:55 · 42m</span></span>
+          <span class="signal-chip"><span class="signal-label">Notion · standup notes</span><span class="signal-meta">10:38 · 9m</span></span>
+          <span class="signal-chip"><span class="signal-label">Chrome · github.com</span><span class="signal-meta">10:47 · 14m</span></span>
+          <span class="signal-chip"><span class="signal-label">Linear · ENG-301</span><span class="signal-meta">11:02 · 6m</span></span>
+          <span class="signal-chip"><span class="signal-label">Gmail · PR review</span><span class="signal-meta">11:11 · 8m</span></span>
+          <span class="signal-chip"><span class="signal-label">Sheets · funnel Q3</span><span class="signal-meta">11:22 · 21m</span></span>
+        </div>
+      </div>
+      <div class="pipe-arrow" aria-hidden="true"><svg viewBox="0 0 28 48" fill="none"><path d="M4 24h16M14 16l8 8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pipe-col">
+        <p class="pipe-label">Event</p>
+        <ul class="task-lines">
+          <li class="task-line"><span>Writing the draft</span><span class="task-time">69m</span></li>
+          <li class="task-line"><span>Pulling the numbers</span><span class="task-time">38m</span></li>
+          <li class="task-line"><span>Review thread</span><span class="task-time">22m</span></li>
+        </ul>
+      </div>
+      <div class="pipe-arrow" aria-hidden="true"><svg viewBox="0 0 28 48" fill="none"><path d="M4 24h16M14 16l8 8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pipe-col">
+        <p class="pipe-label">Calendar</p>
+        <div class="cal-mini">
+          <div class="cal-block cal-rose"><span>ENG-288</span><strong>Writing the draft</strong></div>
+          <div class="cal-block cal-gold"><span>MKT-12</span><strong>Review thread</strong></div>
+          <div class="cal-block cal-sage"><span>SALES-88</span><strong>Pulling the numbers</strong></div>
         </div>
       </div>
     </div>
+    <p class="pipe-story">messy activity → grouped event → ticket on calendar</p>
   </div>
 </section>
 
-<!-- 04 Privacy -->
-<section class="chapter chapter-privacy" id="privacy" data-chapter="privacy">
-  <div class="chapter-inner">
-    <div class="privacy-in" data-reveal>
+<!-- PRIVACY (live: 04 Privacy) — moved up -->
+<section class="section chapter-privacy" id="privacy">
+  <div class="wrap">
+    <div class="privacy-in">
       <p class="kicker">Privacy</p>
       <h2>Everything local</h2>
       <p class="lede">AI running on your computer. It even works without Wi‑Fi. Nothing sent to Claude, OpenAI, or the alike.</p>
@@ -589,53 +207,223 @@
           </ol>
         </article>
       </div>
+      <ul class="facts-d">
+        <li><span class="mono">Model</span>On-device, ~2&nbsp;GB</li>
+        <li><span class="mono">Offline</span>Works without Wi-Fi</li>
+        <li><span class="mono">Online only for</span>Calendar sync with Google or Outlook</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- 05 Pricing -->
-<section class="chapter chapter-price" id="price" data-chapter="price">
-  <div class="chapter-inner">
-    <div class="price-in" data-reveal>
-      <p class="kicker">Pricing</p>
-      <h2>It costs</h2>
-      <div class="big0">$0</div>
-      <p class="price-sub">during beta testing</p>
-      <p class="lede">No card, no account. Help us by suggesting a feature.</p>
-      <div class="cta">
-        <a class="btn btn-dark" href="get.html">Get for Mac</a>
-        <a class="btn btn-ghost" href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
+<!-- A DAY WITH MODOI (live: day beats, sticky scroll) — now normal stacked stages -->
+<section class="section day-d" id="day" aria-labelledby="day-h">
+  <div class="wrap">
+    <p class="kicker">A day with Modoi</p>
+    <h2 id="day-h" class="sr-only">A day with Modoi</h2>
+
+    <!-- BEFORE · 01 -->
+    <article class="stage">
+      <div class="stage-copy">
+        <p class="kicker">Before · 01</p>
+        <h2>Your rim color shows how present you are</h2>
+        <p class="lede">No check-in, no typing — the rim shifts on its own.</p>
+        <ul class="beat-list">
+          <li>Pink when attention is split.</li>
+          <li>Yellow when you wander.</li>
+          <li>Green when present; blue in flow.</li>
+        </ul>
+        <div class="day-progress" aria-hidden="true"><span class="is-on"></span><span></span><span></span><span></span></div>
       </div>
+      <div class="stage-visual">
+        <div class="rim-loom" aria-label="Mac window with Modoi rim color shifting through presence states" role="img">
+          <div class="rim-mac sf">
+            <div class="sf-bezel"><div class="sf-scr">
+            <div class="scr-menubar" aria-hidden="true"><span class="mb-apple"></span><b>Code</b><span>File</span><span>Edit</span><span>View</span><span class="mb-right">Thu Nov 19&nbsp;&nbsp;10:36 AM</span></div>
+            <div class="sf-desk">
+            <div class="rim-mac-window">
+              <header class="rim-mac-chrome">
+                <span class="rim-traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="rim-mac-title">ENG-301 · Ship Search API</span>
+              </header>
+              <div class="rim-mac-body">
+                <aside class="rim-mac-side" aria-hidden="true">
+                  <span class="rim-side-row is-on"></span><span class="rim-side-row"></span><span class="rim-side-row"></span><span class="rim-side-row"></span><span class="rim-side-row"></span>
+                </aside>
+                <div class="rim-mac-editor" aria-hidden="true">
+                  <span class="rim-code c1"></span><span class="rim-code c2"></span><span class="rim-code c3"></span><span class="rim-code c4"></span><span class="rim-code c5"></span><span class="rim-code c2"></span><span class="rim-code c6"></span><span class="rim-code c3"></span>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="rim-mac-glow rim-glow-distracted" aria-hidden="true"></div>
+            <div class="rim-mac-glow rim-glow-wandering" aria-hidden="true"></div>
+            <div class="rim-mac-glow rim-glow-present" aria-hidden="true"></div>
+            <div class="rim-mac-glow rim-glow-zen" aria-hidden="true"></div>
+            </div></div>
+            <div class="sf-stand" aria-hidden="true"></div>
+            <p class="rim-mac-state">
+              <span class="rim-state rim-state-distracted">Split</span>
+              <span class="rim-state rim-state-wandering">Wander</span>
+              <span class="rim-state rim-state-present">Present</span>
+              <span class="rim-state rim-state-zen">Flow</span>
+            </p>
+            <ul class="rim-legend">
+              <li class="rim-distracted">Pink · split</li>
+              <li class="rim-wandering">Yellow · wander</li>
+              <li class="rim-present">Green · present</li>
+              <li class="rim-zen">Blue · flow</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- DURING · 02 -->
+    <article class="stage stage-flip">
+      <div class="stage-copy">
+        <p class="kicker">During · 02</p>
+        <h2>Distraction blocked</h2>
+        <p class="lede">When you leave the task, Modoi nudges once — no lock, no streak.</p>
+        <ul class="beat-list">
+          <li>Shows where you went and how long you were there.</li>
+          <li>Notices when you’re drained and suggests a break.</li>
+          <li>You can type back if you want more detail.</li>
+        </ul>
+        <div class="day-progress" aria-hidden="true"><span></span><span class="is-on"></span><span></span><span></span></div>
+      </div>
+      <div class="stage-visual">
+        <div class="during-loom sf" role="img" aria-label="Distraction nudge over a browser window, with the Mac screen edge glowing pink">
+          <div class="sf-bezel"><div class="sf-scr sf-split">
+          <div class="scr-menubar" aria-hidden="true"><span class="mb-apple"></span><b>Chrome</b><span>File</span><span>Edit</span><span>View</span><span class="mb-right">Thu Nov 19&nbsp;&nbsp;3:14 PM</span></div>
+          <div class="during-browser">
+            <header class="during-chrome">
+              <span class="rim-traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="during-url">youtube.com/watch?v=…</span>
+            </header>
+            <div class="during-page" aria-hidden="true">
+              <div class="during-player"><span class="during-play"></span></div>
+              <div class="during-meta">
+                <span class="during-meta-title"></span><span class="during-meta-sub"></span><span class="during-meta-line"></span><span class="during-meta-line short"></span>
+              </div>
+            </div>
+            <aside class="during-nudge">
+              <p class="during-nudge-kicker">Modoi</p>
+              <p class="during-nudge-body">Are you distracted? You’ve been on YouTube for 5 minutes. Stretch and return to ENG-301.</p>
+              <div class="during-nudge-reply">Glad you're here.</div>
+            </aside>
+          </div>
+          <div class="sf-glow" aria-hidden="true"></div>
+          </div></div>
+          <div class="sf-stand" aria-hidden="true"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- AFTER · 03 -->
+    <article class="stage">
+      <div class="stage-copy">
+        <p class="kicker">After · 03</p>
+        <h2>Auto-generate event details</h2>
+        <p class="lede">Each block already has a name, time, ticket, and project.</p>
+        <ul class="beat-list">
+          <li>Blocks land on a Linear ticket.</li>
+          <li>Pending until you approve.</li>
+        </ul>
+        <div class="day-progress" aria-hidden="true"><span></span><span></span><span class="is-on"></span><span></span></div>
+      </div>
+      <div class="stage-visual">
+        <div class="after-card after-card--loom" role="img" aria-label="Pending event Ship Search API linked to ENG-301 on Product help desk">
+          <div class="after-card-inner">
+            <div class="after-sliver" aria-hidden="true">
+              <p class="after-sliver-head">Events</p>
+              <div class="after-sliver-list">
+                <div class="ab is-ok"><span class="ab-title">Review onboarding copy</span><span class="ab-meta">MKT-12</span><span class="ab-check" aria-hidden="true">✓</span></div>
+                <div class="ab is-ok"><span class="ab-title">Weekly standup notes</span><span class="ab-meta">ENG-123</span><span class="ab-check" aria-hidden="true">✓</span></div>
+                <div class="ab is-pending is-on"><span class="ab-title">Ship Search API</span><span class="ab-meta">ENG-301</span></div>
+                <div class="ab is-ok"><span class="ab-title">Review thread</span><span class="ab-meta">ENG-456</span><span class="ab-check" aria-hidden="true">✓</span></div>
+                <div class="ab is-pending"><span class="ab-title">Pulling the numbers</span><span class="ab-meta">SALES-88</span></div>
+              </div>
+            </div>
+            <aside class="after-side">
+              <div class="after-side-head"><span>Event</span><span aria-hidden="true">✕</span></div>
+              <h3>Ship Search API</h3>
+              <span class="pill"><svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6 3.5V6l2 1.2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> pending</span>
+              <p class="after-meta">09:20–10:05 · 45m</p>
+              <p class="after-actions"><span>Approve</span> <span>Reject</span></p>
+              <label class="after-field">Linear ticket<span>ENG-301 Ship Search API</span></label>
+              <label class="after-field">Project<span>Product help desk</span></label>
+              <label class="after-field">Category<span>Code</span></label>
+              <label class="after-field">Description<span class="after-desc">Implemented search endpoints, wired catalog filters, and opened the ENG-301 PR for review.</span></label>
+              <p class="after-actions"><span>Save description</span> <span>Regenerate</span></p>
+            </aside>
+          </div>
+          <p class="after-cap">Pending until you say otherwise</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- REFLECT · 04 -->
+    <article class="stage stage-flip">
+      <div class="stage-copy">
+        <p class="kicker">Reflect · 04</p>
+        <h2>Double-tap ⌃ to chat about your day</h2>
+        <p class="lede">Ask what you got done — Modoi already has the calendar context.</p>
+        <ul class="beat-list">
+          <li>Stay in flow: no new window hunt.</li>
+          <li>Last week’s focus, already summarized.</li>
+        </ul>
+        <div class="day-progress" aria-hidden="true"><span></span><span></span><span></span><span class="is-on"></span></div>
+      </div>
+      <div class="stage-visual">
+        <div class="reflect-card reflect-card--loom" role="img" aria-label="Reflect chat summarizing last week">
+          <p class="reflect-lead">Last week, you focused deeply on AI tool evaluation and deep work:</p>
+          <ul class="reflect-bullets">
+            <li>Spent 2+ hours reviewing event briefings and AI model comparisons.</li>
+            <li>Worked extensively in Cursor and Modoi on agent docs and workflow design.</li>
+            <li>Drove 1.5 hours exploring model benchmarks and ML concepts.</li>
+            <li>Kept Slack, Notes, and Linear in the loop for coordination.</li>
+          </ul>
+          <p class="reflect-query">my productivity last week</p>
+          <div class="reflect-composer"><span class="reflect-input">Glad you're here.</span></div>
+          <p class="reflect-hint">Double-tap ⌃ (control)</p>
+        </div>
+      </div>
+    </article>
+
+    <div class="mid-cta">
+      <a class="btn-d btn-lg" href="get.html">Get for Mac</a>
+      <p class="meta">macOS 13+ · ~2&nbsp;GB · runs 100% on your Mac</p>
     </div>
   </div>
 </section>
 
-<!-- 06 FAQ -->
-<section class="chapter chapter-faq" id="faq" data-chapter="faq">
+<!-- FAQ (live: 06 FAQ) -->
+<section class="chapter-faq" id="faq">
   <div class="wrap">
     <div class="faq-head">
-      <p class="kicker">FAQ</p>
-      <h2><a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Just ask us</a></h2>
+      <h2>FAQ</h2>
     </div>
     <div class="faqgrid">
       <div class="qa">
-        <h4>Does Modoi work without Wi-Fi or internet?</h4>
-        <p>No. Modoi works without Wi‑Fi. Calendar sync with Google or Outlook needs a connection.</p>
+        <h3 class="h4">Do I need Wi-Fi?</h3>
+        <p>No. Modoi works fully offline. Calendar sync with Google or Outlook needs a connection.</p>
       </div>
       <div class="qa">
-        <h4>How does Modoi track what I'm working on?</h4>
+        <h3 class="h4">How does Modoi track what I'm working on?</h3>
         <p>Window titles, app and tab names, plus what is on screen. Raw images are dropped after on-device reading.</p>
       </div>
       <div class="qa">
-        <h4>Will Modoi interrupt me while I'm working?</h4>
+        <h3 class="h4">Will Modoi interrupt me while I'm working?</h3>
         <p>One line over the off-task window — only when the screen stops matching what you said you were on.</p>
       </div>
     </div>
+    <div class="faq-cta"><a class="btn-ghost-d" href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a></div>
   </div>
 </section>
 
-<!-- 07 Blog -->
-<section class="chapter chapter-blog" id="blog">
+<!-- BLOG (live: 07 Blog) -->
+<section class="chapter-blog" id="blog">
   <div class="wrap">
     <div class="blog-head">
       <p class="kicker">Blog</p>
@@ -643,55 +431,32 @@
       <p class="lede">How task-based time tracking, focus monitoring, and the visual day view actually work — written against the product as it is today.</p>
     </div>
     <div class="blog-posts">
-      <a class="blog-post" href="blogs/task-based-time-tracking.html">
-        <p class="blog-post-meta">Aug 23, 2026</p>
-        <h3>Task-based time tracking and planning, the Modoi approach</h3>
-        <p class="blog-post-lede">Most time trackers assume you will remember to start a timer. You declare a task; Modoi attaches the time and lands it pending for your review.</p>
-      </a>
-      <a class="blog-post" href="blogs/mac-native-deep-work-2026.html">
-        <p class="blog-post-meta">Aug 23, 2026</p>
-        <h3>The best Mac-native deep work tool in 2026</h3>
-        <p class="blog-post-lede">Swift + AppKit + SwiftUI, with on-device AI through MLX on Apple Silicon. No web view in the critical path.</p>
-      </a>
-      <a class="blog-post" href="blogs/focus-nudges-drift-detection.html">
-        <p class="blog-post-meta">Aug 23, 2026</p>
-        <h3>Focus nudges and drift detection: how Modoi keeps you in deep work</h3>
-        <p class="blog-post-lede">A fast deterministic classifier plus an hourly on-device check. One pause, not a cascade — none of it leaves your Mac.</p>
-      </a>
-      <a class="blog-post" href="blogs/ticket-based-workflow.html">
-        <p class="blog-post-meta">Aug 23, 2026</p>
-        <h3>Ticket-based workflow organization: structure without overhead</h3>
-        <p class="blog-post-lede">Issues under projects — imported read-only from Linear or created locally — with time attributed automatically.</p>
-      </a>
-      <a class="blog-post" href="blogs/visual-day-view.html">
-        <p class="blog-post-meta">Aug 23, 2026</p>
-        <h3>Visual day view of work by task: see your whole day</h3>
-        <p class="blog-post-lede">A timeline of what you actually did, built automatically as you work — activity, events, projects, calendar, and labels.</p>
-      </a>
+      <a class="blog-post" href="blogs/task-based-time-tracking.html"><p class="blog-post-meta">Aug 23, 2026</p><h3>Task-based time tracking and planning, the Modoi approach</h3><p class="blog-post-lede">Most time trackers assume you will remember to start a timer. You declare a task; Modoi attaches the time and lands it pending for your review.</p></a>
+      <a class="blog-post" href="blogs/mac-native-deep-work-2026.html"><p class="blog-post-meta">Aug 23, 2026</p><h3>The best Mac-native deep work tool in 2026</h3><p class="blog-post-lede">Swift + AppKit + SwiftUI, with on-device AI through MLX on Apple Silicon. No web view in the critical path.</p></a>
+      <a class="blog-post" href="blogs/focus-nudges-drift-detection.html"><p class="blog-post-meta">Aug 23, 2026</p><h3>Focus nudges and drift detection: how Modoi keeps you in deep work</h3><p class="blog-post-lede">A fast deterministic classifier plus an hourly on-device check. One pause, not a cascade — none of it leaves your Mac.</p></a>
+      <a class="blog-post" href="blogs/ticket-based-workflow.html"><p class="blog-post-meta">Aug 23, 2026</p><h3>Ticket-based workflow organization: structure without overhead</h3><p class="blog-post-lede">Issues under projects — imported read-only from Linear or created locally — with time attributed automatically.</p></a>
+      <a class="blog-post" href="blogs/visual-day-view.html"><p class="blog-post-meta">Aug 23, 2026</p><h3>Visual day view of work by task: see your whole day</h3><p class="blog-post-lede">A timeline of what you actually did, built automatically as you work — activity, events, projects, calendar, and labels.</p></a>
     </div>
   </div>
 </section>
+</main>
 
-<footer class="site">
-  <div class="wrap">
-    <div class="footrow">
-      <a class="brand" href="#hero">
-        <img src="assets/modoi-mark.png" alt="">
-        <span class="wordmark">modoi</span>
-      </a>
-      <div class="foot-links">
-        <a href="#pipeline">How it works</a>
+<footer class="mf">
+  <div class="mf-inner">
+    <div class="mf-row">
+      <a class="mf-brand" href="index.html"><img src="assets/modoi-mark.png" alt="">modoi</a>
+      <nav class="mf-links" aria-label="Footer">
+        <a href="index.html#how">How it works</a>
         <a href="blocker.html">Nuclear Blocker</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#price">Pricing</a>
+        <a href="index.html#privacy">Privacy</a>
         <a href="blogs/index.html">Blog</a>
+        <a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
         <a href="mailto:support@modoi.ai">support@modoi.ai</a>
-      </div>
+      </nav>
     </div>
-    <div class="footbase">&copy; Modoi 2026</div>
+    <div class="mf-base">&copy; Modoi 2026</div>
   </div>
 </footer>
-
-<script src="js/g-lyncx-dynamic.js?v=3"></script>
+<script src="js/hero.js?v=1"></script>
 </body>
 </html>
