@@ -236,7 +236,7 @@ for fname, (title, desc, body, cur) in pages.items():
 
 # Patch all live HTML
 FOOTER_OLD = re.compile(
-    r'<nav class="mf-links" aria-label="Footer">.*?</nav>\s*<div class="mf-base">[^<]*</div>',
+    r'<nav class="mf-links" aria-label="Footer">.*?</nav>\s*</div>\s*<div class="mf-base">[^<]*</div>',
     re.S,
 )
 
@@ -254,6 +254,7 @@ def patch_file(path: Path):
         <a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
         <a href="mailto:support@modoi.ai">support@modoi.ai</a>
       </nav>
+    </div>
     <div class="mf-base">{COPY}</div>"""
     if FOOTER_OLD.search(t):
         t = FOOTER_OLD.sub(new_footer, t, count=1)
@@ -262,8 +263,15 @@ def patch_file(path: Path):
     t = t.replace('href="../index.html#privacy"', 'href="../privacy.html"')
   # blocker nav used blocker-privacy for Privacy link
     t = re.sub(r'href="blocker-privacy\.html"([^>]*?)>Privacy</a>', f'href="{prefix}privacy.html"\\1>Privacy</a>', t)
-    if "© Modoi 2026" in t:
-        t = t.replace("<div class=\"mf-base\">&copy; Modoi 2026</div>", f"<div class=\"mf-base\">{COPY}</div>")
+    t = re.sub(
+        r'<div class="mf-base">\s*(?:&copy;|©)\s*Modoi 2026\s*</div>',
+        f'<div class="mf-base">{COPY}</div>',
+        t,
+    )
+    broken = "      </nav>\n    <div class=\"mf-base\">"
+    fixed = "      </nav>\n    </div>\n    <div class=\"mf-base\">"
+    if broken in t:
+        t = t.replace(broken, fixed, 1)
     path.write_text(t)
 
 for html in ROOT.rglob("*.html"):

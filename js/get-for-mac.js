@@ -410,15 +410,6 @@
 
     if (!form.reportValidity()) return;
 
-    if (otherRadio && otherRadio.checked) {
-      var custom = (otherText && otherText.value || "").trim();
-      if (!custom) {
-        setStatus("Enter an amount for Other, or pick $9 / $19 / $29.", "error");
-        if (otherText) otherText.focus();
-        return;
-      }
-    }
-
     var data = payloadFromForm();
     var kind = selectedProductKind();
     var downloadUrl = dmgUrlForKind(kind);
