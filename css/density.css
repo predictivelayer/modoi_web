@@ -1,0 +1,121 @@
+/* Site-wide compact rhythm (inspired by voicemonkey.com density). Spacing only — loaded last. */
+:root {
+  --section-y: clamp(44px, 5.5vh, 56px);
+  --section-y-tight: clamp(36px, 4.5vh, 48px);
+  --stack-sm: 10px;
+  --stack-md: 16px;
+  --stack-lg: 24px;
+  --prose-max: 70ch;
+}
+
+/* --- Landing sections --- */
+.section{padding:var(--section-y) 0}
+.focus-band{padding:var(--section-y) 0}
+.chapter-faq,
+.chapter-blog{padding:var(--section-y) 0 var(--section-y-tight)}
+.chapter-faq .faq-head{margin-bottom:var(--stack-lg)}
+.chapter-pipeline .pipeline-stage{gap:var(--stack-lg)}
+.pipeline-head .kicker{margin-bottom:var(--stack-sm)}
+.pipeline-head h2{margin-bottom:var(--stack-sm)}
+.pipeline-head .lede{margin-top:var(--stack-sm)}
+.steps-d{margin:var(--stack-md) 0 0}
+.int-row{margin:var(--stack-md) 0 var(--stack-lg)}
+.pipe-story{margin-top:var(--stack-sm)}
+.chapter-privacy .privacy-in .lede{margin-bottom:var(--stack-lg)}
+.facts-d{margin:var(--stack-lg) auto 0}
+.stage{padding:var(--stack-lg) 0;gap:var(--stack-lg)}
+.stage:first-of-type{padding-top:var(--stack-md)}
+.stage-copy h2{margin-bottom:var(--stack-sm)}
+.stage-copy .lede{margin-bottom:var(--stack-sm)}
+.beat-list{margin-top:var(--stack-sm)}
+.mid-cta{padding:var(--stack-lg) 0 0}
+.chapter-faq .qa{padding:14px 0 8px}
+.blog-head .lede{margin-top:var(--stack-sm)}
+.blog-posts{margin-top:var(--stack-lg)}
+
+/* live-components duplicate section padding */
+.chapter-faq{padding:var(--section-y) 0 var(--section-y-tight)!important}
+.chapter-blog{padding:var(--section-y) 0 var(--section-y-tight)!important;min-height:auto!important}
+
+/* --- Hero --- */
+.hero2{padding:clamp(28px,4vw,36px) 0 clamp(36px,5vw,48px)}
+.hero2-copy h1{
+  max-width:26ch;
+  font-size:clamp(31px,3.5vw,50px);
+  line-height:1.08;
+  text-wrap:balance;
+}
+.hero2-copy .eyebrow{margin-bottom:var(--stack-sm)}
+.hero2-copy .lede-d{margin:12px auto 18px}
+.hero2-copy .meta{margin-top:8px}
+.view-toggle{margin-top:var(--stack-md)}
+.focus-band h2{font-size:clamp(28px,3.2vw,42px)}
+.zoom-lead-d{margin-bottom:8px}
+
+/* --- Chrome --- */
+.mf{padding:28px 0 24px}
+
+/* --- Get --- */
+.get-main{padding:clamp(28px,5vh,48px) clamp(20px,4vw,40px) 48px!important}
+.get-card h1{margin-top:var(--stack-sm)}
+.get-lede{margin-top:10px}
+
+/* --- Blocker product page --- */
+.blocker-page:not(.g-blog-article){
+  padding:clamp(32px,6vh,52px) clamp(20px,4vw,40px) 56px;
+  gap:clamp(32px,5vh,48px);
+}
+.blocker-page:not(.g-blog-article)::before{height:min(36vh,280px)}
+.blocker-hero .lede{margin-top:14px}
+.blocker-hero .cta{margin-top:22px}
+
+/* --- Blocker legal / support articles (flex gap was spacing every paragraph) --- */
+.blocker-page.g-blog-article{
+  display:block;
+  max-width:min(44rem,calc(100% - 40px));
+  padding:clamp(28px,5vh,44px) clamp(20px,4vw,40px) 52px;
+  overflow-x:clip;
+  box-sizing:border-box;
+}
+.blocker-page.g-blog-article::before{
+  height:min(28vh,180px);
+  margin:0 calc(-1 * clamp(20px,4vw,40px));
+  left:0;right:0;
+}
+.blocker-page.g-blog-article > *{max-width:var(--prose-max)}
+.blocker-page.g-blog-article p,
+.blocker-page.g-blog-article ul,
+.blocker-page.g-blog-article ol{overflow-wrap:anywhere}
+
+/* --- Blog --- */
+.g-blog-article{
+  padding:clamp(32px,5vh,52px) clamp(20px,4vw,40px) 56px;
+}
+.g-blog-article h1{margin:12px 0 0;font-size:clamp(2rem,3.8vw,2.75rem)}
+.g-blog-article h2{margin:clamp(28px,4vh,36px) 0 0;font-size:clamp(1.35rem,2.2vw,1.65rem)}
+.g-blog-article p{margin:12px 0 0;line-height:1.65;font-size:16px}
+.g-blog-article ul{margin:12px 0 0;gap:8px}
+.g-blog-article hr{margin:clamp(28px,4vh,40px) 0 0}
+.blog-meta{margin-top:12px}
+.blog-kicker{margin-bottom:0}
+.blog-cta{margin-top:clamp(36px,5vh,48px);padding:clamp(22px,4vw,32px)}
+.blog-cta .cta{margin-top:16px}
+.blog-index{padding:clamp(32px,5vh,52px) clamp(20px,4vw,40px) 56px}
+.blog-index-head h1{margin:12px 0 0}
+.blog-index-list{margin-top:var(--stack-lg);gap:12px}
+.blog-card{padding:18px 20px}
+
+/* --- Type rhythm (landing) --- */
+.kicker,.eyebrow{margin-bottom:var(--stack-sm)}
+h2{margin-bottom:var(--stack-sm)}
+.lede,.lede-d{margin-bottom:var(--stack-md)}
+p{margin-bottom:10px}
+.wrap{padding:0 clamp(20px,4vw,40px)}
+
+@media (max-width:640px){
+  .section,.focus-band{padding:36px 0}
+  .chapter-faq,.chapter-blog{padding:36px 0 28px}
+  .hero2{padding:24px 0 32px}
+  .hero2-copy h1{max-width:22ch;font-size:clamp(28px,7.5vw,34px)}
+  .stage{padding:24px 0}
+}
