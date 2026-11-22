@@ -24,7 +24,7 @@
 <!--
   Sheets setup (Zach):
   1. Create a Google Sheet with header row:
-     Timestamp | Email | First name | Last name | Product | Email updates | Value worth | Comments | Source | User agent
+     Timestamp | Email | First name | Last name | Product | Email updates | Comments | Source | User agent
   (If your sheet predates Product, insert a column after Last name and header "Product".)
   2. Extensions → Apps Script → paste scripts/get-for-mac-apps-script.js
   3. Deploy → New deployment → Web app
@@ -41,7 +41,7 @@
     <nav aria-label="Primary" style="display:contents">
       <ul class="mh-links">
         <li><a href="index.html#how">How it works</a></li>
-        <li><a href="index.html#privacy">Privacy</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
         <li><a href="blogs/index.html">Blog</a></li>
         <li><a href="blocker.html">Nuclear Blocker</a></li>
         <li><a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a></li>
@@ -93,18 +93,6 @@
         <label class="get-choice"><input type="radio" name="emailUpdates" value="No"> No</label>
       </fieldset>
 
-      <fieldset class="get-fieldset">
-        <legend>How much would a 20% increase in tickets or issues you close each week be worth to you? <abbr title="required">*</abbr></legend>
-        <label class="get-choice"><input type="radio" name="valueWorth" value="$9" required> $9</label>
-        <label class="get-choice"><input type="radio" name="valueWorth" value="$19"> $19</label>
-        <label class="get-choice"><input type="radio" name="valueWorth" value="$29"> $29</label>
-        <label class="get-choice get-choice-other">
-          <input type="radio" name="valueWorth" value="Other" id="value-other">
-          Other
-          <input type="text" name="valueWorthOther" id="value-other-text" placeholder="$…" inputmode="text" disabled aria-label="Other amount">
-        </label>
-      </fieldset>
-
       <label class="get-field">
         <span>Questions and comments</span>
         <textarea name="comments" rows="3" placeholder="Optional"></textarea>
@@ -140,17 +128,20 @@
     <div class="mf-row">
       <a class="mf-brand" href="index.html"><img src="assets/modoi-mark.png" alt="">modoi</a>
       <nav class="mf-links" aria-label="Footer">
+        <a href="pricing.html">Pricing</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="refund.html">Refund Policy</a>
         <a href="index.html#how">How it works</a>
         <a href="blocker.html">Nuclear Blocker</a>
-        <a href="index.html#privacy">Privacy</a>
         <a href="blogs/index.html">Blog</a>
         <a href="https://modoi.featurebase.app/" target="_blank" rel="noopener noreferrer">Suggest a feature</a>
         <a href="mailto:support@modoi.ai">support@modoi.ai</a>
       </nav>
     </div>
-    <div class="mf-base">&copy; Modoi 2026</div>
+    <div class="mf-base">© 2026 Autonome. Modoi is a product of Autonome.</div>
   </div>
 </footer>
-<script src="js/get-for-mac.js?v=8"></script>
+<script src="js/get-for-mac.js?v=10"></script>
 </body>
 </html>
