@@ -20,9 +20,6 @@
   var doneEl = document.getElementById("get-done");
   var downloadAgain = document.getElementById("get-download-again");
   var getNoteEl = form ? form.querySelector(".get-note") : null;
-  var otherRadio = document.getElementById("value-other");
-  var otherText = document.getElementById("value-other-text");
-
   if (!form) return;
 
   function productSlugFromQuery() {
@@ -289,19 +286,6 @@
     paintStatus(doneStatusEl, message, kind);
   }
 
-  function syncOther() {
-    var on = !!(otherRadio && otherRadio.checked);
-    if (!otherText) return;
-    otherText.disabled = !on;
-    if (on) otherText.focus();
-    else otherText.value = "";
-  }
-
-  form.querySelectorAll('input[name="valueWorth"]').forEach(function (el) {
-    el.addEventListener("change", syncOther);
-  });
-  syncOther();
-
   function startDownload(url) {
     if (!url) return;
     var a = document.createElement("a");
@@ -347,18 +331,13 @@
 
   function payloadFromForm() {
     var fd = new FormData(form);
-    var worth = fd.get("valueWorth") || "";
-    if (worth === "Other") {
-      var custom = (fd.get("valueWorthOther") || "").toString().trim();
-      worth = custom ? "Other: " + custom : "Other";
-    }
     return {
       email: (fd.get("email") || "").toString().trim(),
       firstName: (fd.get("firstName") || "").toString().trim(),
       lastName: (fd.get("lastName") || "").toString().trim(),
       product: (fd.get("product") || "").toString(),
       emailUpdates: (fd.get("emailUpdates") || "").toString(),
-      valueWorth: worth,
+      valueWorth: "",
       comments: (fd.get("comments") || "").toString().trim(),
       source: "get.html",
       userAgent: navigator.userAgent || "",

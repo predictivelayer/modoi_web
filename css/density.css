@@ -87,6 +87,11 @@
 .blocker-page.g-blog-article ul,
 .blocker-page.g-blog-article ol{overflow-wrap:anywhere}
 
+/* --- Legal / policy pages (no blocker hero wash) --- */
+.legal-page.g-blog-article{padding:clamp(28px,5vh,44px) clamp(20px,4vw,40px) 52px;max-width:min(44rem,calc(100% - 40px));margin:0 auto;overflow-x:clip;box-sizing:border-box}
+.legal-page.g-blog-article > *{max-width:var(--prose-max)}
+.legal-page.g-blog-article p,.legal-page.g-blog-article ul,.legal-page.g-blog-article ol{overflow-wrap:anywhere}
+
 /* --- Blog --- */
 .g-blog-article{
   padding:clamp(32px,5vh,52px) clamp(20px,4vw,40px) 56px;
