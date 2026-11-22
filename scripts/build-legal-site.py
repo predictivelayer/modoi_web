@@ -198,14 +198,18 @@ pricing_body = """
 <main class="legal-page g-blog-article pricing-page" id="main">
   <p class="blog-kicker">Pricing</p>
   <h1>Simple plans</h1>
-  <p class="lede">Modoi is a subscription on your Mac. Try it free, then pay monthly if you keep using it. Checkout through Paddle is coming soon; for now, start with the Mac download.</p>
+  <p class="lede">Modoi is a subscription on your Mac. Start a 7-day free trial, then $15 per month if you keep using it. You can also download the beta Mac app without subscribing.</p>
 
   <div class="pricing-cards">
     <article class="pricing-card">
       <p class="blog-kicker">Modoi</p>
       <p class="pricing-price">$15<small>/month</small></p>
       <p class="pricing-note"><strong>7-day free trial</strong> · Cancel anytime</p>
-      <p>AI focus calendar for Mac: local activity capture, ticket-aware day view, and focus nudges. Billed through Paddle when checkout is live.</p>
+      <p>AI focus calendar for Mac: local activity capture, ticket-aware day view, and focus nudges. Secure checkout through Paddle.</p>
+      <div class="pricing-cta pricing-cta--card">
+        <button type="button" class="btn btn-dark" id="paddle-start-trial">Start 7-day free trial</button>
+        <a class="btn btn-ghost" href="get.html">Free beta download</a>
+      </div>
     </article>
     <article class="pricing-card">
       <p class="blog-kicker">Nuclear Blocker</p>
@@ -216,12 +220,13 @@ pricing_body = """
   </div>
 
   <div class="pricing-cta">
-    <a class="btn btn-dark" href="get.html">Get Modoi for Mac</a>
     <a class="btn btn-ghost" href="blocker.html">Nuclear Blocker overview</a>
   </div>
   <p class="pricing-note" style="margin-top:20px">See <a href="terms.html">Terms</a>, <a href="privacy.html">Privacy</a>, and <a href="refund.html">Refund Policy</a>.</p>
 </main>
 """
+
+pricing_script = '\n<script src="js/paddle-checkout.js?v=1" defer></script>\n'
 
 pages = {
     "terms.html": ("Terms of Service · Modoi", "Terms of Service for Modoi and Nuclear Blocker by Autonome.", terms_body, "terms"),
@@ -231,7 +236,8 @@ pages = {
 }
 
 for fname, (title, desc, body, cur) in pages.items():
-    html = head(title, desc) + f'\n<body class="get-page">\n' + header(cur) + body + footer() + "\n</body>\n</html>\n"
+    tail = pricing_script if fname == "pricing.html" else ""
+    html = head(title, desc) + f'\n<body class="get-page">\n' + header(cur) + body + footer() + tail + "\n</body>\n</html>\n"
     (ROOT / fname).write_text(html)
 
 # Patch all live HTML

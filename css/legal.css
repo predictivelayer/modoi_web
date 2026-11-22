@@ -9,3 +9,4 @@
 .pricing-price small{font:500 15px/1.4 "Public Sans",sans-serif;color:#5a5e66}
 .pricing-note{margin-top:10px;font-size:15px;color:#5a5e66}
 .pricing-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.pricing-cta--card{margin-top:18px;justify-content:flex-start}
