@@ -16,7 +16,12 @@ CSS = """<link rel="stylesheet" href="css/landing.css?v=1">
 <link rel="stylesheet" href="css/density.css?v=1">
 <link rel="stylesheet" href="css/legal.css?v=1">"""
 
-COPY = "© 2026 Autonome. Modoi is a product of Autonome."
+ENTITY_LEGAL = "Autonome, operated by 宝佳丰（北京）国际建筑景观规划设计有限公司"
+REGISTERED_ADDRESS = "北京市昌平区回龙观镇黄平路19号院4号楼718室 (Beijing, China)"
+COPY = (
+    "© 2026 Autonome. Modoi is a product of Autonome, operated by "
+    "宝佳丰（北京）国际建筑景观规划设计有限公司."
+)
 
 def head(title, desc):
     return f"""<!DOCTYPE html>
@@ -88,7 +93,7 @@ terms_body = f"""
   <h1>Terms of Service</h1>
   <p class="blog-meta"><span>Last updated: November 21, 2026</span><span>Autonome</span></p>
 
-  <p>These Terms of Service (&ldquo;Terms&rdquo;) govern your use of software and services offered by <strong>Autonome</strong>, a company registered in the People&rsquo;s Republic of China (&ldquo;Autonome,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;). <strong>Modoi</strong> and <strong>Nuclear Blocker</strong> are products of Autonome. By downloading, installing, or using our products, you agree to these Terms.</p>
+  <p>These Terms of Service (&ldquo;Terms&rdquo;) govern your use of software and services offered by <strong>{ENTITY_LEGAL}</strong> (&ldquo;Autonome,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;), registered in the People&rsquo;s Republic of China. Registered address: {REGISTERED_ADDRESS}. <strong>Modoi</strong> and <strong>Nuclear Blocker</strong> are products of Autonome. By downloading, installing, or using our products, you agree to these Terms.</p>
 
   <h2>Merchant of record</h2>
   <p>{PADDLE_MOR}</p>
@@ -116,18 +121,18 @@ terms_body = f"""
   <p>We may update these Terms. We will post the new version on this page and update the date above. Material changes may also be noted in the app or by email where we have your address. Continued use after the effective date means you accept the revised Terms.</p>
 
   <h2>Contact</h2>
-  <p>Questions about these Terms: <a href="mailto:support@modoi.ai">support@modoi.ai</a>.</p>
+  <p><strong>{ENTITY_LEGAL}</strong><br>{REGISTERED_ADDRESS}<br>Questions about these Terms: <a href="mailto:support@modoi.ai">support@modoi.ai</a>.</p>
   <p>See also our <a href="privacy.html">Privacy Policy</a> and <a href="refund.html">Refund Policy</a>.</p>
 </main>
 """
 
-privacy_body = """
+privacy_body = f"""
 <main class="legal-page g-blog-article" id="main">
   <p class="blog-kicker">Legal</p>
   <h1>Privacy Policy</h1>
   <p class="blog-meta"><span>Last updated: November 21, 2026</span><span>Autonome</span></p>
 
-  <p>This Privacy Policy describes how <strong>Autonome</strong> (&ldquo;we,&rdquo; &ldquo;us&rdquo;), a company registered in the People&rsquo;s Republic of China, processes information when you use <strong>Modoi</strong>, <strong>Nuclear Blocker</strong>, and modoi.ai. Our registered address is 北京市朝阳区林翠西里11-4-601, 100192 (Chaoyang District, Beijing, China). Contact: <a href="mailto:support@modoi.ai">support@modoi.ai</a>.</p>
+  <p>This Privacy Policy describes how <strong>{ENTITY_LEGAL}</strong> (&ldquo;we,&rdquo; &ldquo;us&rdquo;), registered in the People&rsquo;s Republic of China, processes information when you use <strong>Modoi</strong>, <strong>Nuclear Blocker</strong>, and modoi.ai. Our registered address is {REGISTERED_ADDRESS}. Contact: <a href="mailto:support@modoi.ai">support@modoi.ai</a>.</p>
 
   <h2>Modoi on your Mac</h2>
   <p>Modoi is built to keep your work context on your computer:</p>
@@ -161,17 +166,17 @@ privacy_body = """
   <p>We may update this policy. We will post changes here and update the date above.</p>
 
   <h2>Contact</h2>
-  <p><a href="mailto:support@modoi.ai">support@modoi.ai</a></p>
+  <p><strong>{ENTITY_LEGAL}</strong><br>{REGISTERED_ADDRESS}<br><a href="mailto:support@modoi.ai">support@modoi.ai</a></p>
 </main>
 """
 
-refund_body = """
+refund_body = f"""
 <main class="legal-page g-blog-article" id="main">
   <p class="blog-kicker">Legal</p>
   <h1>Refund Policy</h1>
   <p class="blog-meta"><span>Last updated: November 21, 2026</span><span>Autonome</span></p>
 
-  <p>Autonome wants you to be satisfied with Modoi and other paid products. This policy explains how refunds work for purchases handled by Autonome and our Merchant of Record, Paddle.</p>
+  <p><strong>{ENTITY_LEGAL}</strong> wants you to be satisfied with Modoi and other paid products. This policy explains how refunds work for purchases handled by Autonome and our Merchant of Record, Paddle.</p>
 
   <h2>30-day money-back guarantee</h2>
   <p>If you are not satisfied with a Modoi subscription or other eligible purchase made through Paddle within <strong>30 days</strong> of payment, contact us for a refund. We will work with Paddle to process qualifying requests promptly.</p>
@@ -190,7 +195,7 @@ refund_body = """
   <p>You may cancel Modoi at any time to stop future billing. Cancel through Paddle&rsquo;s customer portal or the link in your receipt. Canceling does not automatically refund the current period unless this policy or Paddle&rsquo;s terms allow it.</p>
 
   <h2>Contact</h2>
-  <p>Questions: <a href="mailto:support@modoi.ai">support@modoi.ai</a>.</p>
+  <p><strong>{ENTITY_LEGAL}</strong><br>{REGISTERED_ADDRESS}<br>Questions: <a href="mailto:support@modoi.ai">support@modoi.ai</a>.</p>
 </main>
 """
 
@@ -224,8 +229,18 @@ pricing_body = """
 """
 
 pages = {
-    "terms.html": ("Terms of Service · Modoi", "Terms of Service for Modoi and Nuclear Blocker by Autonome.", terms_body, "terms"),
-    "privacy.html": ("Privacy Policy · Modoi", "How Autonome handles data for Modoi, Nuclear Blocker, and modoi.ai.", privacy_body, "privacy"),
+    "terms.html": (
+        "Terms of Service · Modoi",
+        f"Terms of Service for Modoi and Nuclear Blocker by {ENTITY_LEGAL}.",
+        terms_body,
+        "terms",
+    ),
+    "privacy.html": (
+        "Privacy Policy · Modoi",
+        f"Privacy policy for Modoi and Nuclear Blocker — {ENTITY_LEGAL}.",
+        privacy_body,
+        "privacy",
+    ),
     "refund.html": ("Refund Policy · Modoi", "30-day money-back guarantee and refund instructions for Modoi.", refund_body, "refund"),
     "pricing.html": ("Pricing · Modoi", "Modoi subscription pricing: $15/month after a 7-day free trial.", pricing_body, "pricing"),
 }
@@ -272,6 +287,7 @@ def patch_file(path: Path):
     fixed = "      </nav>\n    </div>\n    <div class=\"mf-base\">"
     if broken in t:
         t = t.replace(broken, fixed, 1)
+    t = re.sub(r'(<div class="mf-base">)[^<]*(</div>)', rf"\1{COPY}\2", t, count=1)
     path.write_text(t)
 
 for html in ROOT.rglob("*.html"):
